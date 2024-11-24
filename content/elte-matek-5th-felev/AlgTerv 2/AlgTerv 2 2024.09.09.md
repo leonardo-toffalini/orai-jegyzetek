@@ -20,7 +20,7 @@ $x \in \{ 0, 1 \}^{n}$
 $\sum x_{i} = k$
 tehat van egy $n$ bites szamunk ahol $k$ darab $1$-es van es ezt szeretnenk lekodolni
 
-Elso eset: $n, k$ fixek/rogzitettek, ekkor eleg $\log$${n}\choose{k}$ bit mivel $n \choose k$ helyen lehet a $k$ darab $1$-es es ezeket kell csak kodolni
+Elso eset: $n, k$ fixek/rogzitettek, ekkor eleg $\log {n\choose k}$ bit mivel $n \choose k$ helyen lehet a $k$ darab $1$-es es ezeket kell csak kodolni
 
 Masodik eset: nem ismerjuk egyiket sem
 Ekkor le kell eloszor kodolni az $n$-et utana le kell kodolnunk a $k$-t utana $n \choose k$ -t 

@@ -1,6 +1,4 @@
 ---
-title: Welcome to Quartz
+title: Jegyzetek kincstára
 ---
-
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Ezen az oldalon megtalálhatóak az ELTE Matematika alapképzés órai jegyzetei.

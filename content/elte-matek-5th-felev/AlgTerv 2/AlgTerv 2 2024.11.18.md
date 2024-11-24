@@ -101,7 +101,7 @@ Vegig megyek az $X$ tombon es mindegyik elemrol el tudom donteni $O(1)$ idoben h
 Vegig megyek az $Y$ tombon es mindegyik elemrol el tudom donteni $O(1)$ idoben hogy benne lesz-e $Q$-ban. $\implies YQ$: a $Q$ tomb $y$-szerint rendezve.
 
 
-### III.
+### III. Tengely iranyu teglalap feladat
 #### a) eltarolni az inputot $O(n\log n)$ tarban es idoben
 #### b) Felsorolni az osszes pontot, melyek benne vannak egy adott tengely iranyu teglalapban
 tengely iranyu teglalap: $(x_{bal},\; x_{jobb},\; y_{also},\; y_{felso})$
