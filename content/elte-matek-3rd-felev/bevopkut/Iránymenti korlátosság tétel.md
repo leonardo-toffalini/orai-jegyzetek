@@ -1,0 +1,10 @@
+#tétel 
+
+***Tétel***: 
+
+
+***Biz***.: 
+
+
+***Dependencies***:
+- 
