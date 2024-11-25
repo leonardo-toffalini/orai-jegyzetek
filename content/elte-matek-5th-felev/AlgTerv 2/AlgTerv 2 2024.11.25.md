@@ -21,7 +21,6 @@ Mely pontok esnek az $[x_{b}, x_{j}, y_{a}, y_{f}]$ tengely iranyu teglalapba?
 Valaszolo algoritmus:
 1. $x_{b}$ es $x_{j}$ keresese
 
-<img src="../../Excalidraw/fontos_csucsok_halmaza.svg" />
 <img src="./Excalidraw/fontos_csucsok_halmaza.svg" />
 
 2. $F =$ fontos csucsok halmaza, $\lvert F \rvert \leq 2 \log n$
