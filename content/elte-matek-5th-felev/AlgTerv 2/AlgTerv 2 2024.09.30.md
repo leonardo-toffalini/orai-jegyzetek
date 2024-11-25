@@ -1,3 +1,8 @@
+---
+title: 4. Randomizált algoritmusok
+date: 2024-09-30
+---
+
 # Randomizalt algoritmusok
 *Soft error:* Annak a valsege, hogy a kovetkezo mikroszekundumban hibazik az algoritmus.
 Ennek a tipikus erteke $\frac{1}{2^{55}}$

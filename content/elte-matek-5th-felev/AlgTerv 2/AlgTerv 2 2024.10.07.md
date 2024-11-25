@@ -1,3 +1,8 @@
+---
+title: 5. Közelítő algoritmusok
+date: 2024-10-07
+---
+
 **feladat:** $8$ kiralyno a sakk tablan ugy hogy egyik sem uti a masikat. Van ilyen felallas es ha van akkor hany?
 *Brute force:* osszes felallast kiprobaljuk, ez $64 \choose 8$ esetet kell leellenorizni
 *Heurisztika 1:* Minden oszlopba csak egy kiralnyot rakhatunk, igy mar csak $8^{8}$ esetet kell leellenorizni.
