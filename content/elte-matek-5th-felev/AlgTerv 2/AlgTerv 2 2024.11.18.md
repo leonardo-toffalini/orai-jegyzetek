@@ -1,3 +1,8 @@
+---
+title: 10. Három trükkös feladat
+date: 2024-11-18
+---
+
 *input:* pontok a sikon, azaz $p_{1}, \dots, p_{n} \in \mathbb{R}^{2}$ ahol $p_{i} = (x_{i}, y_{i})$
 
 ### I. konvex burok

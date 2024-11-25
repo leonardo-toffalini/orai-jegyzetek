@@ -1,3 +1,8 @@
+---
+title: 8. Online algoritmusok
+date: 2024-11-04
+---
+
 ## Online algoritmusok / feladatok
 ### Siberles problema
 nem tudjuk elore mennyiszer fogunk elmenni sielni es minden nap el kell dontenunk hogy holnapra veszunk vagy berlunk sifelszerest

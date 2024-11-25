@@ -1,3 +1,8 @@
+---
+title: 6. Közelítő algoritmusok 2
+date: 2024-10-14
+---
+
 *Megj.:* Lehet hogy egy altalanosan nehez feladatot kapunk, de ha valami spec esetet akarunk megoldani akkor lehet hogy meg lehet oldani polinomialis idoben.
 
 # Kozelito megoldasok

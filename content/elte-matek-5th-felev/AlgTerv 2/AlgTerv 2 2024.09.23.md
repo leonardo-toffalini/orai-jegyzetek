@@ -1,3 +1,8 @@
+---
+title: 3. Mediáns keresés, Gyorsrendezés, KMP
+date: 2024-09-23
+---
+
 # Medians kereses
 rendezes utan konnyu megadni a kozepso elemet
 de lehet gyorsabban mint $n\log n$ idoben megadni a medians-t?

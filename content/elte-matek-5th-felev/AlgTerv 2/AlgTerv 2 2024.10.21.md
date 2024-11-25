@@ -1,3 +1,8 @@
+---
+title: 7. FPT algoritmusok
+date: 2024-10-21
+---
+
 Minimalis koltsegu lefogo csucshalmaz
 Minden csucsnak van egy nem negativ koltsege: $w : V \to \mathbb{N}$
 

@@ -1,3 +1,9 @@
+---
+title: 1. Huffman kódolás
+date: 2024-09-09
+---
+
+
 Egy Texasi kiskocsmaban, Billie-nek a konyvelonek van egy gepe amin vannak billentyuk (0, ..., 9, space) amin le kell konyvelnie, hogy melyik ugyfel mennyit fizetett.
 
 Kitor egy lovoldozes a kiskocsmaban es kilovik Billienek az egyik billentyujet. Na de most hogyan konyveljen Billie.
@@ -20,7 +26,7 @@ $x \in \{ 0, 1 \}^{n}$
 $\sum x_{i} = k$
 tehat van egy $n$ bites szamunk ahol $k$ darab $1$-es van es ezt szeretnenk lekodolni
 
-Elso eset: $n, k$ fixek/rogzitettek, ekkor eleg $\log {n\choose k}$ bit mivel $n \choose k$ helyen lehet a $k$ darab $1$-es es ezeket kell csak kodolni
+Elso eset: $n, k$ fixek/rogzitettek, ekkor eleg $\log {n \choose k}$ bit mivel $n \choose k$ helyen lehet a $k$ darab $1$-es es ezeket kell csak kodolni
 
 Masodik eset: nem ismerjuk egyiket sem
 Ekkor le kell eloszor kodolni az $n$-et utana le kell kodolnunk a $k$-t utana $n \choose k$ -t 
@@ -33,7 +39,7 @@ elso $2\log \log n$ bit kodolja az $n$ kodolosanak a hosszat
 $01$
 $2 \log \log k$ bit kodolja a $k$ kodolajanak a hosszat
 $01$
-$n + k + n \text{ alatt } k$
+$n + k + {n \choose k}$
 
 osszesen: $\log (n \text{ alatt } k) + \log n + \log k + 4 \log \log n + 4$
 
@@ -59,8 +65,8 @@ Mivel $\sum_{i=0}^{n}2^{i} = 2^{n+1}-1$
 
 
 # Grafok kodolasa
-1. Tegyuk fel, hogy $n$ ismert, tovabba, hogy egyszeru es iranyitatlan a graf. Ekkor $n \choose 2$ bittel el lehet kodolni (az adjecencia matrix felso haromszoga).
-2. Tegyuk fel, hogy $m \ll n$ ebbol nagyjabol az kovetkezik, hogy $m \cdot \log$$n \choose 2$
+1. Tegyuk fel, hogy $n$ ismert, tovabba, hogy egyszeru es iranyitatlan a graf. Ekkor ${n \choose 2}$ bittel el lehet kodolni (az adjecencia matrix felso haromszoga).
+2. Tegyuk fel, hogy $m \ll n$ ebbol nagyjabol az kovetkezik, hogy $m \cdot \log{n \choose 2}$
 	2.a Ha $n$ ismert, akkor a fentit ki tudjuk szamolni es igy el tudjuk kodolni $m$ darab $\log {n \choose 2}$ kodolossal ami megmondja, hogy az $i$.-edik el melyik ket csucsot koti ossze.
 	2.b Ha $n$ nem ismert, akkor $k := \log {n \choose 2}$ es $2\log k + 2$ bittel kodoljuk a $k$-t es utana a 2.a szerint kodolunk. Igy $m \cdot k + 2 \log k + 2$ bit eleg.
 

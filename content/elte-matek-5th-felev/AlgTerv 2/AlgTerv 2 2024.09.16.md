@@ -1,3 +1,8 @@
+---
+title: 2. LZW kódolás
+date: 2024-09-16
+---
+
 # **SzóFa**
 $\lvert \Sigma \rvert = d, \quad S \subseteq \Sigma ^{*}$
 

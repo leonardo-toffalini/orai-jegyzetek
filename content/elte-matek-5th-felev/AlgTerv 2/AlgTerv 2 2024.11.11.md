@@ -1,3 +1,8 @@
+---
+title: 9. Párhuzamos algoritmusok
+date: 2024-11-11
+---
+
 ### Parhuzamos algoritmusok
 NC (Nick Class): Olyan algortimusok vannak ebben az oszalyban, amelyek $n^{c_{1}}$ preoceszorral $O((\log n)^{c_{2}})$ idoben futnak.
 
