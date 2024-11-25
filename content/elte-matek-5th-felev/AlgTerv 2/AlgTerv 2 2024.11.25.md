@@ -20,7 +20,10 @@ Mely pontok esnek az $[x_{b}, x_{j}, y_{a}, y_{f}]$ tengely iranyu teglalapba?
 
 Valaszolo algoritmus:
 1. $x_{b}$ es $x_{j}$ keresese
-![[Drawing 2024-11-25 12.27.19.excalidraw]]
+
+<img src="../../Excalidraw/fontos_csucsok_halmaza.svg" />
+<img src="./Excalidraw/fontos_csucsok_halmaza.svg" />
+
 2. $F =$ fontos csucsok halmaza, $\lvert F \rvert \leq 2 \log n$
 *All.:* Valasz $\subseteq \cup_{f\in F} \text{ASSOC}(f)$
 *All.:* $\cup_{f\in F} \text{ASSOC}(f)$ -nak minden olyan $i$ eleme valasz, amire $y_{a} \leq y_{i} \leq y_{f}$
