@@ -3,8 +3,8 @@ title: 11. Tartomány fa, Útkeresés
 date: 2024-11-25
 ---
 ### Tartomany fa (Range tree)
-<https://www.cs.umd.edu/class/fall2020/cmsc420-0201/Lects/lect17-range-tree.pdf>
-<https://www.geeksforgeeks.org/exploring-range-trees/>
+[seged anyag 1](https://www.cs.umd.edu/class/fall2020/cmsc420-0201/Lects/lect17-range-tree.pdf) [seged anyag 2](https://www.geeksforgeeks.org/exploring-range-trees/)
+
 A tartomany fa egy $x$ koordinata szerinti kulso tarolasu kiegyensulyozott binaris kereso fa. 
 Minden csucson van egy $u$  utjelzo ami eliranyitja a pontokat ugy, hogy balra vannak azok amiknel $x \leq u$ es jobbra azok amiknel $x > u$. Az adatok a levelekben vannak tarolva.
 
@@ -50,7 +50,8 @@ Legyen $AY_{r}$ az osszes pont indexenek tombje $y$ szerint rendezve.
 Amikor egy csucsnal vagyunk es kette kell osztani az itt levo csucsokat akkor meg tudom oldani $O(\lvert \text{ASSOC}(v) \rvert)$ lepesben. Mert az $AX_{v}$ es az $AY_{v}$ tombok rendezve vannak mar es konstans idoben el tudom donteni egy pontrol az $AX_{v}$ tombben, hogy balra vagy jobbra megy es eleg csak sorban tovvabbadnunk az $AX_{r}$ es az $AY_{r}$ tomboket, mert mar eleve rendezve vannak.
 
 #### Kaszkadolas (Cascading)
-<https://en.wikipedia.org/wiki/Fractional_cascading>
+[seged anyag](https://en.wikipedia.org/wiki/Fractional_cascading)
+
 Legyen $v$ egy csucs a tartomany faban, aminek ket  gyereke $a$ es $b$.
 Definialjuk a kovetkezo tomboket: $AY(V)$, $HY_{va}$, $HY_{vb}$ 
 

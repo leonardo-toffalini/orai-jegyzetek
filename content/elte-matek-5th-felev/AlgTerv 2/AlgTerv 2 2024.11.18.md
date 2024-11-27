@@ -1,11 +1,11 @@
 ---
-title: 10. Három érdekes feladat
+title: 10. Geometriai algoritmusok
 date: 2024-11-18
 ---
 
 *input:* pontok a sikon, azaz $p_{1}, \dots, p_{n} \in \mathbb{R}^{2}$ ahol $p_{i} = (x_{i}, y_{i})$
 
-### I. konvex burok
+### I. Konvex burok
 Feltesszuk, hogy $x_{1} < x_{2} < \dots < x_{n}$
 
 algo:
@@ -40,7 +40,7 @@ ugyanezt $A$-val
 Ezzel az eljarassal minden pontot csak egyszer nezzuk meg.
 
 
-### II. legkozelebbi pontpar tavolsaga
+### II. Legkozelebbi pontpar tavolsaga
 *feladat:* $\delta = d(p_{i}, p_{j})$ ahol $i \neq j$ es $\delta \leq d(p_{k}, p_{l}) \quad \forall k \neq l$
 
 Divide and conquer algoritmus lesz
