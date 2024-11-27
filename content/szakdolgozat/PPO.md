@@ -1,5 +1,5 @@
 ---
-title: Proximal Policy Optimisation
+title: Proximal Policy Optimization
 ---
 
 Define the *Clipped surrogate* objective function to be the following:

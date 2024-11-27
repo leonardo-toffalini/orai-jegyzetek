@@ -1,7 +1,6 @@
 ---
 title: Q-learning
 ---
+In the value iteration algorithm we must know the entire MDP and all the rewards for each action at each state. In general, we can't assume this knowledge, since knowing the entire MDP would assume a perfect modell of the real world in most cases which is unachievable.
 
-A value iteration algoritmusban kell tudnunk az egész Markov láncot és minden lépéshez és állapothoz rendelt jutalmat. Ezt nem mindig tehetjük meg, például tipikusan ha van egy ügynökünk egy valós környezetben, akkor az egész Markov lánc ismerete azt jelentené, hogy tökéletes modellünk van a valóságra, amit még sajnos nem ért el a fizika tudománya.
-
-Ennek a problémának orvosolására vezetjük be a Q-learning algoritmust, ahol már nem kell ismernünk az egész állapotteret és az összes jutalmat, hanem elég tudnunk, hogy hol jártunk és ott milyen jutalmat kaptunk. Így minnél jobban felderítjük az állapotteret, annál jobban közelíti az algoritmus majd a Value iteration algoritmust.
+Q-learning solves this problem by only assigning a value to the visited states, thus leading to a better modell of the environment upon further iterations. In this framework the only thing we need to know is the reward recieved upon taking action $a$ at state $s$. The Q-learning algorithm approaches the Value iteration algorithm.
