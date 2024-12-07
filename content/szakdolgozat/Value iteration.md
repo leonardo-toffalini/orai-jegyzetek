@@ -1,0 +1,1 @@
+The Value Iteration algorithm is an RL algorithm that learns the value function by iteratively improving the current estimate of the value function. It does so by doing a one step lookahead at each state and aggragating the searched actions.
