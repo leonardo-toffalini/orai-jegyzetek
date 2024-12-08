@@ -1,3 +1,26 @@
+$$
+F = ma
+$$
+$$
+a = \frac{F}{m}
+$$
+$$
+F = \gamma \cdot \frac{m_{1}m_{2}}{r_{12}^{2}}
+$$
+$$
+a_{1} = \gamma \cdot \frac{\frac{m_{1}m_{2}}{r_{12}^{2}}}{m_{1}} = \gamma \cdot \frac{m_{2}}{r_{12}^{2}}
+$$
+Ez csak a nagysaga a gyorsulasnak, de $a$ egy vektor, ezert ki kell szamolnunk az iranyat is. A gyorsulas iranya az ero iranyaval egyezik meg, ami a masik test fele nez. Tehat az irany
+$$
+\frac{\vec{x}_{j} - \vec{x}_{i}}{\| \vec{x}_{j} - \vec{x}_{i} \| }
+$$
+
+Tehat a gyorsulas vektora a kovetkezo:
+$$
+a_{i} = m_{j} \frac{\vec{x}_{j} - \vec{x}_{i}}{\| \vec{x}_{j} - \vec{x}_{i} \|^{3} }
+$$
+
+
 Az n-test vonzomozgasat leiro differencial egyenlet a kovetkezo:
 
 $$
