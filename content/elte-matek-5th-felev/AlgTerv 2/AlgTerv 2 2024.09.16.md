@@ -18,11 +18,11 @@ tehat mindegyik szonak lesz egy kodja ami 12 bites lesz
 
 
 # Melysegi kereses
-Elvegzunk egy melysegi keresest egy iranyitatlan grafon, ebool kapunk egy iranyitott erdot
+Elvegzunk egy melysegi keresest egy iranyitatlan grafon, ebbol kapunk egy iranyitott erdot
 milyen elek lehetnek az eredeti grafban?
 - elore el: az iranyitott erdoben egy csucsbol az egyik leszarmazottjaba mutato el
 - vissza el: az iranyitott erdoben egy csucsbol az egyik osebe mutato el
-- kereszt el: az iranyitott erdoben jobbrol balra mutato el (komponenseken keresztul, ksebobbi komponensbol korabbiba)
+- kereszt el: az iranyitott erdoben jobbrol balra mutato el (komponenseken keresztul, kesobbi komponensbol korabbiba)
 
 **Tetel:** $xy \in E$ akkor
 - vissza el, ha $MSZ(y) < MSZ(x)$ es $BSZ(y) > BSZ(x)$
@@ -31,9 +31,9 @@ milyen elek lehetnek az eredeti grafban?
 
 - kereszt el, ha $MSZ(y) < MSZ(x)$ es $BSZ(y) < BSZ(x)$
 
-**All.:** Egy $G$ graf aciklikus $\iff$ nem letezik benne viszzael
+**All.:** Egy $G$ graf aciklikus $\iff$ nem letezik benne visszael
 *Biz.:* $\implies$ trivi.
-$\impliedby$ a melysegi kereses utan a befejezesi szam egy forditott topologikus sorrendet ad
+$\impliedby$ a melysegi kereses utan a befejezesi szam (BSZ) egy forditott topologikus sorrendet ad
 
 **Reszfa-lemma:**
 $x \in V$
@@ -54,7 +54,8 @@ $v'$ nincs benne ebben az osszefuggo sorozatban, es csak nagyobb lehet mert a sz
 ebbol kovetkezik, hogy $MSZ(v') > MSZ(v)$ amibol kovetzkezik, hogy $vv'$ fa, vagy elore el tehat $v' \in T_{x}$ ELLENTMONDAS
 
 *Def.:* $G$ iranyitott graf $x \sim y$, ha $\exists x \to y$ es $y\to x$ ut
-*All.:* Ez egy ekvivalencia relacio.
+
+*All.:* A(z) ($\sim$) infix operator egy ekvivalencia relacio.
 
 *Def.:* Ennek az ekvivalencia relacionak az osztalyait hivjuk eros komponenseknek.
 
@@ -66,7 +67,7 @@ Legyen $P$ az $x\to y$ ut es $v \in P$
 indirekt tegyuk fel, hogy $v \not\in K$ 
 Ekkor letezik $v$-bol $y$-ba ut es $y$-bol $x$-be ut ezert letezik $x$-bol $v$-be ut tehat $x \sim v$ $\implies v \in K$
 
-*Def.:* Redukalt graf (jel.: $red(G)$) ugy kapjuk, hogy minden eros komponenst osszehuzunk egy csucsa. Tehat minden eros komponensnek lesz egy reprezentativ csucsa melynek azok a masik reprezentativ csucsok a szomszedai amelyik komponensbe megy el a jelen komponensbol.
+*Def.:* Redukalt graf (jel.: $red(G)$) ugy kapjuk, hogy minden eros komponenst osszehuzunk egy csucsba. Tehat minden eros komponensnek lesz egy reprezentativ csucsa melynek azok a masik reprezentativ csucsok a szomszedai amelyik komponensbe megy el a jelen komponensbol.
 
 **All.:** Tetszoleges $G$ iranyitott grafnak a redukaltja aciklikus.
 *Biz.:* Ha van komponenseknek egy sorozata mely kort alkot akkor ezen kor menten minden komponens egy nagy komponenst alkot.

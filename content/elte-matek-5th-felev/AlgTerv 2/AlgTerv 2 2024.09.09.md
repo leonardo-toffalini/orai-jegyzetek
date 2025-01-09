@@ -6,7 +6,7 @@ date: 2024-09-09
 Egy Texasi kiskocsmaban, Billie-nek a konyvelonek van egy gepe amin vannak billentyuk (0, ..., 9, space) amin le kell konyvelnie, hogy melyik ugyfel mennyit fizetett.
 
 Kitor egy lovoldozes a kiskocsmaban es kilovik Billienek az egyik billentyujet. Na de most hogyan konyveljen Billie.
-Megolda: Egy kisebb szamrendszerben konyvel es a kimarado billentyu jatsza majd a szerepet a kilott billentyunek.
+Megoldas: Egy kisebb szamrendszerben konyvel es a kimarado billentyu jatsza majd a szerepet a kilott billentyunek.
 
 Folytatodik a sztori es sorba lovik ki a tobbi billentyut is. Egeszen addig ameddig csak a 0, 1, 2 billentyuk maradnak.
 
@@ -31,16 +31,13 @@ Masodik eset: nem ismerjuk egyiket sem
 Ekkor le kell eloszor kodolni az $n$-et utana le kell kodolnunk a $k$-t utana $n \choose k$ -t 
 igy ugy fog kinezni, hogy $n$ kodolva 'vesszo' $k$ kodolva 'vesszo' utolso tag kodolva
 a vesszoket el lehet hagyni ha a fenti mappinget hasznaljuk (az utolso tagot nem kell duplazni, mert ott mar nincsen vesszo)
-igy fog kijonni a $2\log n$, $2\log k$, $\log (n alatt k)$
+igy fog kijonni a $2\log n$, $2\log k$, $\log  {n \choose k}$
 
 ugyesebb megoldas:
-elso $2\log \log n$ bit kodolja az $n$ kodolosanak a hosszat
-$01$
-$2 \log \log k$ bit kodolja a $k$ kodolajanak a hosszat
-$01$
-$n + k + n \text{ alatt } k$
+(elso $2\log \log n$ bit kodolja az $n$ kodolosanak a hosszat), ($01$), ($2 \log \log k$ bit kodolja a $k$ kodolajanak a hosszat), ($01$), ($n + k + {n \choose k}$ kodolva)
 
-osszesen: $\log (n \text{ alatt } k) + \log n + \log k + 4 \log \log n + 4$
+osszesen:
+$$\log {n \choose k} + \log n + \log k + 4 \log \log n + 4$$
 
 legyen $p = \frac{k}{n}$ ($0 < p < 1$)
 ebben az esetben a fenti ('osszesen') $< (-p \log p - (1 - p)\log (1-p)) \cdot n + O(\log n)$
@@ -64,19 +61,19 @@ Mivel $\sum_{i=0}^{n}2^{i} = 2^{n+1}-1$
 
 
 # Grafok kodolasa
-1. Tegyuk fel, hogy $n$ ismert, tovabba, hogy egyszeru es iranyitatlan a graf. Ekkor $n \choose 2$ bittel el lehet kodolni (az adjecencia matrix felso haromszoga).
+1. Tegyuk fel, hogy $n$ ismert, tovabba, hogy egyszeru es iranyitatlan a graf. Ekkor $n \choose 2$ bittel el lehet kodolni (az adjecencia matrix felso haromszoge).
 2. Tegyuk fel, hogy $m \ll n$ ebbol nagyjabol az kovetkezik, hogy $m \cdot \log {n \choose 2}$
-	2.a Ha $n$ ismert, akkor a fentit ki tudjuk szamolni es igy el tudjuk kodolni $m$ darab $\log {n \choose 2}$ kodolossal ami megmondja, hogy az $i$.-edik el melyik ket csucsot koti ossze.
-	2.b Ha $n$ nem ismert, akkor $k := \log {n \choose 2}$ es $2\log k + 2$ bittel kodoljuk a $k$-t es utana a 2.a szerint kodolunk. Igy $m \cdot k + 2 \log k + 2$ bit eleg.
+	-  Ha $n$ ismert, akkor a fentit ki tudjuk szamolni es igy el tudjuk kodolni $m$ darab $\log {n \choose 2}$ kodolossal ami megmondja, hogy az $i$.-edik el melyik ket csucsot koti ossze.
+	- Ha $n$ nem ismert, akkor $k := \log {n \choose 2}$ es $2\log k + 2$ bittel kodoljuk a $k$-t es utana az elozo szerint kodolunk. Igy $m \cdot k + 2 \log k + 2$ bit eleg.
 
 
 # Huffman
-A Huffman kod egy betukod, azaz az ABC minden elemehez hozzarendelek invjektiven egy kodot.
+A Huffman kod egy betukod, tehat az ABC minden betujehez hozzarendel egy kodot, invjektiven.
 $c: \Sigma \to \{ 0, 1 \}^{*}$ inkektiv
 
-Most azt szeretnenk hogy a gyakorli betuknek legyen rovidebb a kodja.
+Azt szeretnenk hogy a gyakori betuknek legyen rovidebb a kodja, mint azoknak a betuknek amiket alig hasznalunk.
 
-***Def.:*** $c$ kod prefix mentes, ha barhogy veszek ket kukonbozo betut $\forall a \neq b \in \Sigma$ akkor $c(a)$ nem prefixe $c(b)$-nek.
+***Def.:*** $c$ kod prefix mentes, ha barhogy veszek ket kukonbozo betut $\forall a \neq b \in \Sigma$ akkor $c(a)$ nem prefixe $c(b)$-nek. Tehat $c(b)$ nem ugy kezdodik, hogy $c(a)$.
 
 Szotar: gyokeres binaris fa es helyenkent vannak levelei. A levelekhez hozzarendelem az ABC elemeit.
 
@@ -84,11 +81,11 @@ Huffman kod:
 $\Sigma = \{ a_{1}, a_{2}, \dots, a_{m} \}$, $a_{i}$ betu gyakorisaga $p_{i}$ tehat $r_{i} = p_{i} \cdot n$ darab van $a_{i}$-bol a szovegben
 
 Kodolo algoritmus:
-Letrehozza az $m$ darab levelet egy faban es alulrol folfele csinalunk fat.
-Minden $a_{i}$ level melle irjuk, hogy mennyi van belole, $r_{i}$
-Menet kozben a gyokereken tarolunk prios szamokat.
-$\forall$gyokerre $\geq \max(\alpha, \beta)$
-az $\alpha$ es a $\beta$ gyokereket egy kozos uj gyoker ala hozzuk es az uj gyoker melle irjuk az $\alpha + \beta$ piros szamot
+1. Letrehozunk $m$ darab levelet, amik reprezentaljak az $m$ darab betut. Minden levelre rairjuk az elofordulasaik szamat, $r_{i}$-t.
+2. Osszevonunk ketto gyokeret, melyeknek a szama a legkisebb. Igy az uj letrehozott gyokernek a szama a ketto masik osszege lesz.
+3. Iteraljuk a masodik lepest ameddig tudjuk, tehat mar csak egy gyoker van es osszefuggo a fa.
+
+Miutan letrehoztuk a huffman fat, elnevezzuk a balra nezo agakat $0$-nak es a jobbra nezo agakat $1$-nek. Igy egy betu kodja a gyokerbol a hozzatartozo levelbe mutato ut lesz, nullasokkal es egyesekkel reprezentalva.
 
 ***Tetel:*** A Huffman kod hossza minimalis a prefixmentes betukodok kozott
 
