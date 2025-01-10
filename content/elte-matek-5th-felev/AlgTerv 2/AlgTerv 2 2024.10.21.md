@@ -46,6 +46,7 @@ peldaul: Kapunk egy $G$ grafot es egy $k \in \mathbb{N}$ paramteret es a kerdes 
 
 *Def.:* FPT $\subseteq$ XP ahol FPT azon feladatok halmaza, melyekre $\exists O(f(k) \cdot n^{c})$ ideju algoritmus ami megoldja.
 
+peldaul az elozo orarol a Vertex Cover algoritmus:
 ```
 VC(G', k'):
 	IF k' < 0 THEN return False
@@ -54,20 +55,22 @@ VC(G', k'):
 	IF k' = 0 THEN return False
 	IF d(v) = 1 THEN return tau(G')
 	
+	// v lefogo
 	T_1 := VC(G' - v, k' - 1)
 	IF T_1 != False THEN return (T_1 U {v})
-	
-	T_2 := VC(G' - v, k' - d(v))
-	IF T_2 != False THEN ...
+
+	// v nem lefogo
+	T_2 := VC(G' - v - N(v), k' - d(v))
+	IF T_2 != False THEN return (T_2 U N(v))
 ```
 
 Legyen $T(k)$ a rekurziv hivasok szama $k$-ra
-Ekkor lathato, hogy $T(k) \geq T(k-1) + T(k-2)$
+Ekkor lathato, hogy $T(k) \leq T(k-1) + T(k-2)$
 
 Tehat $O(\phi ^{k} \cdot m)$  a futasi ido, mert egy lepest minding meg tudunk csinalni $m$ idoben es a rekurziv hivasok szama a fenti eszrevetel miatt a fibonacci sorozat altal korlatozott.
 
-Tudjuk egy kicsit javitani az algoritmus ugy, hogy atcsereljuk a kovetkezo sort: `IF d(v) = 1 ...` arra, hogy `IF d(v) = 2 ...` es igy a rekurziv lepesek szamara igaz, hogy $T(k) \geq T(k - 1)  + T(k-3)$
-Igy a futasi ido $O(1.466^{k} \cdot m)$
+Tudjuk egy kicsit javitani az algoritmus ugy, hogy atcsereljuk a kovetkezo sort: `IF d(v) = 1 ...` arra, hogy `IF d(v) = 2 ...` es igy a rekurziv lepesek szamara igaz, hogy $T(k) \leq T(k - 1)  + T(k-3)$
+Igy a futasi ido $O(1.466^{k} \cdot m)$. Ezt lattuk az elozo oran.
 
 
 *Def.:* Egy $(G, k)$ inputu feladat $g(k)$*-kernele*:
@@ -76,6 +79,7 @@ polinomialis idoben elkeszitunk egy $(G', k')$ inputot, amire:
 - $\lvert G' \rvert \leq g(k)$
 - $k' \leq k$
 
+A lenyege a kernel keszitesnek az, hogy ha tudunk adni egy $g(k)$ kernelt egy feladatra, akkor azt a kernelt barhogyan megoldjuk az algoritmus ami eloszor elkesziti a kernelt es utana a kernelt megoldja biztosan FPT algoritmus lesz. Mivel polinomialis idoben adunk egy $g(k)$ kernelt, es a $g(k)$ meretu feladatot barhogyan megoldjuk, ezert az algoritmus futasideje $O(f(g(k)) \cdot poly(n))$, ahol $f$ jeloli a kernel megoldasanak idejet es $poly(n)$ a kernel letrehozasanak idejet.
 
 *Kernel keszites a lefogo csucshalmaz feladatra*
 Feladat: Keszitsunk egy $k$ csucsu lefogo csucshalmazt.
@@ -94,8 +98,9 @@ Ezt a kissebb grafot a fenti algorimussal meg lehet mar oldani $O(1.466^{k} \cdo
 
 *Def.:* $G$ korona-felbontasa: $V = C \cup H \cup B$ (crown, head, body)
 1. $C$ fuggetlen
-2. $\not\exists bc \in E$ ha $b \in B$ es $c \in C$
+2. $\not\exists bc \in E$ ha $b \in B$ es $c \in C$  (a korona es a body kozott nincs el)
 3. A $(C, H)$ paros grafban letezik $H$-t fedo parositas
+![[crown_reduction.png]]
 
 *Korona redukcio:*
 $$
@@ -114,8 +119,11 @@ Ekkor letezik $T'$ ugy, hogy $\lvert T' \rvert = k$ es $T' \cap C = \emptyset$ e
 $2k$ csucsu kernel
 $G \mapsto P = (V_{1} \cup V_{2}, E')$
 
-$P$-ben $M$ legnagyobb parositas, $T$ legkisebb lefogo, ha $\lvert M \rvert \geq 2k + 1$ akkor megallunk. $O(k \cdot m)$
+$P$-ben $M$ legnagyobb parositas, $T$ legkisebb lefogo.
 
+Ha $\lvert M \rvert \geq k + 1$ akkor megallunk, mert a parositas minden elet legalabb egy csucsnak le kell fognia. Ezt eldontottuk $O(k \cdot m)$ idoben.
+
+Kulonben elkeszitjuk a kovetkezo koronafelbontast:
 $$
 H := \{ v \in V : v_{1} \in T, v_{2} \in T \}
 $$

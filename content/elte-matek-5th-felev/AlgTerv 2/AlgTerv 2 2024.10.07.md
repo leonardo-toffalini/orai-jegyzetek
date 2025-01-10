@@ -117,11 +117,11 @@ DO_VC2(G, k):
 		ELSE
 			RETURN False
 
-	// v nem egy lefogo csucs
+	// v egy lefogo csucs
 	T_1 := DO_VC2(G - v, k - 1)
 	IF T_1 != False THEN RETURN (T_1 U {v})
 
-	// v egy lefogo csucs, es igy a szomszedai nem lefogok
+	// v nem egy lefogo csucs, igy az osszes elet a szomszedai fogjak le
 	T_2 := DO_VC2(G - v - N(v), k - d(v))
 	IF T_2 != False THEN RETURN (T_2 U N(v))
 
