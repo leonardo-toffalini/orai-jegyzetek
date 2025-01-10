@@ -12,7 +12,7 @@ Legyen $f$ egy $n$ valtozos $\leq d$-ed foku polinom, van egy orakulum megadva a
 
 Feladat: Dontsuk el, hogy $f \stackrel{?}{\equiv} 0$
 
-**Scwartz-Zipper-lemma:** Valasszunk $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n} \in \{ 1, 2, 3, \dots, N \}$ ertekeket egyenletesen fuggetlenul.
+**Scwartz-Zippel-lemma:** Valasszunk $\alpha_{1}, \alpha_{2}, \dots, \alpha_{n} \in \{ 1, 2, 3, \dots, N \}$ ertekeket egyenletesen fuggetlenul.
 Ha $f \not\equiv 0$, akkor 
 $$
 \mathbb{P}(f(\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}) = 0) \leq \frac{d}{N}
@@ -53,7 +53,7 @@ sorsolunk veletlen fuggetlen $\alpha_{i}$-ket es behelyettesitjuk $f$-be es ha $
 - Ha $f\equiv{0}$  akkor biztosan nem tevedunk.
 - Ha $f \not\equiv 0$ akkor legfeljebb $\frac{1}{2}$  valoszinuseggel rossz valaszt fogunk adni.
 
-*Ötlet:* Futtassuk leg $t$-szer az algorimust es ha egyszer is $0$-tol kulonbozo erteket kaptunk akkor a valasz $\not\equiv 0$ kulonben $\equiv 0$
+*Ötlet:* Futtassuk le $t$-szer az algorimust es ha egyszer is $0$-tol kulonbozo erteket kaptunk akkor a valasz $\not\equiv 0$ kulonben $\equiv 0$
 
 **All.:** 
 - Ha $f \equiv 0$ akkor bizotsan nem tevedunk.
@@ -107,7 +107,7 @@ Krger(G, n):
 $$
 \mathbb{P}(\text{Karger algoritmus ezt adja ki}) \geq \frac{1}{n \choose 2}
 $$
-*Def.:* Azt monmdjuk, hogy $(A, B)$ tulel egy $uv$ osszehuzast, ha $u, v \in A$ vagy $u, v \in B$
+*Def.:* Azt mondjuk, hogy $(A, B)$ tulel egy $uv$ osszehuzast, ha $u, v \in A$ vagy $u, v \in B$
 
 $$
 \mathbb{P}(\text{elso osszehuzasnal } (A, B) \text{ tulel}) \geq \left( 1 - \frac{2}{n} \right)
@@ -128,6 +128,4 @@ Ismeteljuk meg $n^{2} \log n$ -szer az algorimust. Ekkor
 $$
 \mathbb{P}(\text{a legjobb} > \min) \leq \left( 1 - \frac{1}{n^{2}} \right)^{n^{2}\log n} \approx \frac{1}{n}
 $$
-
-
 

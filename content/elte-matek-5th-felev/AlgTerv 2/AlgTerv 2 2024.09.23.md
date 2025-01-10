@@ -4,12 +4,13 @@ date: 2024-09-23
 ---
 
 # Medians kereses
-rendezes utan konnyu megadni a kozepso elemet
-de lehet gyorsabban mint $n\log n$ idoben megadni a medians-t?
+Meg szeretnenk talalni a kozepso elemet egy tombnak. Nyilvan, rendezes utan konnyu megadni a kozepso elemet, de lehet-e gyorsabban mint $n\log n$ idoben megadni a medians-t?
+
+source: [Median of medians](https://en.wikipedia.org/wiki/Median_of_medians)
 
 **Alapelv:**
 - Keressuk meg a $k$-adik elemet, azaz azt az elemet aminel $k-1$ darab kisebb elem van.
-- Felteszzuk, hgoy az elemek kulonbozoek.
+- Felteszzuk, hogy az elemek kulonbozoek.
 - Keressunk $x$ elemet, aki nagyjabol kozepen van.
 
 Ket tombbe rendezzuk az adatokat, egy $B$ es egy $J$ tombbe, ahol $\forall y \in B: y < x$ es $\forall y \in J: x < y$ ez megoldhato $n-1$ osszehasonlitassal.
@@ -50,6 +51,7 @@ $$
 *(hf)* $T(n) \leq 22n$
 
 # Gyorsrendezes (quicksort)
+source: [quicksort](https://en.wikipedia.org/wiki/Quicksort)
 ```
 QuickSort(A[p : r]):
 	IF p < r THEN 
@@ -61,14 +63,16 @@ QuickSort(A[p : r]):
 ```
 Partition(A[p : r]):
 	i := RND(low=p, high=r)
-	SWAP(A[i], A[r])
-	x := A[r]
-	i := p - 1
+	pivot := A[i]
+	SWAP(A[i], A[r]) // a vegere rakjuk a pivot-ot
+	i := p           // tarolohely index
 	FOR j = p .. r
-		IF A[j] <= x THEN
-			i++
-			SWAP(A[i], A[j])
+		IF A[j] <= pivot THEN
+			SWAP(A[i], A[j]) // berakjuk balra a tarolohelyre a kisebb elemet
+			i++              // a kovetkezo elemet egyel arrabb kell majd rakni
 ```
+
+A `Partition` fuggveny particionalja a tombnek a `[p : r]` slice-jat ugy, hogy az `pivot`-nal kisebb elemek balra vannak az `pivot`-al megegyezok kozepen es az `pivot`-nal nagyobbak jobbra vannk.
 
 **Allitas:** A $j$-edik ciklus vegen 
 
@@ -105,7 +109,7 @@ $$
 
 *Def.:* $f(n) = o(g(n))$ ha
 $$
-\frac{f(n)}{g(n)} \to 0 -->\to 0
+\frac{f(n)}{g(n)} \to 0
 $$
 A fentibol kovetkezik, hogy
 $$
@@ -146,6 +150,8 @@ WHILE j <= n
 *Def.:* Az $y$ az $x$ labfeje, ha $k > 0$ min amire $\exists z, z' : \lvert z \rvert = \lvert z' \rvert = k$ ugy, hogy $x = yz = z'y$
 Tehat tudok az elejere irni $k$ betut es megkapom az $x$-et vagy tudok a vegere irni $k$ betut es visszakapom az $x$-et.
 
+source: [KMP](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
+
 Elofeldolgozas:
 $\pi_{j} =$ a $p_{1}, \dots, p_{j}$ szo labfejenek a hossza
 
@@ -155,7 +161,7 @@ KMP(p, s, pi)
 	j := 0
 	WHILE i + j <= n
 		IF j = m THEN
-			print(i)
+			print(i) // found a match
 			i := i + j - pi[j]
 			j := pi[j]
 		ELSE IF s[i+j] = p[j+1] THEN j := j + 1
@@ -164,5 +170,3 @@ KMP(p, s, pi)
 					i := i + j - pi[j]
 					j := pi[j]
 ```
-
-

@@ -79,6 +79,8 @@ Ekkor letezik $v$-bol $y$-ba ut es $y$-bol $x$-be ut ezert letezik $x$-bol $v$-b
 FOR $i = n \dots 1$ ($-1$)
 	IF $p(i) = 0$ THEN $MB_{G'}(i)$
 
+source: [Kosaraju's algorithm](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
+
 **Tetel:** A 3. pont fenyoi az eros komponensek, tovabba a sorrendjuk megadja a $red(G)$-nek a topologikus sorrendjet
 *Biz.:*
 I.) Ha $K$ egy eros komponens, akkor a csucsai a 2. melysegi keresesnel egy fenyobe kerulnek

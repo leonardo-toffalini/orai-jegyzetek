@@ -12,8 +12,8 @@ date: 2024-10-07
 
 **feladat:** Ki lehet-e szinezni a grafot $3$ szinnel, azaz $\chi(G) \stackrel{?}{\leq} 3$
 $\forall X \subseteq V$-re lehet-e $X$ a pirosak halmaza? Ha $\exists a, b \in X$ ugy, hogy $ab \in E$ akkor nem lehet $X$ a pirosak halmaza.
-Meg eldontendeo, hogy a maradek csucsok, azaz $G - X$ kiszinezheto-e $2$ szinnel.
-Tehat igy osszesen $2^{\lvert V \rvert}$-szer kell futtatni egy $2$-szinezhetoseget, mert az elso lepesben mindn $X \subset V$ -re futtatni kell.
+Meg eldontendo, hogy a maradek csucsok, azaz $G - X$ kiszinezheto-e $2$ szinnel.
+Tehat igy osszesen $2^{\lvert V \rvert}$-szer kell futtatni egy $2$-szinezhetoseget, mert az elso lepesben minden $X \subset V$ -re futtatni kell.
 
 
 **feladat:** Mennyi az $\alpha(G)$ szama a grafnak, azaz mekkora a maximalis fuggetlen csucshalmaza.
@@ -29,18 +29,21 @@ Keressuk az $I$ maximalis fuggetlen csucshalmazt.
 ```
 MFTL(G):
 	I := {}
+	DO_MFTL(G, I)
+
+DO_MFTL(G, I):
 	IF Delta(G) <= 2 THEN
+		// BFS-el megkeressuk a komponenseket es minden komponensnek a felet vesszuk (a fenti allitas miatt)
 		Szelessegi G -> I'
 		RETURN (I U I')
 	ELSE
-		// x benne van a max ftl csucshalmazban
+		// van olyan x, amire d(x) > 2
+		// x benne van a max ftl csucshalmazban (ekkor x szomszedai is kivesszuk)
 		x := legalabb 3-ad foku csucs
-		I := I + x
-		I_1 := MFTL(G - x - N(x))
-		I := I - x
+		I_1 := DO_MFTL(G - x - N(x), I + x)  // note, a set is passed by value
 
 		// x nincs benne a max ftl csucshalmazban
-		I_2 := MTFL(G - x)
+		I_2 := DO_MFTL(G - x, I)
 
 		IF |I_1| + 1 > |I_2| THEN
 			I = I U I_1
@@ -53,7 +56,7 @@ Legyen $T(n)$ a rekurziv hivasok szama, igy a vegso futasi ido $O(T(n)m)$ lesz m
 $$
 T(n) = T(n-4) + T(n-1)
 $$
-**All.:** $T(n) < c \cdot \gamma ^{n}$
+**All.:** $T(n) < c \cdot \gamma ^{n}$, mert egy ilyen rekurziv algoritmus nem roszabb mint egy exponencialis futasi ido.
 $$
 \gamma ^{n} = \gamma ^{n-4} + \gamma ^{n-1}
 $$
@@ -72,51 +75,54 @@ INPUT: $G$ graf, $k \in \mathbb{N}$
 OUTPUT: Letezik-e $k$ csucsu lefogo csucshalmaz $G$-ben
 
 ```
-INIT:
-	G' := G
-	k' := k
-
 // Vertex Cover
-VC(G', k'):
-	IF k' < 0 THEN RETURN False
-	IF |E(G')| = 0 THEN RETURN {}
-	IF k' = 0 THEN RETURN False
+VC(G, k):
+	DO_VC(G, k)
 
+// Vertex Cover helper function
+DO_VC(G, k):
+	IF k < 0 THEN RETURN False    // lehetetlen feladat 
+	IF |E(G)| = 0 THEN RETURN {}  // 0 elt le tudunk fogni barhogyan
+	IF k = 0 THEN RETURN False    // lehetetlen feladat
+
+	// minden elnek pontosan az egyik vege egy lefogo csucs
 	uv in E
-	T_1 := VC(G' - u, k' - 1)
-	IF T_1 != False THEN RETURN (T_1 U {u})
+	T_1 := DO_VC(G - u, k - 1)               // az el egyik vege van benne
+	IF T_1 != False THEN RETURN (T_1 U {u})  // ha megoldhato a feladat u-val akkor keszen vagyunk
 	
-	T_2 := VC(G' - v, k' - 1)
-	IF T_" != False THEN RETURN (T_2 U {v})
+	T_2 := DO_VC(G - v, k - 1)               // az el masik vege van benne
+	IF T_2 != False THEN RETURN (T_2 U {v})  // ha megoldhato a feladat v-vel akkor keszen vagyunk
 
-	RETURN False
+	RETURN False  // sem u-val, sem v-vel nem megoldhato a reszfeladat, tehat a lehetetlen
 ```
 
 futasi ido: $O(2^{k} \cdot n)$
 
 ```
-INIT:
-	G' := G
-	k' := k
+// Vertex Cover 2
+VC2(G, k):
+	DO_VC2(G, k)
 
-// Vertex Cover
-VC2(G', k'):
-	IF k' < 0 THEN RETURN False
-	IF |E(G')| = 0 THEN RETURN {}
-	IF k' = 0 THEN RETURN False
+// Vertex Cover 2 helper function
+DO_VC2(G, k):
+	IF k < 0 THEN RETURN False    // lehetetlen feladat
+	IF |E(G)| = 0 THEN RETURN {}  // trivialis feladat
+	IF k = 0 THEN RETURN False    // lehetetlen feladat
 
-	v := G' egyik max foku csucsa
+	v := G-nek egy max foku csucsa
 	IF d(v) <= 2 THEN
 		T := legkisebb lefogo spec esetben
-		IF |T| <= k' THEN 
+		IF |T| <= k THEN 
 			RETURN T
 		ELSE
 			RETURN False
 
-	T_1 := VC2(G' - v, k' - 1)
+	// v nem egy lefogo csucs
+	T_1 := DO_VC2(G - v, k - 1)
 	IF T_1 != False THEN RETURN (T_1 U {v})
 
-	T_2 := VC2(G' - v - N(v), k' - d(v))
+	// v egy lefogo csucs, es igy a szomszedai nem lefogok
+	T_2 := DO_VC2(G - v - N(v), k - d(v))
 	IF T_2 != False THEN RETURN (T_2 U N(v))
 
 	RETURN False
@@ -139,8 +145,3 @@ Tehat a vegso futasi ido $O(1.466^{k} \cdot m)$
 - Flood fill
 - Go with the winners
 - Genetic algorithms
-
-
-
-
-
