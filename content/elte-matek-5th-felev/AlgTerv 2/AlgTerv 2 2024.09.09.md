@@ -89,4 +89,3 @@ Miutan letrehoztuk a huffman fat, elnevezzuk a balra nezo agakat $0$-nak es a jo
 
 ***Tetel:*** A Huffman kod hossza minimalis a prefixmentes betukodok kozott
 
-

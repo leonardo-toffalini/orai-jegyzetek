@@ -20,7 +20,7 @@ Ahol $\text{OPT}$ azt a megoldast jeloli amire $f_{x}(y)$ minimalis.
 Egyszeru peldak:
 1. Adott $G$ iranyitott graf, keressunk $E' \subseteq E$ reszgrafot, ami aciklikus es $\lvert E' \rvert$ maximalis.
 $2$-kozelites konnyen elerheto a kovetkezo modon:
-Szamozzuk meg a csucsokat es legye $E_{1}$ az elore elek halmaza es $E_{2}$ a vissza elek halmaza. Nyilvan egyik sem tartalmaz kort mert mindketto topologikusan van rendezve. Mivel $E_{1} \cup E_{2} = E$ ezert
+Szamozzuk meg a csucsokat es legyen $E_{1}$ az elore elek halmaza es $E_{2}$ a vissza elek halmaza. Nyilvan egyik sem tartalmaz kort mert mindketto topologikusan van rendezve. Mivel $E_{1} \cup E_{2} = E$ ezert
 $$
 \max(\lvert E_{1} \rvert, \; \lvert E_{2} \rvert ) \geq \frac{\lvert E \rvert }{2}
 $$
@@ -68,6 +68,7 @@ $$
 
 
 ### Hatizsak feladat (again)
+#### Dinamikus Programozas algoritmus
 Tudunk egy felso korlatot adni az optimum-ra: $E \geq \text{OPT}$.
 Peldaul $E = \sum e_{i}$ de ennel tudnk jobbat is adni.
 
@@ -96,46 +97,75 @@ FOR i = n .. 1 (-1):
 		I := I U {i}
 		e := e - e_i
 ```
-$O(n \cdot E)$
+$O(n \cdot E)$ de ez nem polinomialis, mert az input a targyak sulyai es ertekei amik szamjegyekkel vannak megadva. Tehat az input merete $O\left( \sum \log w_{i} + \sum \log e_{i} \right)$
 
 
-#### FPTAS a hatizsak feladatra
-1. Felteheto, hogy $\forall i: w_{i} \leq W$
-2. Legyen $E = \sum e_{i}$ es legyen $M \in \mathbb{R}$
-3. Definialjuk a kovetkezo ertekeket:
-$$
-e'_{i} = \left\lfloor  \frac{e_{i}}{M}  \right\rfloor 
-$$
-4. Megoldjuk DP-vel a kovektezo hatizsak feladatot feladatot $(w_{i},\; e'_{i},\; W)$ 
-Ezzel kapunk egy $\text{OPT}'$ es $I'$ megoldast.
-5. A mi megoldasunk $I'$, $\text{MO}$ ertek ahol
-$$
-\text{MO} = \sum_{i \in I'}e_{i}
-$$
-Azaz a vesszos feladat altal kapott targy halmaznak az eredeti osszerteke.
-Belathato, hogy
-$$
-\text{MO} = \sum_{i \in I'}e_{i} \geq M \cdot \sum_{i \in I'} e'_{i} \geq M \cdot \sum_{i \in I} e'_{i} \geq \sum_{i \in I} (e_{i} - M) \geq \text{OPT} - n \cdot M
-$$
-*Cel:*
-$$\text{MO} \geq (1 - \varepsilon) \text{OPT}$$
-Ha $nM \leq \varepsilon \cdot \text{OPT}$ akkor ez teljesul.
+#### Ibarra–Kim approximációs algoritmusa
+Legyen adva $n$ darab tárgy pozitív egész $w_i$ súlyokkal és $e_i$ értékekkel, valamint egy $w$ súlykorlát, továbbá egy $\varepsilon>0$ pontossági korlát. Tegyük fel, hogy minden $i$-re $w_i \leq w$, hiszen a súlykorlátnál nehezebb tárgyakat úgysem vihetnénk magunkkal. Legyen
 
-*All.:* 
-$$\text{OPT} \geq \max e_{i} \geq \frac{E}{n}$$
-Ebbol kovetkezik, hogy valasszuk $M$-et a kovetkezo keppen:
 $$
-M = \frac{\varepsilon \cdot E}{n^{2}}
+\mathrm{OPT}=\max \left\{\sum_{i \in I} e_i \mid I \subseteq\{1,2, \ldots, n\} \quad \text { és } \quad \sum_{i \in I} w_i \leq w\right\}
 $$
 
-Igy a DP feladat lepesszama 
-$$O(n \cdot E') = O\left( n \cdot \frac{E}{M} \right) = O\left( \frac{n^{3}}{\varepsilon} \right)$$
+valamint legyen $I^*$ egy olyan részhalmaz, amire a maximum éppen eléretik.
+
+Legyen most $M$ egy késöbb alkalmasan választandó szám, ezzel készítsük el a $w_i^{\prime}=w_i, e_i^{\prime}=\left\lfloor e_i / M\right\rfloor$ súlyokat és értékeket, erre a dinamikus programozási algoritmussal keressük meg a $w$ méretű hátizsákban elvihető legnagyobb értéket, legyen ez OPT'. Ezen optimum vétessen fel valamely $J$ részhalmazon, ezt egyébként a dinamikus programozási algoritmussal visszalépéssel (minden minimumszámításnál annak megjegyzésével, hogy a két tag közül melyik eredményezi a minimumot) ki lehet számítani.
+
+Elöször is vegyuik észre, hogy
+
+$$
+\frac{e_i}{M}-1 \leq\left\lfloor\frac{e_i}{M}\right\rfloor \leq \frac{e_i}{M}
+$$
+
+valamint hogy $I^*$ optimális valsztása miatt
+
+$$
+\mathrm{OPT}^{\prime}=\sum_{i \in J}\left\lfloor\frac{e_i}{M}\right\rfloor \leq \frac{1}{M} \sum_{\mathrm{i} \in J} e_i \leq \frac{1}{M} \mathrm{OPT}
+$$
 
 
+Másfelol a $J$ optimális volta miatt
+
+$$
+\mathrm{OPT}^{\prime}=\sum_{i \in J} e_i^{\prime} \geq \sum_{i \in I^*} e_i^{\prime} \geq \sum_{i \in I^*} \frac{e_i}{M}-1 \geq \frac{1}{M} \sum_{i \in I^*} e_i-n=\frac{1}{M} \mathrm{OPT}-n .
+$$
 
 
+Ezek alapján tehát látjuk, hogy
 
+$$
+\mathrm{OPT}-n M \leq M \cdot \mathrm{OPT}^{\prime} \leq \mathrm{OPT}
+$$
 
+most még megmutatjuk, hogy $n M \leq \varepsilon$ OPT, ezzel azt fogjuk látni, hogy
+
+$$
+(1-\varepsilon) \mathrm{OPT} \leq M \cdot \mathrm{OPT}^{\prime} \leq \mathrm{OPT}
+$$
+
+azaz az algoritmusból adódó $M$. $OPT'$ a valódi optimumnak legfeljebb $\varepsilon$ hibájú becslése.
+
+Megadjuk végül $M$ értékét. Legyen $E=\sum_{i=1}^n e_i$, ezzel legyen
+
+$$
+M=\frac{\varepsilon E}{n^2}
+$$
+
+ekkor
+
+$$
+n M=\varepsilon \frac{E}{n} \leq \varepsilon \max _{1 \leq i \leq n} e_i \leq \varepsilon \mathrm{OPT},
+$$
+
+hiszen az átlag nem nagyobb a maximumnál valamint bármelyik konkrét egyetlen tárgyat önmagában el tudjuk vinni.
+
+Már csak az algoritmus lépésszáma van hátra, ez
+
+$$
+O\left(n \sum_{i=1}^n e_i^{\prime}\right) \leq O\left(n \sum_{i=1}^n \frac{e_i}{M}\right) \leq O\left(\frac{n E}{M}\right) \leq O\left(\frac{n^3}{\varepsilon}\right)
+$$
+
+ami valóban polinomiális approximációs algoritmust jelent.
 
 
 

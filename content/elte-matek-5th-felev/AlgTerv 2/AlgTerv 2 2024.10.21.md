@@ -8,12 +8,12 @@ Minden csucsnak van egy nem negativ koltsege: $w : V \to \mathbb{N}$
 
 legyen valtozok: $x_{v}  \forall v \in V$
 $$
-\begin{align}
+\begin{align*}
 x_{u} + x_{v} &\geq 1 \quad &\forall uv \in E \\
 x_{v} &\geq 0 \quad &\forall v \in V \\
 x_{v} &\in \mathbb{N} \quad &\forall v \in V \\
 \min & \sum w(v) \cdot x_{v}
-\end{align}
+\end{align*}
 $$
 
 Ennek az IP feladatnak az LP relaxaltja (tort relaxaltja) csak annyi, hogy elhagyjuk az egeszsegi feltetelt.
