@@ -3,7 +3,7 @@ title: 9. Párhuzamos algoritmusok
 date: 2024-11-11
 ---
 
-NC (Nick Class): Olyan algortimusok vannak ebben az oszalyban, amelyek $n^{c_{1}}$ preoceszorral $O((\log n)^{c_{2}})$ idoben futnak.
+NC (Nick Class): Olyan algortimusok vannak ebben az oszalyban, amelyek $n^{c_{1}}$ proceszorral $O((\log n)^{c_{2}})$ idoben futnak.
 
 Tegyuk fel, hogy van egy NC algoritmusunk es ez az algoritmus az $i$-edik lepesben megszamoljuk, hogy hany proceszor dolgozik: $w_{i}$
 Legyen $W := \sum_{1}^{t}w_{i}$ ahol $t$ a lepesek szama. Ezt a $W$ valtozot az osszmunkanak hivjuk.
@@ -36,7 +36,7 @@ lefele:
 Amikor jovunk lefele, akkor a $p_{16}$ tudja mar a helyes eredmenyt es mostmar csa ka a $8$ -al oszthatok dolgoznak, akkor a $p_{24}$ tudta mar hogy a tole kezdve $8$-nak mi az eredmenye, tegyuk fel hogy ez $*$ volt...
 
 *Szorzas:* A szorzas gyakorlatilag annak felel meg, hogy $n$ darab $2n$ bites szamot osszeadunk.
-Tegyuk fel, hogy va $2n^{2}$ proceszorunk
+Tegyuk fel, hogy van $2n^{2}$ proceszorunk
 Az elozo modszerrel maris megy az egesz $O(\log ^{2}n)$ idoben
 
 Az a celunk, hogy $O(\log n)$ futasideju parhuzamos algoritmust kapjunk.
