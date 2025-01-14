@@ -23,6 +23,8 @@ Valaszolo algoritmus:
 
 <img src="./Excalidraw/fontos_csucsok_halmaza.svg" />
 
+![[fontos_csucsok_halmaza]]
+
 2. $F =$ fontos csucsok halmaza, $\lvert F \rvert \leq 2 \log n$
 *All.:* Valasz $\subseteq \cup_{f\in F} \text{ASSOC}(f)$
 *All.:* $\cup_{f\in F} \text{ASSOC}(f)$ -nak minden olyan $i$ eleme valasz, amire $y_{a} \leq y_{i} \leq y_{f}$
@@ -60,6 +62,8 @@ TODO
 
 ### Utkereses terkepen
 Adott $G$ iranyitott graf es $s, t \in V$ ket csucs kozott keressuk a legrovidebb utat es a hosszat: $d(s,t)$
+
+https://www.cs.princeton.edu/courses/archive/spr06/cos423/Handouts/EPP%20shortest%20path%20algorithms.pdf
 
 #### Ketiranyu Dijkstra
 *"Parhuzamosan"*, inditunk $G$-ben $s$-bol egy Dijkstra algoritmust es inditunk $G$ forditottban $t$-bol egy Dijkstra algoritmust.

@@ -42,6 +42,15 @@ Az elozo modszerrel maris megy az egesz $O(\log ^{2}n)$ idoben
 Az a celunk, hogy $O(\log n)$ futasideju parhuzamos algoritmust kapjunk.
 *Elso megoldas:* **3-2 osszeadas**
 $d + e = a + b + c$
+
+```python
+#                          sum bits                                                  carry bits
+#           ((a xor b) xor c) or  ((a xnor b) xnor c)     (a and b and not c) or (a and not b and c) or (not a and b and c)
+a + b + c = ((a  ^ b)   ^  c) | ~(~(a  ^   b)  ^   c)  +     (a & b & ~c)     |      (a & ~b & c)    |     (~a & b & b)
+```
+
+A fenti python code minden bitre $O(1)$ lepes es parhuzamosan szamolhato minden bitre. Tehat ha van legalabb $n$ processzurnk akkor az $a + b + c \implies d + e$ atalakitas $O(1)$ lepes.
+
 Ezt meg lehet oldani $O(1)$ idoben $n$ proceszorral.
 A $p_{i}$ proceszor azt csinalja, hogy $a_{i} + b_{i} + c_{i} = 2e_{i} + d_{1}$
 

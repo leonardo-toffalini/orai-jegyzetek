@@ -3,21 +3,23 @@ title: 2. LZW kódolás
 date: 2024-09-16
 ---
 
-# **SzóFa**
+# SzóFa
 $\lvert \Sigma \rvert = d, \quad S \subseteq \Sigma ^{*}$
 
 minden csucsnak van legfeljebb $d$ ele amik egyesevel az ABC betuit jelolik
 a szófa minden csucsahoz hozzatartozik egy szo, csak elkezdjuk olvasni az elek menten a betuket a gyokertol kezdve
 minden csucshoz tartozik egy kulonleges *spec* pointer ami jeloli hogy a csucshoz tartozo szo benne van-e a szotartban vagy sem (ha nincs benne akkor *nil* pointert olvasunk)
 
-# **Lempel-Ziv-Welch** (LZW)
+![[szofa.png]]
+
+# Lempel-Ziv-Welch (LZW)
 fix $\Sigma$ ABC, szo-kod fix hosszal (pl 12 bit)
 tehat mindegyik szonak lesz egy kodja ami 12 bites lesz
 
 [wikipedia cikk LZW](https://hu.wikipedia.org/wiki/LZW#K%C3%B3dol%C3%A1s)
 
 
-# Melysegi kereses
+# Eros komponensek
 Elvegzunk egy melysegi keresest egy iranyitatlan grafon, ebbol kapunk egy iranyitott erdot
 milyen elek lehetnek az eredeti grafban?
 - elore el: az iranyitott erdoben egy csucsbol az egyik leszarmazottjaba mutato el
