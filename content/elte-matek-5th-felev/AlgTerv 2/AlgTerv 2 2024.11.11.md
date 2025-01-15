@@ -18,6 +18,9 @@ $$
 
 Azt mondjuk, hogy egy feladat jol parhuzamosithato, ha ez teljesul.
 
+https://dl.acm.org/doi/pdf/10.1145/321812.321815 4. Lemma 2.
+![[brent_1.png]]
+
 ### Bit-muveletek parhuzamos algoritmusokkal
 $a, b < 2^{n}$
 *All.:* $n$ proceszorral $O(\log n)$ lepesben ki lehet szamolni $a + b$ erteket.
@@ -86,7 +89,7 @@ $$
 *input:* algebrai fa
 *cel:* masik fa, ami ugyanazt szamolja es a melysege $\leq 3 \log \lvert F \rvert + 1$
 
-*Tetel (Brent 2):* Letezik ilyen fa.
+*Tetel (Brent 2):* Letezik ilyen fa. (https://sci-hub.st/10.1109/T-C.1973.223757)
 *biz.:* 
 1.) Tegyuk fol hogy van egy $F$ fank, vegyuk annak egy $z$ csucsat es leszarmazottait. 
 $z$: facsucs, illetve egy uj valtozo

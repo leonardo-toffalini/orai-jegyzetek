@@ -103,7 +103,7 @@ $$
 $$
 \begin{align*}
 f(1) &= 0 \\
-f(n) &< 2 \cdot \sum_{i=2}^{n} \frac{1}{i} = 2(\log n  + \gamma - 1 + o(1)) < 2 \log n + o(1)
+f(n) &< 2 \cdot \sum_{i=2}^{n} \frac{1}{i} = 2(\ln n  + \gamma - 1 + o(1)) < 2 \ln n + o(1)
 \end{align*}
 $$
 
@@ -113,7 +113,12 @@ $$
 $$
 A fentibol kovetkezik, hogy
 $$
-C(n) < 2(n+1)\log n + o(n) = 2(n+1) \frac{\log n}{\log e} < 1.39 \cdot n \cdot \log n + O(\log n) + o(n)
+C(n) < 2(n+1)\ln n + o(n) = 2(n+1) \ln 2 \cdot \log n < 1.39 \cdot n \cdot \log n + O(\log n) + o(n)
+$$
+
+itt felhasznaltuk, hogy
+$$
+\log_{2}(n) = \frac{\ln(n)}{\ln(2)} \implies \ln(n) = \ln(2) \cdot \log_{2}(n) < 1.39 \cdot \log_{2}(n)
 $$
 
 # Mintakereses

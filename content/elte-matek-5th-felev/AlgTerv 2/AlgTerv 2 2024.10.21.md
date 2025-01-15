@@ -121,7 +121,7 @@ $G \mapsto P = (V_{1} \cup V_{2}, E')$
 
 $P$-ben $M$ legnagyobb parositas, $T$ legkisebb lefogo.
 
-Ha $\lvert M \rvert \geq k + 1$ akkor megallunk, mert a parositas minden elet legalabb egy csucsnak le kell fognia. Ezt eldontottuk $O(k \cdot m)$ idoben.
+Ha $\lvert M \rvert \geq 2k + 1$ akkor megallunk. Ezt eldontottuk $O(k \cdot m)$ idoben.
 
 Kulonben elkeszitjuk a kovetkezo koronafelbontast:
 $$
