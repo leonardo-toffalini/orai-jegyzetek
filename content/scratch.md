@@ -25,3 +25,12 @@ $$
 \sum_{a\in A} \pi(a|s)q_\pi(s,a) = \mathbb{E} [q_{\pi}(s, a) \mid s] = \mathbb{E}[\mathbb{E}[G_{t}, \mid s, a], \mid s] \stackrel{\text{tower rule}}{=} \mathbb{E}[G_{t} \mid s] = v_\pi(s)
 $$
 
+
+
+### szombat meeting
+legyen minden fejezet es alfejet egy kicsit kidolgozva
+kicsit talan sok lesz a szoveg, lehet kevesbe reszletes, de igazabol nincsen felso korlat
+nem kell adamig es evaig visszamenni, a feltetelezett tudast fel kell jegyezni a bevezetesben
+a trading reszben beszelunk az AR-rol es az FBM-rol is
+ismertetni az alapfogalmakat, es az eredmenyeket
+
