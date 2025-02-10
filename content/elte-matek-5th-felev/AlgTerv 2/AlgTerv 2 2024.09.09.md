@@ -51,7 +51,7 @@ Legyen $\underline{p} = (p_{1}, p_{2}, \dots, p_{m}) \quad 0 < p_{i} \leq 1 \qua
 
 ***All.:*** Ha $n$ rogzitett, akkor a $H(\underline{p})$ a legnagyobb az $\left( \frac{1}{m}, \dots, \frac{1}{m} \right)$ eloszlason es itt $H(\underline{p}) = \log m$
 
-Tegyuk fol, hogy van egy $n$ alapu ABC, tehat $\lvert \Sigma \rvert = n, \quad \forall h \in \Sigma \to p_{h}$ relativ gykorlisag
+Tegyuk fol, hogy van egy $n$ alapu ABC, tehat $\lvert \Sigma \rvert = n, \quad \forall h \in \Sigma \to p_{h}$ relativ gyakorisag
 
 ***Tetel:*** $x \in \Sigma ^{n}$ elkodolhato $\leq \frac{H(\underline{p})}{\log m} \cdot n + O\left( \frac{m \log n}{\log m} \right)$ bittel.
 
@@ -89,3 +89,7 @@ Miutan letrehoztuk a huffman fat, elnevezzuk a balra nezo agakat $0$-nak es a jo
 
 ***Tetel:*** A Huffman kod hossza minimalis a prefixmentes betukodok kozott
 
+pelda:
+A kovetkezo Huffman faban az *u* betunek a kodja a kovetkezo $1101$
+
+![[huffman.png]]

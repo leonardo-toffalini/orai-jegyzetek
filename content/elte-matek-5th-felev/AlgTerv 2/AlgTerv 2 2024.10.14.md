@@ -137,13 +137,13 @@ $$
 \mathrm{OPT}-n M \leq M \cdot \mathrm{OPT}^{\prime} \leq \mathrm{OPT}
 $$
 
-most még megmutatjuk, hogy $n M \leq \varepsilon$ OPT, ezzel azt fogjuk látni, hogy
+most még megmutatjuk, hogy $n M \leq \varepsilon \cdot OPT$, ezzel azt fogjuk látni, hogy
 
 $$
 (1-\varepsilon) \mathrm{OPT} \leq M \cdot \mathrm{OPT}^{\prime} \leq \mathrm{OPT}
 $$
 
-azaz az algoritmusból adódó $M$. $OPT'$ a valódi optimumnak legfeljebb $\varepsilon$ hibájú becslése.
+azaz az algoritmusból adódó $M \cdot OPT'$ a valódi optimumnak legfeljebb $\varepsilon$ hibájú becslése.
 
 Megadjuk végül $M$ értékét. Legyen $E=\sum_{i=1}^n e_i$, ezzel legyen
 

@@ -17,7 +17,24 @@ Ha $f \not\equiv 0$, akkor
 $$
 \mathbb{P}(f(\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}) = 0) \leq \frac{d}{N}
 $$
-*Biz.:*
+*Biz.:* $n=1$-re az algebra alaptétele adja az indukció kezdetét. $n$-re tudjuk, $n+1$ ?
+
+$h\left(x_1, . ., x_n, x_{n+1}\right)$ polinom, írjuk fel $x_1$ hatványai szerint $h=\sum x_1^i h_i$, ahol a $h_i$-k n-változósak. Legyen $t$ a legnagyobb index, amire $h_t \not \equiv 0$, ha $t=0$, akkor az indukciós feltevés szerint készen vagyunk.
+
+$$
+\mathbb{P}(h(\xi)=0)=\mathbb{P}\left(h(\xi)=0 \mid h_t(\xi) \neq 0\right) \mathbb{P}\left(h_t(\xi) \neq 0\right)+\mathbb{P}\left(h(\xi)=0 \mid h_t(\xi)=0\right) \mathbb{P}\left(h_t(\xi)=0\right)
+$$
+
+a teljes valószínűség tételéből, becsüljük a két tagot. A másodikra alkalmazhatjuk az indukciós feltevést: $\leq 1 \cdot n d / N$. Nyilván $\mathbb{P}\left(h_t(\xi) \neq 0\right) \leq 1$, a szorzótényezőjéhez $h_t(\xi) \neq 0$ miatt egy 1-változós $t$-edfokú polinom nullhelyét keressük, indukcióból így
+
+$$
+\mathbb{P}\left(h(\xi)=0 \mid h_t(\xi) \neq 0\right) \leq t / N \leq d / N
+$$
+
+összeadva $(n+1) d / N$.
+
+
+
 **Indukcio $n$-re**
 Ha $n=1$ akkor $\leq \frac{d}{N}$ az algebra alaptetele miatt, mert legfeljebb $d$ gyoke lehet egy legfeljebb $d$-ed foku polinomnak.
 
@@ -94,9 +111,9 @@ Cel: minimalis vagas erteke.
 Osszehuzas muvelet: $u$ es $v$ csucsokat osszehuzom ha van koztuk el, az osszehuzott csubol azok az elek mennek mint amik $u$ bol es $v$ bol mentek.
 jeloles `G/uv`
 
-# Karker algoritmus
+# Karger algoritmus
 ```
-Krger(G, n):
+Karger(G, n):
 	IF n > THEN
 		uv in E veletlen
 		KARGER (G/uv, n-1)
@@ -120,12 +137,12 @@ $$
 \mathbb{P}(\text{i. osszehuzasnal } (A, B) \text{ tulel } \vert \text{ meg el}) \geq \left( 1 - \frac{2}{n+1-i} \right)
 $$
 $$
-\mathbb{P}(\text{vegig tulel}) \geq \prod \left( 1 - \frac{2}{n+1-i} \right) = \frac{n-2}{n} \cdot \frac{n-3}{n-1} \cdot \ldots \cdot \frac{3}{5} \cdot \frac{2}{4} \cdot \frac{1}{3} = \frac{2}{n(n-1)} = \frac{1}{n \choose 2}
+\mathbb{P}(\text{vegig tulel}) \geq \prod_{i=1}^{n-2} \left( 1 - \frac{2}{n+1-i} \right) = \frac{n-2}{n} \cdot \frac{n-3}{n-1} \cdot \ldots \cdot \frac{3}{5} \cdot \frac{2}{4} \cdot \frac{1}{3} = \frac{2}{n(n-1)} = \frac{1}{n \choose 2}
 $$
 
 
 Ismeteljuk meg $n^{2} \log n$ -szer az algorimust. Ekkor
 $$
-\mathbb{P}(\text{a legjobb} > \min) \leq \left( 1 - \frac{1}{n^{2}} \right)^{n^{2}\log n} \approx \frac{1}{n}
+\mathbb{P}(\text{a legjobb} > \min) \leq \left( 1 - \frac{1}{n^{2}} \right)^{n^{2}\log n} \approx e^{\log n} = \frac{1}{n}
 $$
 

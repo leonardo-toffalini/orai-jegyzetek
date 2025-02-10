@@ -1,28 +1,36 @@
-A) Kettő test probléma esetén:
-- Nézzük meg, hogy az energia valóban megmaradó mennyiség a rendszerben (az energia pontos képletének különböző forrásokban ennek utána lehet nézni - ha igény van rá, szívesen küldök).
+### todo
+- [x] elkezdunk tanulni az eddigi megszokott modon `500` iteration-ig es utana amikor kilaposodik a kek fuggveny akkor atallunk a utility-re
+- [x] wealth -> utility celfuggveny, folytonosan valami konvex kombincaiokent (ld. excalidraw)
+- [ ] reward surusege mozduljon a vegefele, ergo ritkuljon a reward (ld. excalidraw)
+- [x] FMBEnv-re kb ugyanaz mint AREnv-re
+- [x] complete FBMEnv implementation $\lambda = 0.01, \quad \alpha = 2$ vagy $\alpha = 1.5$
 
-energiája a két test problémának
-potenciális:
+- [ ] make a way to look inside the trading of the agent during and after training, capture video is not good enough
+- [ ] 
+
+### recap
+- added feature for yaml config parsing: `--config-fpath <file-path>`
+- implemented FBMEnv with the correct trading dynamics, see the plot
+- implemented reward function to be changed during training
+
+
 $$
-E_{p} = -\frac{m_{0} m_{1}}{r}
+v_{\pi}(s) = \mathbb{E}[G_{t} \mid s]
+$$
+$$
+q_{\pi}(s, a) = \mathbb{E}[G_{t}, \mid s, a]
 $$
 
-kinetikus:
 $$
-E_{k} = \frac{m_{0} v_{0}^{2} + m_{1} v_{1}^{2}}{2}
-$$
-
-teljes energia:
-$$
-E = E_{p} + E_{t}
+\sum_{a\in A} \pi(a|s)q_\pi(s,a) = \mathbb{E} [q_{\pi}(s, a) \mid s] = \mathbb{E}[\mathbb{E}[G_{t}, \mid s, a], \mid s] \stackrel{\text{tower rule}}{=} \mathbb{E}[G_{t} \mid s] = v_\pi(s)
 $$
 
-- Oldjuk meg a rendszert explicit Euler, negyedrendű Runge-Kutta és szimplektikus Euler módszerrel is. Hasonlítsuk össze a megoldásokat, és vizsgáljuk az energia értékét is a három módszer esetén.
-
-[online-simulation](https://leonardo-toffalini.github.io/n-body-problem/js/)
 
 
-B) Három test probléma esetén:
-- Szintén oldjuk meg a fenti három módszerrel a rendszert, és hasonlítsuk össze őket.
+### szombat meeting
+legyen minden fejezet es alfejet egy kicsit kidolgozva
+kicsit talan sok lesz a szoveg, lehet kevesbe reszletes, de igazabol nincsen felso korlat
+nem kell adamig es evaig visszamenni, a feltetelezett tudast fel kell jegyezni a bevezetesben
+a trading reszben beszelunk az AR-rol es az FBM-rol is
+ismertetni az alapfogalmakat, es az eredmenyeket
 
-[online-simulation](https://leonardo-toffalini.github.io/n-body-problem/js/)

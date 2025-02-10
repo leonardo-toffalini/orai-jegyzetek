@@ -116,11 +116,3 @@ Algo: Mindig azt a robotot viszi oda, amelyiknek a legkisebb lenne az eddigi oss
 
 *Tetel:* Ha $\lvert X \rvert \geq k + 1$, akkor letezik $(2k - 1)$-versenykepes algoritmus.
 
-
-
-
-
-
-
-
-

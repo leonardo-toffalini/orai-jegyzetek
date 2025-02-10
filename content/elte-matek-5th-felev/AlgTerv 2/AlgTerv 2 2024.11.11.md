@@ -3,7 +3,7 @@ title: 9. Párhuzamos algoritmusok
 date: 2024-11-11
 ---
 
-NC (Nick Class): Olyan algortimusok vannak ebben az oszalyban, amelyek $n^{c_{1}}$ preoceszorral $O((\log n)^{c_{2}})$ idoben futnak.
+NC (Nick Class): Olyan algortimusok vannak ebben az oszalyban, amelyek $n^{c_{1}}$ proceszorral $O((\log n)^{c_{2}})$ idoben futnak.
 
 Tegyuk fel, hogy van egy NC algoritmusunk es ez az algoritmus az $i$-edik lepesben megszamoljuk, hogy hany proceszor dolgozik: $w_{i}$
 Legyen $W := \sum_{1}^{t}w_{i}$ ahol $t$ a lepesek szama. Ezt a $W$ valtozot az osszmunkanak hivjuk.
@@ -17,6 +17,9 @@ $$
 $$
 
 Azt mondjuk, hogy egy feladat jol parhuzamosithato, ha ez teljesul.
+
+https://dl.acm.org/doi/pdf/10.1145/321812.321815 4. Lemma 2.
+![[brent_1.png]]
 
 ### Bit-muveletek parhuzamos algoritmusokkal
 $a, b < 2^{n}$
@@ -36,12 +39,21 @@ lefele:
 Amikor jovunk lefele, akkor a $p_{16}$ tudja mar a helyes eredmenyt es mostmar csa ka a $8$ -al oszthatok dolgoznak, akkor a $p_{24}$ tudta mar hogy a tole kezdve $8$-nak mi az eredmenye, tegyuk fel hogy ez $*$ volt...
 
 *Szorzas:* A szorzas gyakorlatilag annak felel meg, hogy $n$ darab $2n$ bites szamot osszeadunk.
-Tegyuk fel, hogy va $2n^{2}$ proceszorunk
+Tegyuk fel, hogy van $2n^{2}$ proceszorunk
 Az elozo modszerrel maris megy az egesz $O(\log ^{2}n)$ idoben
 
 Az a celunk, hogy $O(\log n)$ futasideju parhuzamos algoritmust kapjunk.
 *Elso megoldas:* **3-2 osszeadas**
 $d + e = a + b + c$
+
+```python
+#                          sum bits                                                  carry bits
+#           ((a xor b) xor c) or  ((a xnor b) xnor c)     (a and b and not c) or (a and not b and c) or (not a and b and c)
+a + b + c = ((a  ^ b)   ^  c) | ~(~(a  ^   b)  ^   c)  +     (a & b & ~c)     |      (a & ~b & c)    |     (~a & b & b)
+```
+
+A fenti python code minden bitre $O(1)$ lepes es parhuzamosan szamolhato minden bitre. Tehat ha van legalabb $n$ processzurnk akkor az $a + b + c \implies d + e$ atalakitas $O(1)$ lepes.
+
 Ezt meg lehet oldani $O(1)$ idoben $n$ proceszorral.
 A $p_{i}$ proceszor azt csinalja, hogy $a_{i} + b_{i} + c_{i} = 2e_{i} + d_{1}$
 
@@ -77,7 +89,7 @@ $$
 *input:* algebrai fa
 *cel:* masik fa, ami ugyanazt szamolja es a melysege $\leq 3 \log \lvert F \rvert + 1$
 
-*Tetel (Brent 2):* Letezik ilyen fa.
+*Tetel (Brent 2):* Letezik ilyen fa. (https://sci-hub.st/10.1109/T-C.1973.223757)
 *biz.:* 
 1.) Tegyuk fol hogy van egy $F$ fank, vegyuk annak egy $z$ csucsat es leszarmazottait. 
 $z$: facsucs, illetve egy uj valtozo
