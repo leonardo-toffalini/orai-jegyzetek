@@ -9,3 +9,4 @@
 - [ ] a trading reszben beszelunk az AR-rol es az FBM-rol is
 - [ ] ismertetni az alapfogalmakat, es az eredmenyeket a trading reszben
 
+asd
