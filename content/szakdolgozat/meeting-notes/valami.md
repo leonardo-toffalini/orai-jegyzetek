@@ -98,3 +98,19 @@ $$
 $$
 \Phi_{t+1} - \Phi_{t} = \phi_{t}
 $$
+
+$$
+G^*(y):=\sup _{x \in \mathbb{R}}(x y-G(x))=\frac{\alpha-1}{\alpha} \alpha^{\frac{1}{1-\alpha}} \lambda^{\frac{1}{1-\alpha}}|y|^{\frac{\alpha}{\alpha-1}}
+$$
+$$
+\left|X_T^0(\phi)\right| \leq\left|\int_0^T G^*\left(-S_t\right) d t\right| \leq C \int_0^T\left|S_t\right|^{\alpha /(\alpha-1)} d t
+$$
+$$
+\left| \int_0^T G^*\left(-S_t\right) d t \right| = \left\lvert  \int _{0}^{T} \frac{\alpha-1}{\alpha} \alpha^{\frac{1}{1-\alpha}} \lambda^{\frac{1}{1-\alpha}}|-S_{t}|^{\frac{\alpha}{\alpha-1}} \, dt   \right\rvert = 
+$$
+$$
+\gamma = \frac{1}{1 - \alpha}
+$$
+$$
+\left| \int_0^T G^*\left(-S_t\right) d t \right| = \frac{1}{\beta} \alpha^{\gamma} \lambda^{\gamma} \cdot \left\lvert  \int _{0}^{T} |-S_{t}|^{\frac{\alpha}{\alpha-1}} \, dt   \right\rvert
+$$
