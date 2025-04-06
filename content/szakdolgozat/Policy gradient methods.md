@@ -45,3 +45,11 @@ $$
 
 As you can see, this is just an algebraic manipulation.
 
+**Policy gradient theorem**
+For any differentiable policy $\pi_{\theta}$, for any policy objective function $J$, the policy gradient is the following:
+$$
+\nabla_{\theta}J(\theta) = \mathbb{E}_{\pi_{\theta}} [\nabla_{\theta}\log \pi_{\theta}(s, a) \cdot Q^{\pi_{\theta}}(s, a)]
+$$
+
+
+
