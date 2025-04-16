@@ -74,8 +74,6 @@ J_{a v R}(\theta)=\sum_s d^{\pi_\theta}(s) \sum_a \pi_\theta(s, a) \mathcal{R}_s
 $$
 
 ### Policy gradient theorem
-The following theorem is provided *as is*
-
 For any differentiable policy $\pi_{\theta}$, for any policy objective function $J$, the policy gradient is the following:
 $$
 \nabla_{\theta}J(\theta) = \mathbb{E}_{\pi_{\theta}} [\nabla_{\theta}\log \pi_{\theta}(s, a) \cdot Q^{\pi_{\theta}}(s, a)]
