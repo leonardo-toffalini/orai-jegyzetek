@@ -1,0 +1,14 @@
+- komplex szamok
+- polinomok gyokeinek szama test folott
+- szamelmelet alaptetele szamokra es polinokra
+- euklideszi algo
+- irreducibilitas
+- primszamok
+- kongruenciak es csoportelmeleti vonatkozasaik
+- matrixcsoportok
+- permutaciocsoportok
+- elemrend
+- faktorcsoport
+- algebrais es transzcendens szamok
+- minimalpolinom
+
