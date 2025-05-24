@@ -1,0 +1,12 @@
+- linearis egyenletrendszer
+- determinans
+- vektorter
+- fuggetlenseg
+- dimenzio
+- linearis lekepzesek es matrixaik
+- sajatertek
+- diagonalizalhatosag
+- normalis
+- uniter
+- onadjungalt transzformaciok
+- kvadratikus alakok
