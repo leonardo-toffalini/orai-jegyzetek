@@ -100,15 +100,118 @@ $$
 *Tetel:* Egy linearis egyenletrendszer akkor es csak akkor oldhato meg, ha az egyutthatomatrix rangja megegyezik a kibovitett matrix rangjaval.
 
 ### Linearis lekepzesek es matrixaik
+*Def.:* Legyen $V_{1}$ es $V_{2}$ ugyanazon $T$ kommutativ test feletti vektorterek. Ekkor azt mondjuk hogy $\mathcal{A}: V_{1} \to V_{2}$ (homogen) linearis lekepezes ha
+- $\forall u, v \in V_{1}: \mathcal{A}(u + v) = \mathcal{A}(u) + \mathcal{A}(v)$
+- $\forall u \in V_{1}, \forall \lambda \in T: \mathcal{A}(\lambda u) = \lambda \mathcal{A}(u)$
+
+*Def.:*
+$$
+\operatorname{Im} \mathcal{A} = \{ \mathcal{A}x \mid x \in V_{1} \}
+$$
+
+*Def.:*
+$$
+\operatorname{Ker}\mathcal{A} = \{ x \in V_{1} \mid \mathcal{A}x = 0 \}
+$$
+
+*Tetel:* $\operatorname{Im} \mathcal{A}$ alter $V_{2}$-ben es $\operatorname{Ker} \mathcal{A}$ alter $V_{1}$-ben.
+
+*Def.:* Ha $V_{1} = V_{2}$ akkor $\mathcal{A}$-t ugy hivjuk hogy linearis transzformacio.
+
+*Def.:* Egy bijektiv linearis lekepezest izomorfizmusnak nevezunk. Ket vektorter izomorf ha letezik koztuk izomorfuzmus. Jel.: $V_{1} \cong V_{2}$
+
+*Tetel:* Az $\mathcal{A} : V_{1} \to V_{2}$ lekepezos akkor es csak akkor izomorfizmus ha $\operatorname{Ker} \mathcal{A} = 0$ es $\operatorname{Im} \mathcal{A} = V_{2}$.
+*Biz.:* $\operatorname{Im} \mathcal{A} = V_{2}$ biztositja hogy $\mathcal{A}$ szurjektiv. TFH $\mathcal{A}u = \mathcal{A}v$ ekkor $0 = \mathcal{A}u - \mathcal{A}v = \mathcal{A}(u - v)$ de $u \neq v$, ellentmondas. Tehat $\mathcal{A}$ injektiv.
+
+*Tetel:*
+$$
+\operatorname{dim} V_{T} = n \neq 0 \implies V \cong T^{n}
+$$
+
+*Tetel:*
+$$
+U_{T} \cong V_{T} \iff \operatorname{dim} U = \operatorname{dim} V
+$$
+
+*Tetel:* Legyen $b_{1}, \dots, b_{n}$ bazis $V_{1}$-ben es $c_{1}, \dots c_{n} \in V_{2}$. Ekkor pontosan egy olyan $\mathcal{A} : V_{1} \to V_{2}$ lekepezes letezik amire
+$$
+\mathcal{A}b_{i} = c_{i} \quad \forall i
+$$
+
+*Tetel:* (dimenzio-tetel)
+$$
+\operatorname{dim} \operatorname{Im} \mathcal{A} + \operatorname{dim} \operatorname{Ker} \mathcal{A} = \operatorname{dim} V_{1}
+$$
+
+*Tetel:* $\operatorname{Hom}(V_{1}, V_{2})$ egy vektorter $T$ felett
+
+*Tetel:* $\operatorname{Hom}(V)$ algebra $T$ felett
+
+*Def.:* Legyen $a_{1}, \dots, a_{n}$ egy bazis $V_{1}$-ben es $b_{1}, \dots b_{k}$ egy bazis $V_{2}$-ben. Ekkor $\mathcal{A} : V_{1} \to V_{2}$ linearis lekepezes matrixa az $a, b$ bazisparba a kovetkezo
+$$
+[\mathcal{A}]_{a, b} = \begin{bmatrix}
+\alpha_{11} & \alpha_{12} & \dots & \alpha_{1n} \\
+\alpha_{21} & \alpha_{22} & \dots & \alpha_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\alpha_{k1} & \alpha_{k2} & \dots & \alpha_{kn} \\
+\end{bmatrix}
+$$
+ahol 
+$$
+\mathcal{A}a_{i} = \alpha_{1 i}b_{1} + \alpha_{2i} b_{2} + \dots + \alpha_{ki} b_{k} \quad \forall i = 1, \dots, n
+$$
+
+*Tetel:*
+$$
+[\mathcal{A}v]_{b} = [\mathcal{A}]_{a,b} \cdot [v]_{a}
+$$
 
 ### Sajatertek
+*Def.:* Az $\mathcal{A}$ linearis transzformacionak $\lambda \in T$ egy sajaterteke ha letezik olyan $v \in V$ ($v \neq 0$) amelyre
+$$
+\mathcal{A}v = \lambda v
+$$
+
+*Def.:* Az $\mathcal{A}$ linearis transzformacionak $v \in V$ ($v \neq 0$) egy sajatvektora ha letezik olyan $\lambda \in T$ amelyre
+$$
+\mathcal{A}v = \lambda v
+$$
+
+*Def.:* Egy $\mathcal{A}$ linearis transzformacio karakterisztikus polinomja a kovetkezo
+$$
+k_{\mathcal{A}}(x) = \det([\mathcal{A} - x\mathcal{E}])
+$$
+
+*Tetel:* Egy $\lambda \in T$ skalar akkor es csak akkor sajaterteke $\mathcal{A}$-nak ha gyoke $k_{\mathcal{A}}(x)$-nek.
+*Biz.:* $\exists v \in V: \mathcal{A}x = \lambda  \iff (\mathcal{A} - \lambda \mathcal{E})x = 0 \iff [\mathcal{A} - \lambda\mathcal{E}] \cdot [x] = [0] \iff \det([\mathcal{A} - \lambda \mathcal{E}]) = 0 \iff k_{\mathcal{A}}(x) = 0$
 
 ### Diagonalizalhatosag
+*Tetel:* Egy linearis transzformacio matrixa akkor es csak akkor diagonalis ha a sajatvektorok altal alkotott bazisban irtuk fel. Ekkor a foatloban allo elemek pont a megfelelo bazisvektorokhoz tartozo sajatertekek.
+*Biz.:*
+$$
+[\mathcal{A}]_{a} = \begin{bmatrix}
+\lambda_{1} & 0 & \dots & 0 \\
+0 & \lambda_{2} & \dots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & \lambda_{n} \\
+\end{bmatrix}
+$$
+pontosan akkor teljesul ha $\mathcal{A}a_{1} = \lambda_{1}, \; \mathcal{A}a_{2} = \lambda_{2}, \; \dots,\; \mathcal{A}a_{n} = \lambda_{n}$
 
 ### Normalis transzformaciok
+$$
+A = A^{*}
+$$
 
 ### Uniter transzformaciok
+$$
+AA^{*} = A^{*}A = I
+$$
 
 ### Onadjungalt transzformaciok
+$$
+A = A^{*}
+$$
 
 ### Kvadratikus alakok
+
