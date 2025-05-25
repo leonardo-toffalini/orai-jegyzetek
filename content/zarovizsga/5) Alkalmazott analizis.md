@@ -1,12 +1,12 @@
-### a) KDE
-- egzisztencia es unicitas
-- egyszeru modellek
-- linearis diff egyenletek es rendszerek megoldasainak eloallitasa
-- harmonikus rezges
-- stabilitasi fogalmakl
+## a) KDE
+### Egzisztencia es unicitas
+### Egyszeru modellek
+### Linearis diff egyenletek es rendszerek megoldasainak eloallitasa
+### Harmonikus rezges
+### Stabilitasi fogalmakl
 
-### b) PDE es num modszerek
-- kezdeti es peremertek feladatok fogalma
-- fourier modszer vegyes feladatokra
-- linearis es nemlinearis algebrai rendszerek iteracios megoldasa
-- diff egyenletek megoldasa Euler modszerrel
+## b) PDE es num modszerek
+### Kezdeti es peremertek feladatok fogalma
+### Fourier modszer vegyes feladatokra
+### Linearis es nemlinearis algebrai rendszerek iteracios megoldasa
+### Diff egyenletek megoldasa Euler modszerrel

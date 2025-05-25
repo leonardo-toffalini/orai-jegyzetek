@@ -1,17 +1,17 @@
-- naiv halmazelmelet
-- axiomatikus halmazelmet alapjai
-- kivalasztasi axioma
-- szamossagok
-- muveletek szamossagokokn
-- cantor tetele
-- russel paradoxon
-- ismert halmazok szamossaga
-- a valos szamok felepitese
-- rendezes, jojlrendezes
-- kiselenteslogika
-- igazszagfuggvenyek
-- igazsagtablazatok
-- teljes diszjunktiv normalforma
-- teljes rendszerek
-- kovetkeztetesek
-- elsorendu nyelvek
+### naiv halmazelmelet
+### axiomatikus halmazelmet alapjai
+### kivalasztasi axioma
+### szamossagok
+### muveletek szamossagokokn
+### cantor tetele
+### russel paradoxon
+### ismert halmazok szamossaga
+### a valos szamok felepitese
+### rendezes, jojlrendezes
+### kiselenteslogika
+### igazszagfuggvenyek
+### igazsagtablazatok
+### teljes diszjunktiv normalforma
+### teljes rendszerek
+### kovetkeztetesek
+### elsorendu nyelvek

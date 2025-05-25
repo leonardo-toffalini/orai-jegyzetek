@@ -1,17 +1,17 @@
-### a) valoszinuseg szamitas
-- valoszinusegi mezo
-- valoszinusegi valtozok
-- varhato ertek
-- szoras
-- kovariencia
-- korrelacios egyutthato
-- valoszinnusegi valtozok konvergenciaja
-- nagy szamok torvenye
-- centralis hatareloszlas tetel
+## a) valoszinuseg szamitas
+### Valoszinusegi mezo
+### Valoszinusegi valtozok
+### Varhato ertek
+### Szoras
+### Kovariencia
+### Korrelacios egyutthato
+### Valoszinnusegi valtozok konvergenciaja
+### Nagy szamok torvenye
+### Centralis hatareloszlas tetel
 
-### b) statisztika
-- becslesek es tulajdonsagaik
-- torzitatlansa, hatasossag, konzisztencia
-- hipotezisvizsgalat
-- normalis eloszla parametereire vonatkozo probak
-- chi^2 probak
+## b) statisztika
+### Becslesek es tulajdonsagaik
+### Torzitatlansa, hatasossag, konzisztencia
+### Hipotezisvizsgalat
+### Normalis eloszla parametereire vonatkozo probak
+### chi^2 probak

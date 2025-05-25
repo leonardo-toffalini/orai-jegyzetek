@@ -1,17 +1,17 @@
-### a)
-- veges automatak
-- Turing gep
-- RAM gep
-- eldonthetetlenseg
-- bonyolultsagi osztalyok
-- NP-teljesseg
-- visszavezetesek
+## a)
+### Veges automatak
+### Turing gep
+### RAM gep
+### Eldonthetetlenseg
+### Bonyolultsagi osztalyok
+### NP-teljesseg
+### Visszavezetesek
 
-### b)
-- dinamikus programozas
-- adatstrukturak
-- rendezesek
-- grafok tarolasa
-- grafok bejarasa (BFS, DFS)
-- legrovidebb ut
-- minimalis koltsegu feszitofak
+## b)
+### Dinamikus programozas
+### Adatstrukturak
+### Rendezesek
+### Grafok tarolasa
+### Grafok bejarasa (BFS, DFS)
+### Legrovidebb ut
+### Minimalis koltsegu feszitofak

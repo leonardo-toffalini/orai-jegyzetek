@@ -1,20 +1,20 @@
-### a)
-- legrovidebb ut feladatok (Dijkstra, Bellman-Ford)
-- kereses
-- BFS
-- DFS
+## a)
+### Legrovidebb ut feladatok (Dijkstra, Bellman-Ford)
+### Kereses
+### BFS
+### DFS
 
-### b)
-- parositasok paros grafokban
-- maximalis sulyu eset
-- elszinezes
+## b)
+### Parositasok paros grafokban
+### Maximalis sulyu eset
+### Elszinezes
 
-### c)
-- halozati folyamok
-- Menger-tetel
-- grafok tobbszoros osszefuggosege
+## c)
+### Halozati folyamok
+### Menger-tetel
+### Grafok tobbszoros osszefuggosege
 
-### d)
-- algoritmusok
-- modellek
-- kombinatorikus optimalizalas alkalmazasai
+## d)
+### Algoritmusok
+### Modellek
+### Kombinatorikus optimalizalas alkalmazasai

@@ -1,13 +1,13 @@
-- Linearis egyenlotlensegrendszerek tulajdonsagai
-- megoldasai (bazismegoldasok, eros bazismegoldasok)
-- alkalmazasai
-- linearis optimalizalas
-- politopok
-- kupok
-- poliederek
-- felbontasi tetelek
-- dualitas
-- Farkas-lemma
-- Szimplex modszer
-- teljesen unimodularis (TU) matrixok
-- alkalmazasaik
+### Linearis egyenlotlensegrendszerek tulajdonsagai
+### Megoldasai (bazismegoldasok, eros bazismegoldasok)
+### Alkalmazasai
+### Linearis optimalizalas
+### Politopok
+### Kupok
+### Poliederek
+### Felbontasi tetelek
+### Dualitas
+### Farkas-lemma
+### Szimplex modszer
+### Teljesen unimodularis (TU) matrixok
+### Alkalmazasaik

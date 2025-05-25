@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "leonardo-toffalini.github.io/orai-jegyzetek",
     ignorePatterns: ["private", "templates", ".obsidian", "Excalidraw/*.md"],
     defaultDateType: "created",
     generateSocialImages: false,

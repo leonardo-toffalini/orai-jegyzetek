@@ -38,16 +38,16 @@ $$
 
 
 
-- polinomok gyokeinek szama test folott
-- szamelmelet alaptetele szamokra es polinokra
-- euklideszi algo
-- irreducibilitas
-- primszamok
-- kongruenciak es csoportelmeleti vonatkozasaik
-- matrixcsoportok
-- permutaciocsoportok
-- elemrend
-- faktorcsoport
-- algebrais es transzcendens szamok
-- minimalpolinom
+### Polinomok gyokeinek szama test folott
+### Szamelmelet alaptetele szamokra es polinokra
+### Euklideszi algo
+### Irreducibilitas
+### Primszamok
+### Kongruenciak es csoportelmeleti vonatkozasaik
+### Matrixcsoportok
+### Permutaciocsoportok
+### Elemrend
+### Faktorcsoport
+### Algebrais es transzcendens szamok
+### Minimalpolinom
 

@@ -1,30 +1,30 @@
-### a) differencialszamitas
-- egyvaltozos folytonossag
-- hatarertek
-- elemi fuggvenyek
-- differencialhatosag
-- fuggvenyvizsgalat
-- tobbvaltozos differencialhatosag
-- szelsoertek
-- komplex differencialhatosag
+## a) Differencialszamitas
+### Egyvaltozos folytonossag
+### Hatarertek
+### Elemi fuggvenyek
+### Differencialhatosag
+### Fuggvenyvizsgalat
+### Tobbvaltozos differencialhatosag
+### Szelsoertek
+### Komplex differencialhatosag
 
-### b) integralszamitas
-- egyvaltozos primitiv fuggveny
-- Riemann-integral
-- terulet es ivhossz
-- tobbszoros integral
-- vonalintegral
-- potencial
-- Lebesgue-mertek
-- L^p terek
-- normalt ter es Hilbert-ter
+## b) integralszamitas
+### Egyvaltozos primitiv fuggveny
+### Riemann-integral
+### Terulet es ivhossz
+### Tobbszoros integral
+### Vonalintegral
+### Potencial
+### Lebesgue-mertek
+### L^p terek
+### Normalt ter es Hilbert-ter
 
-### c) vegtelen sorok
-- szamsorozatok es sorok
-- fuggvenysorozatok es sorok
-- hatvanysor
-- taylor sor
-- komplex fuggvenyek es hatvanysorok
-- komplex exponencialis fuggveny
-- fourier sorok
+## c) Vegtelen sorok
+### Szamsorozatok es sorok
+### Fuggvenysorozatok es sorok
+### Hatvanysor
+### Taylor sor
+### Komplex fuggvenyek es hatvanysorok
+### Komplex exponencialis fuggveny
+### Fourier sorok
  
