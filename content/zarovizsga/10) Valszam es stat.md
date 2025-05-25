@@ -1,4 +1,4 @@
-### a)
+### a) valoszinuseg szamitas
 - valoszinusegi mezo
 - valoszinusegi valtozok
 - varhato ertek
@@ -9,7 +9,7 @@
 - nagy szamok torvenye
 - centralis hatareloszlas tetel
 
-### b)
+### b) statisztika
 - becslesek es tulajdonsagaik
 - torzitatlansa, hatasossag, konzisztencia
 - hipotezisvizsgalat
