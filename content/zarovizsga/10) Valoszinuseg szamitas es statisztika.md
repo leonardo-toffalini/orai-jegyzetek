@@ -18,17 +18,19 @@ Elnevezesek:
 *Def.:* Valoszinusegi valtozonak az olyan $X : \Omega \to \mathbb{R}$ fuggvenyeket nevezzuk, melyre $\mathbb{P}(a < X \leq b)$ ertelmes minden $a < b$ valos szamra.
 
 ### Varhato ertek
-diszkret eset:
+*Def.:*
+- diszkret eset:
 $$
 \mathbb{E}[X] = \sum_{j = 1}^{\infty}x_{j} \cdot \mathbb{P}(X = x_{j})
 $$
 
-abszolut folytonos eset:
+- abszolut folytonos eset:
 $$
 \mathbb{E}[X] = \int _{-\infty}^{\infty}x \cdot f(x) \, dx 
 $$
 
 ### Szoras
+*Def.:* Masodik centralis momentum:
 $$
 D^{2}[X] = \mathbb{E}[(X - \mathbb{E}[X])^{2}] = \mathbb{E}[X^{2}] - \mathbb{E}[X]^{2}
 $$
@@ -37,6 +39,7 @@ D[X] = \sqrt{ D^{2}[X] }
 $$
 
 ### Kovariencia
+*Def.:*
 $$
 \begin{align}
 \operatorname{cov}(X, Y) & =\mathrm{E}[(X-\mathrm{E}[X])(Y-\mathrm{E}[Y])] \\
@@ -47,6 +50,7 @@ $$
 $$
 
 ### Korrelacios egyutthato
+*Def.:*
 $$
 \operatorname{cor}(X, Y) = \frac{\operatorname{cov}(X, Y)}{D(X)D(Y)}
 $$
@@ -60,7 +64,7 @@ $$
 *Tetel:* mm. $\implies$ sztoch.
 *Tetel:* $L^{p}$ $\implies$ sztoch.
 *Tetel:* sztoch $\implies$ eloszlasban
-*Megj.:* m.m.-bol nem kovetkezik $L^{p}$ es forditva
+*Megj.:* m.m.-bol nem kovetkezik $L^{p}$ vagy forditva
 
 ### Nagy szamok torvenye
 *Def.:* 
@@ -152,7 +156,87 @@ Szavakban annyit jelent a fenti tetel hogy i.i.d. val. valtozok osszege eloszlas
 
 ## b) Statisztika
 ### Becslesek es tulajdonsagaik
+*Def.:* (likelihood fuggveny)
+- diszkret eset
+$$
+L_{n, \vartheta}(k_{1}, \dots, k_{n}) = \prod_{j=1}^{n}\mathbb{P}_{\vartheta}(Y_{j} = k_{j})
+$$
+
+- abszolut folytonos eset
+$$
+L_{n, \vartheta}(t_{1}, \dots, t_{n}) = \prod_{j=1}^{n}f_{j, \vartheta}(t_{j}) \quad (t_{1}, \dots, t_{n} \in \mathbb{R})
+$$
+
+*Def.:* A $\vartheta$ maximum likelihood becslese az $X_{1}, \dots, X_{n}$ mintabol $\hat{\vartheta}$ ha $\hat{\vartheta}$ maximalizalja a $L_{n, \vartheta}(X_{1}, \dots, X_{n})$ fuggvenyt. Ahol $L_{n, \vartheta}$ a minta likelihood fuggvenye.
+
+*pelda:* (normalis eloszlasra)
+$$
+L_{n, m, \sigma} = \prod_{j=1}^{n}f_{j, m, \sigma} = \prod_{j=1}^{n} \left[  \frac{1}{\sqrt{ 2 \pi \sigma ^{2} }} \exp\left( - \frac{(X_{j} - m)^{2}}{2 \sigma ^{2}} \right)  \right]
+$$
+
+*ML becsles tulajdonsagai:*
+- nem minden statisztikai mezon letezik
+- nem feltetlenul egyertelmu
+- nem feltetlenul torzitatlan
+- a $g(\vartheta)$ fuggveny ML-becslese $g(\hat{\vartheta})$ ahol $\hat{\vartheta}$ ML-becsles $\vartheta$-ra
+- Eros regularitasi feltetelek mellet az ML-becsles aszimptotikusan torzitatlan:
+$$
+\lim_{ n \to \infty } \mathbb{E}(\hat{\vartheta}) = \vartheta
+$$
+- Eros regularitasi feltetelek mellet az ML-becsles aszimptotikusan hatasos.
+- Gyakran eleg a kovetkezo egyenletet megoldani a ML-becsles megtalalasahoz:
+$$
+\frac{\partial}{\partial \vartheta} \log L_{m, \vartheta} = 0
+$$
+
+- Momentum modzser
+
 ### Torzitatlansag, hatasossag, konzisztencia
+*Def.:* A $T$ statisztika torzitatlan becsles $g$-re, ha $\forall \vartheta \in \Theta$-ra
+$$
+\mathbb{E}_{\vartheta}(T(X_{1}, \dots, X_{n})) = g(\vartheta)
+$$
+
+*Def.:* Legyenek $T_{1}, T_{2}$ torzitatlan becslesei $g(\vartheta)$-nek. Azt mondjuk hogy $T_{1}$ hatasosabb $T_{2}$-nel, ha
+$$
+D_{\vartheta}^{2}(T_{1}) \leq D_{\vartheta}^{2}(T_{2})
+$$
+teljesul $\forall \vartheta \in \Theta$.
+
+*Def.:* A $T_{1}$ becsles hatasos $g(\vartheta)$-ra, ha torzitatlan, es minden masik torzitatlan becslesnel hatasosabb.
+
+*Def.:* A $T_{n} = T_{n}(X_{1}, X_{2}, \dots, X_{n})$ becslessorozat konzisztens $g(\vartheta)$-ra, ha $\forall \vartheta \in \Theta$-ra
+$$
+T_{n}(X_{1}, X_{2}, \dots, X_{n}) \to g(\vartheta)
+$$
+$n \to \infty$ eseten sztochasztikusan.
+
+*All.:* $T_{n}$ konzisztens becslessorozat $g(\vartheta)$-ra ha
+$$
+\mathbb{E}_{\vartheta}(T_{n}(X)) \to g(\vartheta) \quad \text{es} \quad D_{\vartheta}(T_{n}(X)) \to 0
+$$
+minden $\vartheta \in \Theta$-ra.
+*Biz.:* Azt kell belatni hogy $\forall \varepsilon >0$-ra
+$$
+\mathbb{P}_{\vartheta}(\lvert T_{n} - g(\vartheta) \rvert > \varepsilon ) \to 0 \quad (n \to \infty)
+$$
+Az elso feltetel miatt $\forall \varepsilon / 2 > 0$ letezik elegge nagy $n$ melyre $\lvert \mathbb{E}_{\vartheta}(T_{n}(X)) - g(\vartheta) \rvert \leq \varepsilon /2$.
+$$
+\mathbb{P}_{\vartheta}(\lvert T_{n}(X) - g(\vartheta) \rvert \geq \varepsilon) = \mathbb{P}_{\vartheta}(\lvert T_{n}(X) - \mathbb{E}_{\vartheta}(T_{n}(X)) + \mathbb{E}_{\vartheta}(T_{n}(X)) - g(\vartheta) \rvert \geq \varepsilon )
+$$
+$$
+\leq \mathbb{P}_{\vartheta}(\lvert T_{n}(X) - \mathbb{E}_{\vartheta}(T_{n}(X)) \rvert \geq \varepsilon ) \leq \frac{D^{2}(T_{n}(X))}{(\varepsilon / 2)^{2}}
+$$
+A masodik feltetel miatt minden eleg nagy $n$-ra a szamlalo legfeljeb $\varepsilon ^{3} /4$, ilyenkor a hanyados legfeljebb $\varepsilon$, amivel belattuk azt amit akartunk.
+
 ### Hipotezisvizsgalat
+
 ### Normalis eloszla parametereire vonatkozo probak
+- z-proba - Normalis eloszlas varhatoertekere vonatkozo proba ismert szoras mellett.
+- t-proba - Normalis eloszlas varhatoertekere vonatkozo probam ismeretlen szoras mellett.
+- F-proba - Fuggetlen normalis eloszlasu mintak szorasanak osszehasonlitasara alkalmas proba.
+
 ### chi^2 probak
+- illeszkedes vizsgalat
+- fuggetlenseg vizsgalat
+- homogenitas vizsgalat

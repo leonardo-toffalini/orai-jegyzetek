@@ -1,4 +1,4 @@
-### alapfogalmak
+### Alapfogalmak
 *Csoport*
 $(A, \cdot)$ csoport ha a kovetkezok teljesulnek
 - $\cdot$ asszociativ: $(a \cdot b) \cdot c = a \cdot (b \cdot c) \quad \forall a, b, c \in A$
@@ -21,7 +21,7 @@ $$
 $$
 
 
-### komplex szamok
+### Komplex szamok
 $$
 \mathbb{C} = \{ a + bi : a,b \in \mathbb{R} \}
 $$
