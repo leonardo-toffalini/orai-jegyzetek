@@ -60,7 +60,7 @@ $$
 *Tetel:* mm. $\implies$ sztoch.
 *Tetel:* $L^{p}$ $\implies$ sztoch.
 *Tetel:* sztoch $\implies$ eloszlasban
-*Megj.:* mm. $\centernot{\implies}$ $L^{p}$ es $L^{p}$ $\centernot{\implies}$ mm.
+*Megj.:* m.m.-bol nem kovetkezik $L^{p}$ es forditva
 
 ### Nagy szamok torvenye
 *Def.:* 
@@ -75,6 +75,23 @@ Ha az esemenyek valoszinusegenek osszege veges, akkor annak a valoszinusege hogy
 - Tegyuk fel, hogy az $A_{n}$ esemenyek fuggetlenek. Ekkor $\sum \mathbb{P}(A_{n}) = \infty$ eseten $\mathbb{P}(\limsup A_{n}) = 1$
 Ha a fuggetlen esemenyek valoszinusegenek osszege vegtelen, akkor annak a valoszinusege hogy vegtelen sok megtortenik az $1$.
 
+*Biz.:*
+$$
+\mathbb{P}(\limsup A_{n}) = \mathbb{P} \left(\bigcap_{n=1}^{\infty} \bigcup_{k = n}^{\infty} A_{k} \right) \leq \mathbb{P}\left(  \bigcup_{k=n}^{\infty}A_{k}  \right) \leq \sum_{k=n}^{\infty}\mathbb{P}(A_{k})
+$$
+Az utolso egyenlotlensegben kihasznaltuk hogy $\mathbb{P}$ egy mertek es ezet $\sigma$-szubadditiv. Minel az osszegben $n$-et barmennyire novelhetjuk, ezert tetszolegesen kicsi lehet az osszeg erteke.
+
+Eleg igazolni hogy a komplementer esemeny valoszinusege $0$. A de Morgan-azonossag miatt
+$$
+\overline{\limsup A_{n}} = \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} \overline{A_{k}}
+$$
+
+Azt kell belatni hogy $\mathbb{P}(\cap_{k=n}^{\infty} \overline{A_{k}}) = 0$
+$$
+\mathbb{P}\left(  \bigcap_{k=n}^{N} \overline{A_{kj}} \right) = \prod_{k=n}^{N} \mathbb{P}(\overline{A_{k}}) = \prod_{k=n}^{N} (1 - \mathbb{P}(A_{k})) \leq \prod_{k=n}^{N} e^{-\mathbb{P}(A_{k})} \leq \exp\left( - \sum_{k=n}^{N}\mathbb{P}(A_{k}) \right)
+$$
+Ha $N\to \infty$ akkor a jobb oldal tart $0$-hoz.
+
 *Tetel:* (Nagy szamok gyenge torvenye) $X_{1}, X_{2}, \dots$ i.i.d. valoszinusegi valtozok. Tegyuk fel, hogy $D(X_{1}) < \infty$. Ekkor $\forall \varepsilon >0$ eseten
 $$
 \mathbb{P}(\lvert \overline{X_{n}} - \mathbb{E}(X_{1}) > \varepsilon \rvert ) \to 0 \quad (n \to \infty)
@@ -87,7 +104,35 @@ $$
 $$
 teljesul $1$ valoszinuseggel (m.m.) $n \to \infty$ eseten.
 
-*Biz.:* TODO
+*Biz.:* Legyen $S_{n} = X_{1} + X_{2} + \dots + X_{n}$. Eloszor csak azt az esetet vizsgaljuk ahol minden $X_{i}$ nemnegativ.
+Legyen $\varepsilon >0$ es $A(n) = \left\{  \left\lvert  \frac{S_{n}}{n} - \mathbb{E}X_{1}  \right\rvert > \varepsilon \right\}$. Mivel $S_{n}/n$ szorasa vegtelen, mert $X_{1}$ szorasa az, ezert lehet hasznalni a Csebisev-egyenlotlenseget
+$$
+\mathbb{P}(A(n^{2})) \leq \frac{D^{2}(S_{n^{2}} / n^{2})}{\varepsilon ^{2}} \leq \frac{D^{2}(X_{1})}{n^{2}\varepsilon ^{2}}
+$$
+
+$$
+\sum \mathbb{P}(A(n^{2})) \leq \sum \frac{D^{2}(X_{1})}{n^{2} \varepsilon ^{2}} = \frac{D^{2}(X_{1})}{\varepsilon ^{2}} \sum \frac{1}{n^{2}} < \infty
+$$
+ezert a Borel-Cantell-lemma miatt $1$ a valoszinusege annak hogy az $A(n^{2})$ csak veges sok $n$-re teljesul, tehat van olyan nagy $n$ amire
+$$
+\left\lvert  \frac{S_{n^{2}}}{n^{2}} - \mathbb{E}X_{1}  \right\rvert \leq \varepsilon
+$$
+ami pont azt jelenti hogy $1$ valseggel 
+$$
+\limsup_{n\to \infty} \left\lvert  \frac{S_{n^{2}}}{n^{2}} - \mathbb{E}X_{1}  \right\rvert  \leq \varepsilon
+$$
+Legyen $n = \lfloor \sqrt{ n } \rfloor$ ekkor $m^{2} \leq n < (m + 1)^{2}$. Mivel minden $X_{i}$ nem negativ, ezert egy tobb $S_{m^{2}} \leq S_{n} \leq S_{(m+1)^{2}}$ tovobba
+$$
+\left( \frac{m}{m+1} \right)^{2} \frac{S_{m^{2}}}{m^{2}} \le \frac{S_{n}}{n} \leq \left( \frac{m+1}{m} \right)^{2} \frac{S_{(m+1)^{2}}}{(m+1)^{2}}
+$$
+Ha $n\to \infty$ akkor $m$ is tart vegtelenben es igy a rendor elv miatt $S_{n} / n$ is ugyanugy tart $\mathbb{E}X_{1}$-hez ahogyan a ket szele az egyenlotlensegnek.
+
+Altalanos esetben minde $X_{i}$-t bontsuk fel a pozitiv es a negativ reszere: $X_{i} = X_{i}^{+} - X_{i}^{-}$, igy $X_{i}^{+}$ es $X_{i}^{-}$ is mar nemnegativ.
+$$
+\frac{1}{n} \sum_{i=1}^{n}X_{i} = \frac{1}{n} \sum_{i=1}^{n}X_{i}^{+} - \frac{1}{n}\sum_{i=1}^{n}X_{i}^{-}
+$$
+A baloldali tag tart $\mathbb{E}(X_{1}^{+})$-hez es a jobbolali tag tart $\mathbb{E}(X_{1}^{-})$-hoz mert mindketto nemnegativ es igy az elobb belatott allitas ervenyes rajuk.
+Tovabba, $\mathbb{E}(X_{1}) = \mathbb{E}(X_{1}^{+}) - \mathbb{E}(X_{1}^{-})$ es igy belattuk hogy $\overline{X_{n}} \to \mathbb{E}(X_{1})$ $1$-valoszinuseggel.
 
 *Tetel:* (Kolmogorov-fele nagy szamok torvenye) $X_{1}, X_{2}, \dots$ i.i.d. valoszinusegi valtozok
 - Ha $\mathbb{E}(X_{1})$ veges  akkor $S_{n} / n \to \mathbb{E}(X_{1})$ $1$ valoszinuseggel (m.m.).
