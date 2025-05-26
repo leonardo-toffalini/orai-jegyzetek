@@ -72,7 +72,7 @@ $$
 \limsup A_{n} = \bigcap_{n=1}^{\infty} \bigcup_{k = n}^{\infty} A_{k}
 $$
 
-*Tetel:* (Borel-Cantelli-lemma)
+*Tetel:* (Borel–Cantelli-lemma)
 - Ha $\sum \mathbb{P}(A_{n}) < \infty$ akkor $\mathbb{P}(\limsup A_{n}) = 0$
 Ha az esemenyek valoszinusegenek osszege veges, akkor annak a valoszinusege hogy vegtelen sok megortenik az $0$.
 
@@ -117,7 +117,7 @@ $$
 $$
 \sum \mathbb{P}(A(n^{2})) \leq \sum \frac{D^{2}(X_{1})}{n^{2} \varepsilon ^{2}} = \frac{D^{2}(X_{1})}{\varepsilon ^{2}} \sum \frac{1}{n^{2}} < \infty
 $$
-ezert a Borel-Cantell-lemma miatt $1$ a valoszinusege annak hogy az $A(n^{2})$ csak veges sok $n$-re teljesul, tehat van olyan nagy $n$ amire
+ezert a Borel–Cantell-lemma miatt $1$ a valoszinusege annak hogy az $A(n^{2})$ csak veges sok $n$-re teljesul, tehat van olyan nagy $n$ amire
 $$
 \left\lvert  \frac{S_{n^{2}}}{n^{2}} - \mathbb{E}X_{1}  \right\rvert \leq \varepsilon
 $$
@@ -186,10 +186,18 @@ $$
 - Eros regularitasi feltetelek mellet az ML-becsles aszimptotikusan hatasos.
 - Gyakran eleg a kovetkezo egyenletet megoldani a ML-becsles megtalalasahoz:
 $$
-\frac{\partial}{\partial \vartheta} \log L_{m, \vartheta} = 0
+l_{m, \vartheta} = \frac{\partial}{\partial \vartheta} \log L_{m, \vartheta} = 0
 $$
 
-- Momentum modzser
+*Def.:* (Momentum modszer) Irjuk fel az alabbi egyenleteket a legkisebb olyan $k$-ig, amire az egyenletrendszer egyertelmuen meghatarozza $\vartheta$-t:
+$$
+\mathbb{E}_{\vartheta}(X_{1}^{m}) = \frac{1}{n} \sum_{j=1}^{n}X_{j}^{m} \quad m = 1, \dots, k
+$$
+*Momentum modszer tulajdonsagai:*
+- nem mindig letezik
+- nem mindig egyertelmu
+- nem feltetlenul hatasos
+- nem feltetlenul torzitatlan
 
 ### Torzitatlansag, hatasossag, konzisztencia
 *Def.:* A $T$ statisztika torzitatlan becsles $g$-re, ha $\forall \vartheta \in \Theta$-ra
@@ -230,13 +238,117 @@ $$
 A masodik feltetel miatt minden eleg nagy $n$-ra a szamlalo legfeljeb $\varepsilon ^{3} /4$, ilyenkor a hanyados legfeljebb $\varepsilon$, amivel belattuk azt amit akartunk.
 
 ### Hipotezisvizsgalat
+Legyen $(\Omega, \mathcal{A}, \mathcal{P})$ parameteres statisztikai mezo, azaz $\mathcal{P} = \{ \mathbb{P}_{\vartheta}: \vartheta \in \Theta \}$ valamilyen $\Theta$ parameterterrel. $\Theta = \Theta_{0} \cup ^{*} \Theta_{1}$
+Nullhipotezis - $H_{0}: \vartheta \in \Theta_{0}$
+Ellenhipotezis - $H_{1}: \vartheta \in \Theta_{1}$
+
+Legyen a mintater $B \subseteq \mathbb{R}^{n}$, es ezt is diszjunkt uniora bontjuk: $B = B_{0} \cup ^{*} B_{1}$.
+Elfogadasi tartomany: Ha $(X_{0}, \dots, X_{n}) \in B_{0}$ akkor elfogadjuk $H_{0}$.
+Elutasitasi (kritikus) tartomany: Ha $(X_{0}, \dots, X_{n}) \in B_{1}$ akkor elutasitjuk $H_{0}$.
+
+Elsofaju hiba: $H_{0}$ igaz de mi elutasitottuk.
+Masodfaju hiba: $H_{0}$ nem igaz de mi elfogadtuk.
+
+*Def.:* Egy proba szignifikancia szintje (terjedelme) a legnagyobb valoszinuseg amivel elsofaju hibat vetunk, azaz
+$$
+\alpha = \sup_{\vartheta \in \Theta_{0}} \mathbb{P}_{\vartheta}(\underline{X} \in B_{1})
+$$
+
+*Def.:* Egy proba erofuggvenye annak a valoszinusege hogy elutasitjuk $H_{0}$-t ha az nem igaz, azaz
+$$
+\beta(\vartheta) = \mathbb{P}_{\vartheta}(\underline{X} \in B_{1}) \quad (\vartheta \in \Theta_{1})
+$$
+
+*Def.:* Egy hipotezisvizsgalati feladatban a $p$-ertek a legnagyobb olyan szignifikancia szint, ami mellett $H_{0}$-t elfogadjuk.
+
+Tehat ha $\alpha$ a szignifikancia szint, akkor
+- $p < \alpha$ eseten elutasitjuk $H_{0}$-t, azaz szignifikans elteres van $H_{0}$-tol.
+- $p \geq \alpha$ eseten elfogadjuk $H_{0}$-t, azaz nincs szignifikans elteres $H_{0}$-tol, tehat nem volt eleg bizonyitek $H_{1}$-re.
+
 
 ### Normalis eloszla parametereire vonatkozo probak
-- z-proba - Normalis eloszlas varhatoertekere vonatkozo proba ismert szoras mellett.
-- t-proba - Normalis eloszlas varhatoertekere vonatkozo probam ismeretlen szoras mellett.
-- F-proba - Fuggetlen normalis eloszlasu mintak szorasanak osszehasonlitasara alkalmas proba.
+#### z-proba
+Normalis eloszlas varhatoertekere vonatkozo proba ismert szoras mellett.
+$$
+z = \frac{\overline{X} - m_{0}}{\sigma} \sqrt{ n }
+$$
+- Egyoldali proba
+	Ha $z > \Phi ^{-1}(1 - \alpha)$ akkor elvetjuk a nullhipotezist, kulonben elfogadjuk.
+	Ilyenkor a $p$-ertek $1 - \Phi(z)$
+- Ketoldali proba
+	Ha $\lvert z \rvert > \Phi ^{-1}(1 - \alpha / 2)$ akkor elvetjuk a nullhipotezist, kulonben elfogadjuk.
+	Ilyenkor a $p$-ertek $2 - 2\Phi(\lvert z \rvert)$
+
+#### t-proba
+Normalis eloszlas varhatoertekere vonatkozo probam ismeretlen szoras mellett.
+$$
+t = \frac{\overline{X} - m_{0}}{s_{n}^{*}} \sqrt{ n }
+$$
+- Egyoldali proba
+	Ha $t > \bar{t}_{n-1, \alpha}$, azaz $p < \alpha$ akkor elutasitjuk a nullhipotezist, kulonben elfogadjuk.
+	Ahol $\bar{t}_{n-1, \alpha}$ az $f = n-1$ szabadsagi foku $t$-eloszlas felso $1-\alpha$ kvantilise.
+
+|            | Egy mintas  | Ket mintas      |
+| ---------- | ----------- | --------------- |
+| Egy oldali | $m < m_{0}$ | $m_{1} < m_{2}$ |
+| Ket oldali | $m = m_{0}$ | $m_{1} = m_{2}$ |
+
+#### F-proba
+Fuggetlen normalis eloszlasu mintak szorasanak osszehasonlitasara alkalmas proba.
+$$
+F = \frac{s_{n_{1}}^{*2}}{s_{n_{2}}^{*2}}
+$$
+Ketoldali proba: $H_{0}: \sigma_{1} = \sigma_{2}$, $H_{1}: \sigma_{1} \neq \sigma_{2}$
+	Ha $F > F_{n_{1} - 1, n_{2}-1}$ vagy $1 / F > F_{n_{2}-1, n_{1}-1}$ akkor elvetjuk a nullhipotezist, kulonben elfogadjuk.
+	Ahol $F_{f_{1}, f_{2}}$ az $f_{1}, f_{2}$ szabadsagi foku $F$-eloszlas $1 - \alpha / 2$ kvantilise.
+
 
 ### chi^2 probak
-- illeszkedes vizsgalat
-- fuggetlenseg vizsgalat
-- homogenitas vizsgalat
+#### Illeszkedes vizsgalat
+- Tiszta illeszkedes vizsgalat:
+$$
+H_{0}: \mathbb{P}(A_{k}) = p_{k} \quad \forall k
+$$
+$$
+H_{1}: \exists k: \mathbb{P}(A_{k}) \neq p_{k}
+$$
+Ha $\chi ^{2} > c_{\text{krit}}$ akkor elutasitjuk $H_{0}$-t. Ahol $c_{\text{krit}}$ az $f= r-1$ szabadsagi foku $\chi ^{2}$-eloszlas $1-\alpha$ kvantilise.
+
+- Becsleses illeszkedes vizsgalat:
+$$
+H_{0}: \mathbb{P}(A_{k}) = \hat{p}_{k} \quad \forall k
+$$
+$$
+H_{1}: \exists k: \mathbb{P}(A_{k}) \neq \hat{p}_{k}
+$$
+ahol $\hat{p}_{k}$ a becsult parameterbol szarmazo valoszinuseg.
+Ha $\chi ^{2} > c_{\text{krit}}$ akkor elutasitjuk $H_{0}$-t. Ahol $c_{\text{krit}}$ az $f= r - 1 - d$ (a becsult parameter $d$-dimenzios) szabadsagi foku $\chi ^{2}$-eloszlas $1-\alpha$ kvantilise.
+
+probastatisztika:
+$$
+\chi ^{2} = \sum_{k=1}^{r} \frac{(N_{k} - n \cdot p_{k})^{2}}{n \cdot p_{k}}
+$$
+
+#### Fuggetlenseg vizsgalat
+$A_{1}, \dots, A_{r}$ es $B_{1}, \dots, B_{s}$ teljes esemenyrendszerek.
+$H_{0}$: a ket szempont fuggetlen egymastol, azaz $\mathbb{P}(A_{i} \cap B_{i}) = \mathbb{P}(A_{i}) \cdot \mathbb{P}(B_{i})$ minden $i, j$-re.
+$H_{1}$: $\exists i,j$ amire $\mathbb{P}(A_{i} \cap B_{i}) \neq \mathbb{P}(A_{i}) \cdot \mathbb{P}(B_{i})$
+
+probastatisztika:
+$$
+\chi ^{2} = \sum_{i=1}^{r} \sum_{j=1}^{s} \frac{\left(N_{ij} - \frac{N_{i \cdot} N_{\cdot j}}{n}\right)^{2}}{\frac{N_{i \cdot} N_{\cdot j}}{n}}
+$$
+A fenti probastatisztika $f = (r-1)(s-1)$ szabadsagi foku $\chi ^{2}$ eloszlashoz tart.
+Ha $\chi ^{2} > c_{\text{krit}}$ akkor elutasitjuk $H_{0}$-t, tehat az adatok szignifikans osszefuggest mutatnak.
+Ha $\chi ^{2} \leq c_{\text{krit}}$ akkor elfogadjuk $H_{0}$-t, tehat nem talaltunk szignifikans osszefuggest a szempontok kozott.
+
+#### Homogenitas vizsgalat
+Van $X_{1}, \dots, X_{n}$ es $Y_{1}, \dots, Y_{m}$ fuggetlen mintank az osszes adatot $r$ diszjunkt osztalyba soroljuk, ahol az $i$-edik osztaly valoszinusege $p_{i}$ az elso mintaban es $q_{i}$ a masodik mintaban. Az elso mintaban az osztalyok gyakorisaga $\nu_{i}$, mig a masodik mintaban az osztalyok gyakorisaga $\mu_{i}$.
+$H_{0}$: A ket eloszlas megegyezik, tehat $p_{i} = q_{i}$ minden $i$-re
+$H_{1}$: Van olyan $i$ amire $p_{1} \neq q_{1}$
+
+probastatisztika:
+$$
+\chi ^{2} nm \sum_{i=1}^{r} \frac{\left(  \frac{\nu_{i}}{n} - \frac{\mu_{i}}{m}  \right)^{2}}{\nu_{i} + \mu_{i}}
+$$
+A fenti probastatisztika $f = r -1$ szabadsagi foku $\chi ^{2}$ eloszlashoz tart.
