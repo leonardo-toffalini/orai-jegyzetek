@@ -349,6 +349,6 @@ $H_{1}$: Van olyan $i$ amire $p_{1} \neq q_{1}$
 
 probastatisztika:
 $$
-\chi ^{2} nm \sum_{i=1}^{r} \frac{\left(  \frac{\nu_{i}}{n} - \frac{\mu_{i}}{m}  \right)^{2}}{\nu_{i} + \mu_{i}}
+\chi ^{2} = nm \sum_{i=1}^{r} \frac{\left(  \frac{\nu_{i}}{n} - \frac{\mu_{i}}{m}  \right)^{2}}{\nu_{i} + \mu_{i}}
 $$
 A fenti probastatisztika $f = r -1$ szabadsagi foku $\chi ^{2}$ eloszlashoz tart.
