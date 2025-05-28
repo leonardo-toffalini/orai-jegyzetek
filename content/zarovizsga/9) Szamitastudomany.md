@@ -211,20 +211,149 @@ Dinamikus meretu array, push front $O(1)$
 Dinamikus meretu array, push back $O(1)$
 
 #### Linked list
-
+Mindenki tudja mi egy lancolt lista. $O(1)$ insert barhol, de nincs random access.
 
 #### Tree
+Minden csucsnak legfeljebb ketto leszarmazottja van. Majdnem olyan mint egy lancolt lista, csak nem egy successor van hanem max 2.
+
 #### Binary search tree
+A binaris keresofa egy olyan binaris fa, amelynek csucsaiban rekordok vannak, amelyek kulcsa a szotar egy eleme. Ezenkivul teljesul ra a keresofa tulajdonsag: az osszes $v$ csucsra a $v$ bal gyerekenek minden $u$ leszarmazottjara igaz hogy $K(u) < K(v)$ es a $v$ jobb gyerekenek minden $w$ leszarmazottjara igaz hogy $K(w) > K(v)$.
+Ergo egy csucstol balra levo csucsok kulcsa kisebb, mig a csucstol jobbra levo kulcsok nagyobbak. (nem engedjuk meg a duplikatumot, tehat nincs egyenloseg)
+
+
+Muveletek:
+- kereses $O(\text{fa melysege})$, elindulunk a gyokerbol es ha a kulcs amit keresunk kisebb mint a kulcs amin eppen allunk akkor balra megyunk tovabb, ha nagyobb akkor jobbra es addig folytatjuk amig meg nem talaltuk a keresett kulcsot vagy vegig mentunk a fan.
+- beszuras $O(\text{fa melysege})$, megkeressuk hogy benne van-e az elem amit beszurni kivanunk a faban, ha benne akkor keszen vagyunk mert nem ismetelunk elemet, ha nincs akkor a kereses visszaadta hogy hova kell beszurni.
+- torles $O(\text{fa melysege})$, megkeressuk hogy a torolni kivant elem benn van-e a faban, ha nincs akkor keszen vagyunk, ha benne van akkor ket eset lehetseges: 1 gyereke van az elemnek, ekkor kitoroljuk az elemet es a helyebe jon az egyetlen gyereke, ha 2 gyereke van akkor megkeressuk azt az elemet ami kisebb a torolni kivant-nal de nagyobb az osszesnel a bal reszfaban (lepunk egyet balra es utana amig lehet jobbra), ezzel kicseruljuk a torolni kivantat es mar lehet torolni a levelbe helyezett torolendot.
+
 #### AVL tree
+Egy binaris keresofa AVL-fa ha minden $v$ csucsra $\lvert m(bal(v)) - m(jobb(v)) \rvert \leq 1$, ahol $m(w)$ a $w$ csucs magassaga, azaz a belole lefele vezeto leghosszabb ut hossza es $m(nil) = -1$. 
+Ergo az AVL-fa olyan binaris keresofa ahol barmelyik csucsnak a bal reszfajanak a magassak legfeljebb $1$-el ter el a jobb reszfanak a magassagaval
+
+Muveletek:
+- Billentes $O(1)$ – Ha $y$ az $x$ nevu szulojenek bal gyereke, akkor $y$-t rakjuk $x$ helyere, $x$ lesz $y$ jobb gyereke, az $y$ jobb gyereke pedig $x$ bal gyereke lesz. (Ha $y$ jobb gyerek, akkor szimmetrikusan jarunk el.)
+- Beszuras $O(\log n)$ – Nem is hiszem hogy az AVL-fa kotelezo anyag lenne minoron.
+
 #### Graph
+Mindenki tudja mi a graf. $E$ elek halmaza $V$ csucsok halmaza, barmely ket csucs kozott mehet el.
+
 #### Heap
+A binaris kupac egy szep binaris fa melynek csucsaiben $1-1$ rekord van egy kituntetett kulcs mezovel $K(v_{i})$ jeloli a $v_{i}$ csucsban levo rekord kulcsat. Ezen kivul teljesul a kupacrendezettseg: minden, a gyokertol kulonbozo, $v$ csucsra igaz, hogy $K(\text{szulo}(v)) \leq K(v)$.
+
+Muveletek:
+- Beszuras $O(\log n)$, a vegere beszurjuk az uj elemet es felbillegtetjuk.
+- Minimum torlese $O(\log n)$, mivel a legtetejen van a minimalis elem ezert tudjuk hogy mit kell kitorolnunk de ugyelni kell arra hogy megmaradjon a kupacrendezettseg. Ezert becsereljuk a legfelso elemet az utolsoval, igy mar ki tudjuk torolni az utolso helyre kerult minimalis elemet. Tovabba a tetejere kerul elemet le kell billegtetni hogy visszarendezzuk a kupacot.
 
 ### Rendezesek
-- bubble sort
-- insertion sort
-- merge sort
-- heap sort
-- quick sort
+#### Bubble sort $O(n^{2})$
+```python
+def bubble_sort(a):
+  a = np.copy(a)
+  flag = True
+  while flag:
+    flag = False
+	for i in range(len(a)-1):
+	  if a[i] > a[i+1]:
+	    flag = True
+		a[i], a[i+1] = a[i+1], a[i]
+  return a
+```
+
+#### Insertion sort $O(n^{2})$
+```python
+def insertion_sort(a):
+  a = np.copy(a)
+  i = 1
+  while i < len(a):
+    j = i
+	while j > 0 and a[j-1] > a[j]:
+	  a[j], a[j-1] = a[j-1], a[j]
+	  j -= 1
+	i += 1
+  return a
+```
+
+#### Merge sort $O(n\log n)$
+```python
+def merge_sort(a):
+  a = np.copy(a)
+  if len(a) == 1:
+    return a
+  mid = len(a)//2
+  left = merge_sort(a[:mid])
+  right = merge_sort(a[mid:])
+  return merge(left, right)
+
+def merge(left, right):
+  result = []
+  i = j = 0
+  while i < len(left) and j < len(right):
+    if left[i] <= right[j]:
+	  result.append(left[i])
+	  i += 1
+	else:
+	  result.append(right[j])
+	  j += 1
+  
+  result.extend(left[i:])
+  result.extend(right[j:])
+  
+  return result
+```
+
+#### Heap sort $O(n\log n)$
+Rakjuk bele az osszes elemet egy kupacba es egyessevel szedjuk le oket. Mivel mindig a minimalis elemet szedjuk le ezert novekvo sorrendbe kapjuk meg az elemeket.
+Kupacepites: $n$-szer kell beilleszteni $O(\log n)$ idoben tehat $O(n\log n)$
+Leszedegetes: $n$-szer kell minimumot torolni $O(\log n)$ idoben tehat $O(n\log n)$
+```python
+def min_heap_sort(arr):
+  n = len(arr)
+    
+  # Build min heap
+  for i in range(n // 2 - 1, -1, -1):
+    min_heapify(arr, n, i)
+    
+  # Extract elements from smallest to largest
+  result = []
+  for i in range(n):
+    result.append(arr[0])  # Extract minimum
+    arr[0] = arr[n - 1 - i]  # Move last element to root
+    min_heapify(arr, n - 1 - i, 0)  # Heapify reduced heap
+    
+  return result
+
+def min_heapify(arr, n, i):
+  smallest = i
+  left = 2 * i + 1
+  right = 2 * i + 2
+    
+  # Find smallest among root and children
+  if left < n and arr[left] < arr[smallest]:
+    smallest = left
+    
+  if right < n and arr[right] < arr[smallest]:
+    smallest = right
+    
+  # If smallest is not root, swap and continue heapifying
+  if smallest != i:
+    arr[i], arr[smallest] = arr[smallest], arr[i]
+    min_heapify(arr, n, smallest)
+
+```
+
+#### Quick sort $O(n^{2})$
+```python
+def quicksort(arr):
+  if len(arr) <= 1:
+    return arr
+    
+  pivot_index = np.random.randint(0, len(arr))
+  pivot = arr[pivot_index]
+  left = [x for x in arr[1:] if x <= pivot]
+  right = [x for x in arr[1:] if x > pivot]
+    
+  return quicksort(left) + [pivot] + quicksort(right)
+```
 
 ### Grafok tarolasa
 - incidencia matrix
