@@ -201,15 +201,23 @@ def knapsack(items, M):
 ```
 
 ### Adatstrukturak
-- array
-- queue
-- stack
-- linked list
-- tree
-- binary search tree
-- AVL tree
-- graph
-- heap
+#### Array
+Fix meretu egybefuggo memoria terulet
+
+#### Queue
+Dinamikus meretu array, push front $O(1)$
+
+#### Stack
+Dinamikus meretu array, push back $O(1)$
+
+#### Linked list
+
+
+#### Tree
+#### Binary search tree
+#### AVL tree
+#### Graph
+#### Heap
 
 ### Rendezesek
 - bubble sort
