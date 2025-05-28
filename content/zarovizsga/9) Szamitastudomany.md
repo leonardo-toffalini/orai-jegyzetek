@@ -104,20 +104,57 @@ Tehat, az elozo lemma ertelmeben mar csak annyit kell belatnunk hogy $L_{T}$ kom
 
 *Kovetkezmeny:* Nincs olyan Turing-gep ami el tudna donteni hogy egy masik Turing-gep leall-e egy szora. Mashogy megfogalmazva, a $(T, w)$ parokat tartalmazo nyelv, ahol $T$ Turing-gep megall $w$-re, nem rekurziv.
 
+*Def.:* A dominonyelv szavai dominokeszletek ahol egy dominokeszlet elemei $(a, b, c, d)$ negyesek.
+*Def.:* $L_{\text{KIRAK}}$ azon szavakat tartalmazza a dominonyelvbol amelyekkel lehet parkettazni a sikot.
+*Def.:* $L_{\text{NEMKIRAK}}$ azon szavakat tartalmazza a dominonyelvbol amelyekkel nem lehet parkettazni a sikot.
+
+*Lemma:* $V$ rekurziv es $L \subset V$. Ekkor $L$ rekurziv akkor es csak akkor ha $L$ es $V - L$ rekurzive felsorolhato.
+*Tetel:* $L_{\text{NEMRAK}}$ rekurzive felsorolhato.
+*Lemma:* $w \in L_{\text{KIRAK}} \iff w$-vel kirakhato minden $N \in \mathbb{N}$ szmara a $(2N + 1) \times (2N + 1)$ meretu negyzet.
+*Tetel:* $L_{\text{KIRAK}}$ nem rekurzive felsorolhato.
+
 ### Bonyolultsagi osztalyok
-- DTIME
-- DSPACE
-- P
-- PSPACE
-- NTIME
-- NSPACE
-- NP
-- NPSPACE
+*Def.:* $\operatorname{time}_{T}(n)$ jeloli a legfeljebb $n$ hosszu inputokon hasznalt lepesszamok maximumat a $T$ Turing-gep altal.
+*Def.:* $\operatorname{space}_{T}(n)$ jeloli a legfeljebb $n$ hosszu inputokon hasznalt mezok maximumat a $T$ Turing-gep altal.
+*Def.:* $\operatorname{DTIME}(f(n))$ jeloli azon $L$ nyelvek osztalyat, ahol minden $L$-hez letezik $T$ Turing-gep amely felismeri $L$-et es $w \stackrel{?}{\in} L$  kerdest $f(\lvert w \rvert)$ lepesben eldonti.
+*Def.:* $\operatorname{DSPACE}(f(n))$ jeloli azon $L$ nyelvek osztalyat, ahol minden $L$-hez letezik $T$ Turing-gep amely felismeri $L$-et es $w \stackrel{?}{\in} L$  kerdest $f(\lvert w \rvert)$ tarban eldonti.
+*Def.:*
+$$
+\operatorname{P} = \bigcup_{i=1}^{\infty} \operatorname{DTIME}(n^{i})
+$$
+*Def.:*
+$$
+\operatorname{PSPACE} = \bigcup_{i=1}^{\infty} \operatorname{DSPACE}(n^{i})
+$$
+
+*All.:* $k \cdot \operatorname{time}_{T}(n) \geq \operatorname{space}_{T}(n)$. Kovetkezmenykent $\operatorname{DTIME}(f(n)) \subset \cup_{k=1}^{\infty}\operatorname{DSPACE}(k \cdot f(n))$.
+
+*Def.:* $\operatorname{NTIME}(f(n))$ jeloli azon $L$ nyelvek osztalyat, ahol minden $L$-hez letezik $T$ nem determinisztikus Turing-gep amely felismeri $L$-et es $w \stackrel{?}{\in} L$  kerdest $f(\lvert w \rvert)$ lepesben eldonti.
+*Def.:* $\operatorname{NSPACE}(f(n))$ jeloli azon $L$ nyelvek osztalyat, ahol minden $L$-hez letezik $T$ nem determinisztikus Turing-gep amely felismeri $L$-et es $w \stackrel{?}{\in} L$  kerdest $f(\lvert w \rvert)$ tarban eldonti.
+*Def.:*
+$$
+\operatorname{NP} = \bigcup_{i=1}^{\infty} \operatorname{NTIME}(n^{i})
+$$
+*Def.:*
+$$
+\operatorname{NPSPACE} = \bigcup_{i=1}^{\infty} \operatorname{NSPACE}(n^{i})
+$$
+*Def.:* $\operatorname{co-NP} = \{ l : \Sigma_{0}^{*} - L \in \operatorname{NP} \}$
+
+*Def.:* Azt mondjuk hogy $w$-nek az $L$-beli tagsagara az $y$ szo polinomialis tanu, ha $L$-hez van olyan $T$ Turing-gep, hogy $w \in L \iff T$ elfogadja a $(w, y)$ part $\lvert w \rvert$-ben polinomialis idoben.
+
+*Tetel:* $L \in \operatorname{NP}$ akkor es csak akkor ha $\forall w \in L$-ra letezik polinomialis tanu.
+
+*Tetel:* (Pratt) $\operatorname{PRIM} \in \operatorname{NP}$
 
 ### NP-teljesseg
-*Def.:* Az $L$ nyelv NP-teljes, ha $L \in \text{NP}$ es $\forall K \in \text{NP}$-re ihaz hogy polinomialisan visszavezetheto $L$-re. Azaz $\forall k \in \text{NP}: K \propto L$.
+*Def.:* Az $L$ nyelv NP-teljes, ha $L \in \text{NP}$ es $\forall K \in \text{NP}$-re ihaz hogy polinomialisan visszavezetheto $L$-re. Azaz $\forall K \in \text{NP}: K \propto L$.
+
+*Megj.:* Az hogy $L$ NP-teljes nem azt jelenti hogy nehezebb barmilyen masik NP-beli nyelvnel, hanem csak annyit jelent hogy legalabb annyira nehez. Ha azt akarjuk belatni hogy $L$ NP-teljes ahoz kell talalnunk egy $V$ NP-teljes nyelvet es megmutatnunk hogy $V$ visszavezetheto $L$-re. Igy mivel $V$ NP-teljes ezert minden NP nyelv visszavezetheto ra es $V$ visszavezetheto $L$-re. Roviden $\forall K \in \operatorname{NP}: K \propto V \propto L \implies K \propto L$.
 
 *Tetel:* (Cook) A SAT nyelv NP-teljes.
+*Biz.:* Eloszor is $\operatorname{SAT} \in \text{NP}$, mert egy kielegito behelyettesites polinomialis tanu.
+Masodszor annyit kell megmutatnunk hogy barmilyen $T$ nem determinisztikus Turing-gephez tudunk konstrualni olyan konjunktiv normal format, ami pont ennek a gepnek a mukodeset tukrozi. Ez a nehezebb resz a bizonyitasban, de az osszes lepes elegge egyertelmu csak vegig kell gondolni az osszes szabalyat a Turing-gepeknek es azt formalizalni konjunktiv normal formaban.
 
 ### Visszavezetesek
 *Tetel:* H2C NP-teljes
@@ -134,12 +171,43 @@ Tehat, az elozo lemma ertelmeben mar csak annyit kell belatnunk hogy $L_{T}$ kom
 
 ## b) Algoritmusok tervezese es elemzese
 ### Dinamikus programozas
+#### Fibonacci szamok $O(\phi ^{n})$
+```python
+def fib(n):
+  if n <= 1:
+    return n
+  else:
+    return fib(n-1) + fib(n-2)
+```
+
+#### Fibonacci szamok DP $O(n)$
+```python
+def fib(n):
+  cache = [0, 1]
+  for i in range(2, n+1):
+    cache.append(cache[i-1] + cache[i-2])
+
+  return cache[n]
+```
+
+#### Hatizsak feladat $O(n \cdot W)$
+```python
+def knapsack(items, M):
+  A = [0 for _ in range(M)]
+  for item in items:
+	for i in range(M, item.weight, -1):
+	  A[i] = max(A[i], A[i - item.weight] + item.value)
+  return A[-1]
+```
+
 ### Adatstrukturak
 - array
 - queue
 - stack
 - linked list
 - tree
+- binary search tree
+- AVL tree
 - graph
 - heap
 
@@ -160,7 +228,9 @@ Tehat, az elozo lemma ertelmeben mar csak annyit kell belatnunk hogy $L_{T}$ kom
 
 ### Legrovidebb ut
 - Dijkstra
+- Pert modszer
 - Bellman–Ford
+- Floyd–Warhsall
 
 ### Minimalis koltsegu feszitofak
 - Kruskall
