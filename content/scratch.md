@@ -6,8 +6,8 @@
 - [x] bibtex forces sentence case even when it is written in word case, to keep capital letters put them in {} braces
 - [x] explain more clearly why Hurst is 0.1 according to \[5\]
 - [x] can explain more clearly what params and hyperparams were used, hyperparam table hidden at the end
-- [ ] conclusion chapter
-- [ ] explain in the conclusion that this is just the first step and the results of this thesis are great fodder for future work and expainding the infrastructure defined is trivial by implementing new process generator
+- [x] conclusion chapter
+- [x] explain in the conclusion that this is just the first step and the results of this thesis are great fodder for future work and expainding the infrastructure defined is trivial by implementing new process generator
 
 
 
