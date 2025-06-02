@@ -360,8 +360,32 @@ def quicksort(arr):
 - ellista
 
 ### Grafok bejarasa (BFS, DFS)
-- BFS
-- DFS
+#### BFS $O(\lvert V \rvert + \lvert E \rvert)$
+```python
+def bfs(graph, start):
+  visited = set()
+  queue = deque([start])
+  visited.add(start)
+  while queue:
+    node = queue.popleft()
+	print(node, end=" ")
+	for neighbor in graph[node]:
+	  if neighbor not in visited:
+	    visited.add(neighbor)
+		queue.append(neighbor)
+```
+
+#### DFS $O(\lvert V \rvert + \lvert E \rvert)$
+```python
+def dfs(graph, node, visited=None):
+  if visited is None:
+    visited = set()
+    visited.add(node)
+    print(node, end=" ")
+    for neighbor in graph[node]:
+      if neighbor not in visited:
+	    dfs(graph, neighbor, visited)
+```
 
 ### Legrovidebb ut
 - Dijkstra
