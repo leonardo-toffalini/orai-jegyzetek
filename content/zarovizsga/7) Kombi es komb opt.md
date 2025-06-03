@@ -94,6 +94,10 @@ Fiuk algoritmusa: Minden fiu eloszor megkeri az altala legkedveltebb lanyt, ha a
 Lanyok algoritmusa: Egy lany az elso kerot elfogadja ideiglenes partnernek, a tovabbi keroknel eldonti melyik a jobb: a mostani partner, vagy az uj kero, a rosszabbikat kikosarazza, es igy tovabb. Mindig az eddigi legjobbat tartja meg (ideiglenes) partnernek, es az osszes tobit kikosarazza.
 
 #### Tartalmazasra maximalis parositas: Konig javito utas algoritmusa $O(\min(n_{1}, n_{2}) \cdot m)$
+*Def.:* Legyen $G$ graf es $M$ parositas $G$-ben, es $P : v_{0}, e_{1}, v_{1}, \dots, e_{k}, v_{k}$ egy ut. Ekkor $P$ egy javito ut $M$-re nezve, ha $v_{0}$ es $v_{k}$ nem parositottak, $k$ paratlan es a paros sokadik elek elemei $M$-nek.
+Tehat, $P$ minden masodik ele eleme az eredeti parositasnak, es az elso es utolso csucs $P$-nek nem fedett $M$ altal.
+
+*Algoritmus:* Kiindulunk egy tetszoleges parositasbol es amig van javito ut addig csinaljuk a kovetkezot: vegyuk a szimmetrikus differenciajat a parositasnak es a javito utnak es az legyen a kovetkezo parositas.
 
 #### Tartalmazasra maximalis parositas: Hopcroft–Karp algoritmus $O(m \sqrt{ n^{*} })$ ahol $n^{*} = \nu(G) \leq \min(\lvert U \rvert, \lvert V \rvert) \leq n / 2$
 
@@ -101,7 +105,7 @@ Lanyok algoritmusa: Egy lany az elso kerot elfogadja ideiglenes partnernek, a to
 - Maximalis sulyo parositas: Kuhn Magyar modszere $O(\lvert E \rvert^{2} \cdot \lvert S \rvert)$
 
 ### Elszinezes
-- Ketszinezes: BFS
+- Ketszinezes: BFS $\to$ BFS szintek, van vagy nincs paratlan kor
 
 ## c)
 ### Halozati folyamok

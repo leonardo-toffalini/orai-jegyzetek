@@ -10,4 +10,4 @@
 ### Farkas-lemma
 ### Szimplex modszer
 ### Teljesen unimodularis (TU) matrixok
-### Alkalmazasaik
+### TU matrixok alkalmazasai

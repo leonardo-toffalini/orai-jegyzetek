@@ -2,13 +2,13 @@
 ### Axiomatikus halmazelmet alapjai
 ### Kivalasztasi axioma
 ### Szamossagok
-### Muveletek szamossagokokn
+### Muveletek szamossagokon
 ### Cantor tetele
 ### Russel paradoxon
 ### Ismert halmazok szamossaga
 ### A valos szamok felepitese
 ### Rendezes, jojlrendezes
-### Kiselenteslogika
+### Kijelenteslogika
 ### Igazszagfuggvenyek
 ### Igazsagtablazatok
 ### Teljes diszjunktiv normalforma
