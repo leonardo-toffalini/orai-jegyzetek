@@ -8,7 +8,7 @@
 ### Szelsoertek
 ### Komplex differencialhatosag
 
-## b) integralszamitas
+## b) Integralszamitas
 ### Egyvaltozos primitiv fuggveny
 ### Riemann-integral
 ### Terulet es ivhossz

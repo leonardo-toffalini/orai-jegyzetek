@@ -56,6 +56,66 @@ kezdeti ertek feladatnak minden $(t_{0}, x_{0}) \in T$ eseten letezik megoldasa.
 #### Stabilitas – A megoldas folytonosan fugg az adatoktol.
 
 ### Egyszeru modellek
+#### Newton II. torvenye
+$$
+F = ma
+$$
+Mivel $a = x''(t)$ ezert a fenti torveny a kovetkezo differencial egyenlettel irhato le:
+$$
+x''(t) = \frac{F(t)}{m}
+$$
+Megoldasa a fentinek:
+$$
+x(t) = \frac{1}{2}a t^{2} + v_{0}t + x_{0}
+$$
+
+#### Harmonikus rezgomozgas
+$$
+x''(t) = -\omega ^{2}x(t)
+$$
+Megoldasa a fentinek:
+$$
+x(t) = x_{0}\cos(\omega t) + \frac{v_{0}}{\omega} \sin(\omega t)
+$$
+
+#### Radioaktiv bomlas
+Tudjuk hogy mindegyik idopillanatban egy radioaktiv anyag a jelenlegi tomegenek $k$-ad resze sugarzik el.
+$$
+x'(t) = -kx(t)
+$$
+Megoldasa a fentinek:
+$$
+x(t) = C \cdot e^{-kt}
+$$
+
+#### Lotka–Volterra modell
+$$
+\begin{cases}
+	x'(t) = \alpha x - \beta x y, \\
+	y'(t) = -\gamma y + \delta x y,
+\end{cases}
+$$
+ahol $\alpha, \gamma > 0$ szuletesi ratak es $\beta, \delta > 0$ halalozasi ratak.
+
+#### SIR modell
+- $S(t)$ – Fertozhetoek mennyisege (susceptible).
+- $I(t)$ – Fertozottek mennyisege (infected).
+- $R(t)$ – Gyogyultak mennyisege (recovered).
+$$
+\begin{cases}
+	S'(t) = -\alpha S(t) I(t), \\
+	I'(t) = \alpha S(t)I(t) - \beta I(t), \\
+	R'(t) = \beta I(t),
+\end{cases}
+$$
+ahol $\alpha > 0$ a fertozesi rata es $\beta > 0$ a gyogyulasi rata.
+
+#### Egyebek
+- Lorenz modell
+- Black–Scholes
+- Navier–Stokes
+- N-test problema
+
 ### Linearis diff egyenletek es rendszerek megoldasainak eloallitasa
 #### Elsorendu homogen eset
 #### Elsorendu inhomogen este
@@ -64,6 +124,43 @@ kezdeti ertek feladatnak minden $(t_{0}, x_{0}) \in T$ eseten letezik megoldasa.
 #### Masodrendu inhomogen eset
 #### Allando egyutthatos eset
 #### Atviteli elv
+Minden $n$-ed rendu explicit KDE visszavezetheto egy $n$ darab egyenletbol allo elsorendu KDE rendszerre.
+$$
+y^{(n)}(t) - F(t, y(t), y'(t), y''(t), \dots, y^{(n-1)}(t))
+$$
+Vezessuk be a kovetkezo valtozokat:
+$$
+\begin{aligned}
+	x_{1} &= y &\implies x_{1}' = y' = x_{2} \\
+	x_{2} &= y &\implies x_{2}' = y'' = x_{3} \\
+	x_{3} &= y &\implies x_{3}' = y''' = x_{4} \\
+	&\;\;\vdots & \\
+	x_{n} &= y &\implies x_{n}' = y^{(n)} = F\\
+\end{aligned}
+$$
+Tudunk egyszerusiteni a jelolesen ha a kovetkezo vektorokat bevezetjuk:
+$$
+x(t) = \begin{bmatrix}
+x_{1}(t) \\
+x_{2}(t) \\
+x_{3}(t) \\
+\vdots \\
+x_{n}(t) \\
+\end{bmatrix}
+$$
+$$
+f(t, x(t)) = \begin{bmatrix}
+x_{2}(t) \\
+x_{3}(t) \\
+x_{4}(t) \\
+\vdots \\
+F(t, x_{1}(t), x_{2}(t), \dots, x_{n}(t))
+\end{bmatrix}
+$$
+Ezekkel a jelolesekkel arra jutunk hogy az eredeti $n$-ed rendu KDE valojaban a kovetkezo KDE rendszerrel egyenlo:
+$$
+x'(t) = f(t, x(t))
+$$
 
 
 ### Harmonikus rezges
