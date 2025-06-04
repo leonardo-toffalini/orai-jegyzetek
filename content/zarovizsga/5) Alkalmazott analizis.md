@@ -1,13 +1,88 @@
 ## a) KDE
+#### Alapveto fogalmak
+*Def.:* (KDE) Legyen $F : \mathbb{R}^{n} \to \mathbb{R}$ adott fuggveny. Ekkor az
+$$
+F(t, x(t), x'(t), x''(t), \dots, x^{(n)}(t)) = 0, \quad t \in \mathbb{R}
+$$
+alaku egyenlet az $x : \mathbb{R} \to \mathbb{R}$ ismeretlen fuggvenyre vonatkozo $n$-edrendu KDE-nek nevezzuk.
+
+*Def.:* A kovetkezo alaku feladatot elsorendu explicit differencialegyenletnek hivjuk:
+$$
+x'(t) = f(t, x(t)), \quad t \in \mathbb{R},
+$$
+ahol $f \in C(T)$ valamilyen $T \subset \mathbb{R}^{2}$ tartomanyra.
+
+*Def.:* Legyen $I \subset \mathbb{R}$ egy intervallum. Azt mondjuk, hogy az $x : I \to \mathbb{R}$ fuggveny megoldasa az elozo egyenletnek, ha:
+- $x \in D(f)$, azaz differencialhato $I$-n.
+- $\{ (t, x(t)) : t \in I \} \subset T$
+- $x'(t) = f(t, x(t))$ minden $t \in I$ eseten.
+
+*Def.:* A kovetkezo feladatot kezdeti ertek feladatnak hivjuk:
+$$
+\begin{cases}
+	x'(t) = f(t, x(t)), \quad t \in \mathbb{R} \\
+	x(t_{0}) = x_{0} \qquad \qquad \text{(kezdeti feltetel)}
+\end{cases}
+$$
+ahol $(t_{0}, x_{0}) \in T$ adott.
+
+- Rend – Az egyenletben szereplo legmagasabb derivalt rendje.
+- Linearis – Az ismeretlen fuggveny csak linearisan szerepel, azaz az ismeretlen ufggveny es derivaltjai csak a valtozotol fuggo egyutthatokkal vannak megszorozva.
+- Homogen – Az egyenletben nem szerepel csak a valtozotol fuggo additiv tag.
+
 ### Egzisztencia es unicitas
-- Egzisztencia – letezik megoldas az adott fuggveny osztalyon.
-- Unicitas – A (letezo) megoldas egyertelmu az adott fuggveny osztalyon.
-- Stabilitas – A megoldas folytonosan fugg az adatoktol.
+
+#### Egzisztencia – Letezik megoldas az adott fuggveny osztalyon.
+*Tetel:* Ha $T \subset \mathbb{R}^{2}$ tartomany es $f: T \to \mathbb{R}^{2}$ folytonos, akkor az
+$$
+\begin{cases}
+	x'(t) = f(t, x(t)) \\
+	x(t_{0}) = x_{0}
+\end{cases}
+$$
+kezdeti ertek feladatnak minden $(t_{0}, x_{0}) \in T$ eseten letezik megoldasa.
+
+#### Unicitas – A (letezo) megoldas egyertelmu az adott fuggveny osztalyon.
+*Def.:* Azt mondjuk hogy az $x'(t) = f(t, x(t))$ KDE (rendszer)  megoldasa...
+1. ... az $x(t_{0}) = x_{0}$ kezdeti feltetel mellett ...
+	- ... globalisan egyertelmu, ha a KDE-nek ez a kezdeti feltetel mellett legfeljebb egy megoldasa van.
+	- ... lokalisan egyertelmu, ha $t_{0}$-nak van olyan kornyezete, ahol a kezdeti feltetelt teljesito barmely ket megoldas egyenlo.
+2. ... globalisan/lokalisan egyertelmu, ha barmely kezdeti feltetel mellett globalisan/lokalisan egyertelmu.
+
+*Tetel:* (Cauchy–Lipschitz) Legyen $T \subset \mathbb{R} \times \mathbb{R}^{n}$ tartomany, $f: T \to \mathbb{R}^{n}$ folytonos es a masodik (vektor) valtozojaban Lipschitz fuggveny a $T$ tartomanyon. Ekkor az $x'(t) = f(t, x(t))$ KDE-nek minden kezdeti feltetel mellett letezik megoldasa, es az globalisan egyertelmu.
+
+*Tetel:* (Picard–Lindelof) Legyen $T \subset \mathbb{R} \times \mathbb{R}^{n}$ tartomany, $f: T \to \mathbb{R}^{n}$ folytonos es a masodik (vektor) valtozojaban lokalisan Lipschitz fuggveny a $T$ tartomanyon. Ekkor az $x'(t) = f(t, x(t))$ KDE-nek minden kezdeti feltetel mellett letezik megoldasa, es az lokalisan egyertelmu.
+
+#### Stabilitas – A megoldas folytonosan fugg az adatoktol.
 
 ### Egyszeru modellek
 ### Linearis diff egyenletek es rendszerek megoldasainak eloallitasa
+#### Elsorendu homogen eset
+#### Elsorendu inhomogen este
+#### Partikularis megoldas megoldasa
+#### Masodrendu homogen eset
+#### Masodrendu inhomogen eset
+#### Allando egyutthatos eset
+#### Atviteli elv
+
+
 ### Harmonikus rezges
-### Stabilitasi fogalmakl
+A harmonikus rezgest a kovetkezo masodrendu differencial egyenlet irja le:
+$$
+y''(t) = - \omega ^{2} y(t),
+$$
+ahol $\omega > 0$ es $y : I \to \mathbb{R}$.
+
+A fenti masodrendu differencial egyenletet az atviteli elv alapjan fel tudjuk irni ket elsorendu differencial egyenlet rendszerekent:
+$$
+\begin{cases}
+	y'(t) = v(t) \\
+	v'(t) = y''(t) = -\omega ^{2}y(t)
+\end{cases}
+$$
+
+### Stabilitasi fogalmak
+
 
 ## b) PDE es num modszerek
 ### Kezdeti es peremertek feladatok fogalma
@@ -225,8 +300,23 @@ Tobbvaltozos analizisbol tudjuk, hogy $\varphi'(x) = Ax - b$. Tehat ahol $\varph
 Tovabba, ha feltesszuk hogy $A$ szimmetrikus pozitiv definit, akkor $\varphi''(x) = A$ pozitiv definit tehat valoban minimumhely $x$.
 Na most ha tudunk egy olyan eljarast ami egy fuggveny minimumhelyet megtalalja akkor megoldottuk az $Ax = b$ egyenletrendszert.
 
+Mivel tudjuk hogy egy fuggveny a gradiense abba az iranyba mutat amelyik iranyba a leggyorsabban no a fuggveny, tehat abba az ellentetes iranyba csokken a leggyorsabban. Ha vesszuk a $\varphi$ fuggveny gradienset es annak elentetes iranyba lepunk egy $\alpha$ meretu lepest akkor a kovetkezot kapjuk:
+$$
+\varphi'(x) = Ax - b \implies x_{n+1} = x_{n} + \alpha (Ax - b)
+$$
 
 #### Konjugalt gradiens modszer
+
+#### Newton-iteracio
+$$
+x_{n+1} = x_{n} - \frac{f(x_{n})}{f'(x_{n})}
+$$
+Analog tobb dimenzioban:
+$$
+x_{n+1} = x_{n} - (J(x_{n}))^{-1} \cdot f(x_{n})
+$$
+Ahol $J(x_{n})$ az $f$ fuggveny Jacobi-matrixa az $x_{n}$ pontban.
+
 
 ### Diff egyenletek megoldasa Euler modszerrel
 $$
