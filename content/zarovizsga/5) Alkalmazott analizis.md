@@ -118,9 +118,76 @@ ahol $\alpha > 0$ a fertozesi rata es $\beta > 0$ a gyogyulasi rata.
 
 ### Linearis diff egyenletek es rendszerek megoldasainak eloallitasa
 #### Elsorendu homogen eset
-#### Elsorendu inhomogen este
-#### Partikularis megoldas megoldasa
-#### Masodrendu homogen eset
+$$
+x'(t) = a(t) \cdot x(t)
+$$
+$$
+\int \frac{1}{x} \, dx = \int a(t) \, dt  
+$$
+$$
+A' = a
+$$
+$$
+\ln \lvert x \rvert = A(t) + C
+$$
+$$
+x(t) = C \cdot e^{A(t)}
+$$
+
+#### Elsorendu inhomogen eset
+$$
+x'(t) = a(t) x(t) + b(t)
+$$
+$$
+x'(t) - a(t)x(t) = b(t)
+$$
+a bal oldal valaminek a derivaltja, szorozzuk meg mindket oldalt $e^{-A(t)}$-vel
+$$
+e^{-A(t)}x'(t) - e^{-A(t)}a(t)x(t) = e^{-A(t)}b(t)
+$$
+$$
+(e^{-A(t)} \cdot x(t))' = e^{-A(t)}b(t)
+$$
+$$
+e^{-A(t)} \cdot x(t) = \int e^{-A(s)}b(s) \, ds 
+$$
+$$
+x(t) = e^{A(t)} \int  e^{-A(s)}b(s) \, ds 
+$$
+Ha $\int e^{-A(s)}b(s) \, ds = B(s) + C$ akkor
+$$
+x(t) = e^{A(t)} \cdot (B(t) + C) = Ce^{A(t)} + B(t)e^{A(t)}
+$$
+Itt latszik hogy $Ce^{A(t)}$ a homogen eset osszes megoldasa es $B(t)e^{A(t)}$ az inhomogen eset egyik megoldasa.
+Tehat az $x'(t) = a(t)x + b(t)$ linearis inhomogen egyenlet megoldasa aloall a homogen egyenlet osszes megoldasanak es az inhomogen egyenlet partikularis megoldasanak osszegekent:
+$$
+x(t) = x_{h}(t) + x_{p}(t).
+$$
+
+#### Partikularis megoldas megtalalasa
+- Allandok varialasa
+- Probafuggveny modszere
+
+#### Masodrendu linearis KDE
+$$
+a(t)x''(t) + b(t)x'(t) + c(t)x(t) = g(t) \quad t \in I
+$$
+*Tetel:* Legyen $x_{p}$ az egyenlet egy rogzitett megoldasa. Ekkor az egyenlet osszes megoldasa eloall a $x = x_{h} + x_{p}$ alakban, ahol $x_{h}$ befutja a homogen egyenlet osszes megoldasat.
+
+*Def.:*
+$$
+W(x_{1}, x_{2}) = \left\lvert \begin{matrix}
+x_{1} & x_{2} \\
+x'_{1} & x'_{2} \\
+\end{matrix} \right\rvert 
+$$
+*Def.:* 
+$$
+S_{hom} = \{ x: ax'' + b' + cx = 0 \}
+$$
+
+*Tetel:* Legyenek $x_{1}, x_{2} \in S_{hom}$  es $W(x_{1}, x_{2}) \neq 0$. Ekkor $x_{1}, x_{2}$ bazis $S_{hom}$-ban.
+
 #### Masodrendu inhomogen eset
 #### Allando egyutthatos eset
 #### Atviteli elv
