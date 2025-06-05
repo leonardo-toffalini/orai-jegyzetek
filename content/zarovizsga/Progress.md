@@ -1,5 +1,5 @@
-Progress 4.5/10 
-`[========>...........]`
+Progress 5/10 
+`[=========>..........]`
 
 - [ ] 1) Algebra es szamelmelet
 
@@ -13,8 +13,8 @@ A vegen meg nincs kesz a diagonalizalhatosag es specialis matrixok es kvadratiku
 	- [ ] Integral szamitas
 	- [ ] Vegtelen sorok
 
-- [ ] 5) Alkalmazott analizis
-	- [ ] KDE
+- [x] 5) Alkalmazott analizis
+	- [x] KDE
 	- [x] PDE es numerikus modszerek (gradiens modszer es konjugalt gradiens modszer meg hianyos)
 
 - [ ] 6) Geometria

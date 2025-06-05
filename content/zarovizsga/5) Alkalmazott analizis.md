@@ -186,10 +186,30 @@ $$
 S_{hom} = \{ x: ax'' + b' + cx = 0 \}
 $$
 
-*Tetel:* Legyenek $x_{1}, x_{2} \in S_{hom}$  es $W(x_{1}, x_{2}) \neq 0$. Ekkor $x_{1}, x_{2}$ bazis $S_{hom}$-ban.
+*Tetel:* Legyenek $x_{1}, x_{2} \in S_{hom}$  es $W(x_{1}, x_{2}) \neq 0$. Ekkor $x_{1}, x_{2}$ bazis $S_{hom}$-ban. Avagy azt mondjuk hogy $x_{1}, x_{2}$ alaprendszer.
+
+#### Masodrendu homogen eset allando egyutthatokkal
+$$
+Ax''(t) + Bx'(t) + Cx(t) = 0, \quad A, B, C \in \mathbb{R}, A \neq 0
+$$
+Keressuk a megoldasok a $x(t) = ke^{-\lambda t}$ alakban, ekkor az eredeti egyenlet a kovetkezokeppen nez ki:
+$$
+Ak \lambda ^{2}e^{\lambda t} + Bk \lambda e^{\lambda t} + C k e^{\lambda t} = 0
+$$
+egyszerusitve az elozot kapjuk a kovetkezot:
+$$
+A\lambda ^{2} + B\lambda + C = 0
+$$
+ezt hivjuk az eredeti egyenlet karakterisztikus egyenletenek.
+1. $\lambda_{1}, \lambda_{2} \in \mathbb{R}$ es $\lambda_{1} \neq \lambda_{2}$ ekkor igy neznek ki a megoldasok $x_{1}(t) = e^{\lambda_{1}t}$ es $x_{2}(t) = e^{\lambda_{2}t}$
+2. $\lambda_{1}, \lambda_{2} \in \mathbb{R}$ es $\lambda_{1} = \lambda_{2}$ ekkor igy neznek ki a megoldasok $x_{1}(t) = e^{\lambda t}$ es $x_{2}(t) = \lambda e^{\lambda t}$
+3. $\lambda_{1}, \lambda_{2} \in \mathbb{C}$ es $\lambda_{1, 2} = \alpha \pm i \beta$ ekkor igy neznek ki a megoldasok $x_{1}(t) = e^{\alpha t} \cdot \cos(\beta t)$ es $x_{2}(t) = e^{\alpha t} \cdot \sin(\beta t)$
 
 #### Masodrendu inhomogen eset
-#### Allando egyutthatos eset
+$$
+x(t) = x_{h}(t) + x_{p}(t)
+$$
+
 #### Atviteli elv
 Minden $n$-ed rendu explicit KDE visszavezetheto egy $n$ darab egyenletbol allo elsorendu KDE rendszerre.
 $$
@@ -246,7 +266,23 @@ $$
 $$
 
 ### Stabilitasi fogalmak
+*Def.:* A kovetkezo feladat idoben allando megoldasat egyensulyi helyzetnek nevezzuk:
+$$
+\begin{cases}
+x'(t) = f(t, x(t)) \\
+x(t_{0}) = x_{0}
+\end{cases}
+$$
+Tehat $x^{*}$ egyensulyi helyzete a fentinek ha $(x^{*})' = 0$
 
+*Def.:* Azt mondjuk hogy az elozo feladat $x^{*}$ egyensulyi helyzete stabil, ha $\forall x_{0} \in \mathbb{R}^{d}: \forall \varepsilon > 0 \; \exists \delta >0$ ugy hogy ha $\lvert x_{0} - x^{*} \rvert < \delta$ akkor $\lvert x(t) - x^{*} \rvert < \varepsilon$  $\forall t > t_{0}$.
+*Def.:* Azt mondjuk hogy az elozo feladat $x^{*}$ egyensulyi helyzete instabil, ha nem stabil.
+*Def.:* Azt mondjuk hogy az elozo feladat $x^{*}$ egyensulyi helyzete aszimptotikusan stabil, ha stabil es $\lvert x_{0} - x^{*} \rvert < \delta$ eseten $\lim_{ t \to \infty } \lvert x(t) - x^{*} \rvert = 0$.
+
+Intuicio:
+- Stabil – korkoros mozgas.
+- Instabil – Kifele spiral mozgas.
+- Aszimptotikusan stabil – Befele spiral mozgas.
 
 ## b) PDE es num modszerek
 ### Kezdeti es peremertek feladatok fogalma
