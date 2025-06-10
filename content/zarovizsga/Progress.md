@@ -9,8 +9,8 @@ A vegen meg nincs kesz a diagonalizalhatosag es specialis matrixok es kvadratiku
 - [ ] 3) A matematika alapjai
 
 - [ ] 4) Analizis
-	- [ ] Differencial szamitas
-	- [ ] Integral szamitas
+	- [x] Differencial szamitas
+	- [x] Integral szamitas
 	- [ ] Vegtelen sorok
 
 - [x] 5) Alkalmazott analizis
