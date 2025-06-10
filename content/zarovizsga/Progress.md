@@ -1,5 +1,5 @@
-Progress 5/10 
-`[=========>..........]`
+Progress 10/15
+`[=========>.....]`
 
 - [ ] 1) Algebra es szamelmelet
 
@@ -10,7 +10,9 @@ A vegen meg nincs kesz a diagonalizalhatosag es specialis matrixok es kvadratiku
 
 - [ ] 4) Analizis
 	- [x] Differencial szamitas
+	Szelsoertek?
 	- [x] Integral szamitas
+	Potencial? Lebesgue-mertek nem bizti hogy az amit oran tanultunk...
 	- [ ] Vegtelen sorok
 
 - [x] 5) Alkalmazott analizis

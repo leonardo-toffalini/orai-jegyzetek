@@ -328,13 +328,40 @@ $$
 $$
 
 ### Vonalintegral
+*Def.:* Legyen $\gamma : [a, b] \to \mathbb{R}^{p}$ egy $\mathbb{R}^{p}$-be kepzo gorbe es legyen $f: \gamma([a, b]) \to \mathbb{R}^{p}$. Azt mondjuk, hogy az $\int _{\gamma} f \, dx$ vonalintegral letezik es erteke az $I$ szam, ha minden $\varepsilon >0$-hoz van olyan $\delta >0$, hogy valahanyszor $a = t_{0} < t_{1} < \dots < t_{n} = b$ egy $\delta$-nal finomabb felosztas, es $c_{i} \in [t_{i-1}, t_{j}]$ tetszoleges kozbulso pontok, akkor
+$$
+\left\lvert  I - \sum_{i=1}^{n} \langle f(\gamma(c_{i})), \; \gamma(t_{i}) - \gamma(t_{i-1}) \rangle   \right\rvert < \varepsilon.
+$$
+*Def.:* Legyen $G \subset \mathbb{R}^{p}$ nyilt halmaz es $f = (f_{1}, \dots, f_{p}) : G \to \mathbb{R}^{p}$. Azt mondjuk, hogy az $F: G \to \mathbb{R}$ fuggveny az $f$ primitiv fuggvenye, ha $F$ differencialhato $G$-ben es $F' = f$.
 
+*Tetel:* Ha $f = (f_{1}, f_{2}, \dots, f_{p}) : \gamma([a, b]) \to \mathbb{R}^{p}$ es az $\int _{\gamma} f_{j}  \, dx_{j}$ vonalintegral letezik minden $j$-re, akkor az $\int _{\gamma} f  \, dx$ vonalintegral is letezik es
+$$
+\int \limits_{\gamma} f \, dx = \sum_{j=1}^{p} \int \limits_{\gamma} f_{j} \, dx_{j}.
+$$
+
+*Tetel:* (Newton–Leibniz vonalintegralra) Legyen $G \subset \mathbb{R}^{p}$ nyil halmaz, es legyen $F: G \to \mathbb{R}$ az $f: G \to \mathbb{R}^{p}$ folytonos lekepezes primitiv fuggvenye. Ekkor minden $\gamma: [a, b] \to G$ folytonos es rektifikalhato gorbere $\int _{\gamma} f  \, dx = F(\gamma(b)) - F(\gamma(a))$.
+
+*Tetel:* Legyen $G \subset \mathbb{R}^{p}$ nemures nyilt halmaz, es legyen $f: G \to \mathbb{R}^{p}$ folytonos. Az $f$ fuggvenynek akkor es csak akkor van primitiv fuggvenye $G$-ben, ha barmely $G$-ben fekvo folytonos es rektifikalhato $\gamma$ zart gorvere $\int _{\gamma} f  \, dx = 0$.
 
 ### Potencial
 ???
 
 ### Lebesgue-mertek
-Kulsomertekesen definialjuk a Caratheodory kriteriummal?
+*Def.:* Adott $E \subset \mathbb{R}$ halmaz, amelyben barmely $I = [a,b]$ intervallum hossza $l(I) = b - a$. ekkor az $E$ halmaz kulso Lebesgue-merteke az infimuma
+$$
+\sum_{k=1}^{\infty}l(I_{k})
+$$
+-nak, ahol $I_{k}$ nyilt intervallumok sorozata, ugy hogy 
+$$
+E \subseteq \bigcup_{k=1}^{\infty} I_{k}.
+$$
+Az $E$ halmaz kulso Lebesgue-merteket $\lambda ^{*}(E)$-vel jeloljuk.
+
+*Def.:* Ha egy $E$ halmazra igaz, hogy barmely $A \subset \mathbb{R}$-re
+$$
+\lambda ^{*}(A) = \lambda ^{*}(A \cap E) + \lambda ^{*}(A \cap \overline{E}),
+$$
+akkor az $E$ halmaz Lebesgue-merteke megegyezik a kulso Lebesgue-mertekevel, vagyis $\lambda(E) = \lambda ^{*}(E)$. Amelyik halmazra nem teljesul az elozo kriterium, annak nincs Lebesgue-merteke.
 
 ### L^p terek
 *Def.:* Vezessuk be minden $X$-en merheto $f$ fuggvenyre az
