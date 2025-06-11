@@ -424,6 +424,36 @@ $$
 
 ## c) Vegtelen sorok
 ### Szamsorozatok es sorok
+*Def.:* Az $(a_{n})$ sorozat $b$-hez tart, ha minden $\varepsilon > 0$-ra van olyan $n_{0}$ szam, amelyre teljesul, hogy
+$$
+\lvert a_{n} - b_{n} \rvert < \varepsilon \quad \text{minden } \quad n> n_{0} \quad \text{indexre.}
+$$
+*Def.:* Azt mondjuk, hogy az $(a_{n})$ sorozat hatarerteke $\infty$, ha tetszoleges $P$-hez letezik olyan $n_{0}$ szam, amelyre teljesul, hogy
+$$
+a_{n} > P, \quad \text{ha} \quad n > n_{0}.
+$$
+*Def.:* A $\sum_{n=1}^{\infty} a_{n}$ vegtelen sor reszletosszegein az $s_{n} = a_{1} + \dots + a_{n}$ szamokat ertjuk. Ha a reszletosszegekbol kepzett $(s_{n})$ sorozat konvergens es hatarerteke $A$, akkor azt mondjuk, hogy a $\sum_{n=1}^{\infty} a_{n}$ vegtelen sor konvergens, es az osszege $A$.
+
+*Tetel:* A harmonikus sor divergens.
+*Tetel:* $\sum_{n=1}^{\infty} 1 / n^{p}$ konvergens $p \geq 2$-re. Nevezetesen $p = 2$-re az vegtelen sor erteke $\pi ^{2} / 6$.
+
+*Tetel:* (Cauchy-kriterium) A $\sum_{n=1}^{\infty} a_{n}$ vegtelen sor akkor es csak akkor konvergens, ha minden $\varepsilon > 0$-hoz letezik egy $n$ index ugy, hogy minden $N \leq n < m$-re
+$$
+\lvert a_{n+1} + a_{n+2} + \dots + a_{m} \rvert  < \varepsilon.
+$$
+*Def.:* A $\sum_{n=1}^{\infty} a_{n}$ vegtelen sort abszolut konvergensnek nevezzuk, ha a $\sum_{n=1}^{\infty} \lvert a_{n} \rvert$ sor konvergens.
+*Tetel:* 
+1. Minden abszolut konvergens sor konvergens.
+2. Egy abszolut konvergens sor barmely atrendezettje is abszolut konvergens, es az osszege ugyanaz mint az eredeti sore.
+*Def.:* Egy sor feltetelesen konvergens, ha konvergens de nem abszolut konvergens.
+*Tetel:* (Riemann atrendezes) Ha a $\sum_{n=1}^{\infty} a_{n}$ sor feltetelesen konvergens, akkor az atrendezettjei kozott van olyan, amelyiknek az osszege vegtelen, van olyan, amelyiknek osszege minusz vegtelen, minden $A \in \mathbb{R}$-re van olyan, amelyik konvergens es az osszege $A$, es olyan is van, amelyik divergens es nincs osszege.
+
+*Megj.:* Peldaul a
+$$
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \dots
+$$
+feltelesen konvergens, mert az tagonkenti abszolut sor a harmonikus sor. Ezt at lehet rendezni ugy hogy barmit kapjuk.
+
 ### Fuggvenysorozatok es sorok
 ### Hatvanysor
 ### Taylor sor
