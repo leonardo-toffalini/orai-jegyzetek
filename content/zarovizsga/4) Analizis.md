@@ -455,9 +455,150 @@ $$
 feltelesen konvergens, mert az tagonkenti abszolut sor a harmonikus sor. Ezt at lehet rendezni ugy hogy barmit kapjuk.
 
 ### Fuggvenysorozatok es sorok
+*Def.:* Legyenek $f_{1}, f_{2}, \dots$ a $H$ halmazon ertelmezett valos erteku fuggvenyek. Azt mondjuk, hogy az $(f_{n})$ fuggvenysorozat pontokent konvergal az $f: H \to \mathbb{R}$ fuggvenyhez, ha $\lim_{ n \to \infty }f_{n}(x = f(x))$ minden $x \in H$-re. Jelolesben $f_{n} \to f$.
+
+*Megj.:* Az $f_{n}(x) = x^{n}$ fuggvenysorozat az
+$$
+f (x) = \begin{cases}
+0 & 0 \leq x < 1 \\ \\
+1 & x = 1
+\end{cases}
+$$
+fuggvenyhez. Innen latszik hogy folytonos fuggvenyek pontonkenti limeszi nem feltetlenul folytonos.
+
+*Def.:* Legyenek $f_{1}, f_{2}, \dots$ a $H$ halmazon ertelmezett valos erteku fuggvenyek. Azt mondjuk, hogy az $(f_{n})$ fuggveny sorozat egyenletesen konvergal az $f: H \to \mathbb{R}$ fuggvenyhezm ha minden $\varepsilon > 0$-hoz van olyan $n_{0}$, hogy $\lvert f_{n}(x) - f(x) \rvert < \varepsilon$ minden $x \in H$-ra es minden $n > n_{0}$-ra.
+
+*Def.:* (Cauchy-kriterium) Az $(f_{n})$ fuggvenysorozat akkor es csak akkor konvergal egyenletesen a $H$ halmaon, ha minden $\varepsilon > 0$ van olyan $N$, hogy
+$$
+\lvert f_{n}(x) - f_{m}(x) \rvert < \varepsilon
+$$
+teljesul minden $x \in H$ es $n, m \geq N$ eseten.
+
+*Tetel:* Folyonos fuggveny egyenletes limesze folytonos.
+*Kov.:* A folytonos fuggvenyek tere az egyenletes konvergenciaval teljes ter, mivel minden Cauchy sorozat egyenletesen konvergens.
+
+*Tetel:* $f_{n}$ integralhato fuggvenyek sorozatanak egyenletes limesze $f$ is integralhato es az integralja a kovetkezo
+$$
+\int _{a}^{b}f(x) \, dx = \lim_{ n \to \infty } \int _{a}^{b}f_{n}(x) \, dx .
+$$
+*Def.:* Legyenek $f_{1}, f_{2}, \dots$  a $H$ halmazon ertelmezett valos erteku fuggvenyek. Azt mondjuk, hogy a $\sum f_{n}$ fuggvenysor konvergens es az osszege $f : H \to \mathbb{R}$, ha a $\sum f(x)$ sor konvergens es az osszege $f(x)$ minden $x \in H$-ra.
+*Def.:* Tegyuk fel, hogy $\sum f_{n} = f$ a $H$ halmazon. Azt mondjuk, hogy a $\sum f_{n}$ fuggvenysor egyenletesen konvergens $H$-n, ha az $s_{n} = \sum_{i=1}^{n}f_{i}$ fuggvenyekbol allo fuggvenysorozat egyenletesen konvergal az $f$ fuggvenyhez $H$-n.
+*Tetel:* (Cauchy-kriterium) A $\sum f_{n}$ fuggvenysor akkor es csak akkor konvergal egyenletesen a $H$ halmazon, ha minden $\varepsilon > 0$-hoz van olyan $N$, hogy
+$$
+\left\lvert  \sum_{i=n+1}^{m}f_{i}(x)  \right\rvert  < \varepsilon
+$$
+teljesul minden $x \in H$ es $N \leq n < m$ eseten.
+
+*Tetel:* (Weierstrass-kriterium) Ha vannak olyan $a_{n}$ szamok melyekre $\sum a_{n}$ konvergens es $\lvert f_{n}(x) \rvert \leq a_{n}$ minden $x \in H$-ra es $n > n_{0}$ eseten, akkor a $\sum f_{n}$ fuggvenysor egyenletesen konvergal a $H$ halmazon.
+*Megj.:* Majoraltuk a fuggvenysort az $a_{n}$ szamokkal.
+
+*Tetel:* (Tagonkenti integralhatosag) Az $[a, b]$ intervallumon integralhato $f_{n}$ fuggvenyekbol allo $\sum f_{n}$ sor ha egyenletesen konvergal $f$-hez, akkor $f$ is integralhato $[a, b]$ es az integralja a kovetkezo:
+$$
+\int _{a}^{b}f(x) \, dx  = \sum_{n=1}^{\infty} \int _{a}^{b}f_{n}(x) \, dx .
+$$
+
+
+*Tetel:* (Tagonkenti differencialhatosag) Legyenek az $f_{n}$ fuggvenyek folytonosan differencialhatoak a korlatos $I$ intervallumon, es tegyuk fel, hogy
+1. $\sum f'_{n} = g$ egyenletesen az $I$ intervallumon, es
+2. letezik legalabb egy $x_{0} \in I$, amelyre a $\sum f_{n}(x_{0})$ sor konvergens.
+Ekkor az $\sum f_{n}$ sor egyenletesen konvergal $I$-n. Ha $\sum f_{n} = f$, akkor $f$ differencialhato es 
+$$
+\left( \sum_{n=1}^{\infty}f_{n} \right)'(x) = \sum_{n=1}^{\infty} f_{n}'(x)
+$$
+minden $x \in I$-re.
+
 ### Hatvanysor
+*Def.:* Az $\sum_{n=0}^{\infty} a_{n} x^{n}$ alaku sorokat hatvanysoroknak hivunk.
+*Def.:* Egy hatvanysor konvergencia sugaran azon $x \in \mathbb{R}$ szamok halmazat ertjuk melyekre konvergens a sor. Jel.: $T$.
+*Def.:* Az $r = \sup T$ mennyiseget a hatvanysor konvergenciasugaranak hivunk.
+*Tetel:* Legyen $R$ a konvergenciasugara egy adott hatvanysornak.
+1. Ha $R = 0$ akkor a konvergenciatartomany $\{  0 \}$.
+2. Ha $0 < R < \infty$ akkor a sor konvergenciatartomanya a kovetkezok kozul egy: $[-R, R], [-R, R), (-R, R], (-R,R)$.
+3. Ha $R = \infty$ akkor a sor konvergenciatartomany az egesz szamegyenes.
+*Tetel:* (Cauchy-Hadamard-formula) A $\sum a_{n}x^{n}$ hatvanysor konvergenciasugara
+$$
+R = \frac{1}{\limsup_{ n \to \infty } \sqrt[n]{ \lvert a_{n} \rvert  } }.
+$$
+
 ### Taylor sor
+*Def.:* Ha $f$ $n$-szer differencialhato az $x_{0}$ pontban akkor a kovetkezot az $n$-edik Taylor polinomjanak hivjuk az $x_{0}$ pontban:
+$$
+\sum_{k=0}^{n} \frac{f^{(k)}(x_{0})}{k!} (x - x_{0})^{k}.
+$$
+*Def.:* Ha $f$ akarhanyszor differencialhato az $x_{0}$ pontban akkor a kovetkezot a Taylor soranak nevezzuk az $x_{0}$ pontban:
+$$
+\sum_{k=0}^{\infty} \frac{f^{(k)}(x_{0})}{k!} (x - x_{0})^{k}.
+$$
+*Def.:* Azt mondjuk, hogy $f$ analitikus az $x_{0}$ pontban ha van Taylor sora $x_{0}$ ban es az megegyezik $f(x_{0})$-al.
+
 ### Komplex fuggvenyek es hatvanysorok
+*Def.:* A komplex szinusz fuggvenyt a kovetkezokeppen definialjuk:
+$$
+\sin(z) = z - \frac{z^{3}}{3!} + \frac{z^{5}}{5!} - \frac{z^{7}}{7!} \dots
+$$
+*Def.:* A komplex koszinusz fuggvenyt a kovetkezokeppen definialjuk:
+$$
+\cos (z) = 1 - \frac{z^{2}}{2!} + \frac{z^{4}}{4!} - \frac{z^{6}}{6!} \dots
+$$
+*Tetel:* A komplex szinusz es koszinusz fuggvenyek analitikusak, avagy holomorfak.
+
 ### Komplex exponencialis fuggveny
+*Def.:* A komplex exponencialis fuggvenyt a kovetkezokeppen definialjuk:
+$$
+e^{z} = \sum_{n=0}^{\infty} \frac{z^{n}}{n!}.
+$$
+*Tetel:* (Euler formula)
+$$
+e^{iz} = \cos z + i \sin z
+$$
+*Tetel:*
+$$
+\cos z = \frac{e^{iz} + e^{-iz}}{2}
+$$
+$$
+\sin z = \frac{e^{iz} - e^{-iz}}{2i}
+$$
+
 ### Fourier sorok
+*Def.:* Az
+$$
+a_{0} + \sum_{n=1}^{\infty} (a_{n} \cos nx + b_{n} \sin nx)
+$$
+alaku sorokat trigonometrikus soroknak nevezzuk.
+
+*Motivacio:* Nyilvan ha a fenti sor konvergens mindenutt akkor az osszeg $2\pi$ szerint periodikus. Vajon eloall az osszes $2\pi$ periodikus fugveny ilyen alakban? A valasz igenlo, de mi csak akkor latjuk be amikor a trigonometrikus sor egyenletesen konvergens.
+
+*Tetel:* Tegyuk fel, hogy a fenti trigonometrikus sor egyenletesen konvergens $\mathbb{R}$-en. Ha a sor osszege $f(x)$, akkor $f$ folytonos, es fennalnak az
+$$
+a_{0} = \frac{1}{2\pi} \int _{0}^{2\pi} f(x) \, dx 
+$$
+es
+$$
+a_{n} = \frac{1}{\pi} \int _{0}^{2\pi}f(x) \cos nx \, dx 
+$$
+es
+$$
+b_{n} = \frac{1}{\pi} \int _{0}^{2\pi} f(x) \sin nx \, dx 
+$$
+osszefuggesek.
+
+*Megj.:* Tehat az elozo tetel azt mondja ki, hogy ha a trigonometrikus sor egyenletesen konvergens es osszege $f(x)$ akkor $f$ folytonos es az egyutthatok egyertelmuan eloallnak egyszeru hatarozott integralok eredmenyekent.
+
+*Def.:* Tegyuk fel, hogy $f: \mathbb{R} \to \mathbb{R}$ periodikus $2\pi$ szerint es integralhato $[0, 2\pi]$-ben. Az elozo formulak altal definalt szamokat az $f$ Fourier egyutthatoinak hivjuk, es a veluk felirt sort az $f$ Fourier soranak.
+
+*Megj.:* Ha $n \geq 1$ egyesz, akkor
+$$
+\int _{0}^{2\pi} \sin ^{2}nx \, dx = \int _{0}^{2\pi} \cos ^{2}nx \, dx = \pi.
+$$
+Tovabba ha $n$ es $m$ egyeszek, akkor
+$$
+\int _{0}^{2\pi} \sin nx \cos mx \, dx = 0.
+$$
+Es meg ha $n$ es $m$ kulonbozo nemnegativ egeszek, akkor
+$$
+\int _{0}^{2\pi} \cos nx \cos mx \, dx = \int _{0}^{2\pi} \sin nx \sin mx \, dx = 0.
+$$
+
+Egy szo mint szaz: a trigonometrikus bazis ortonormalt bazis.
+
  
