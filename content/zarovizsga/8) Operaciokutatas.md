@@ -8,8 +8,22 @@
 ### Linearis egyenlotlensegrendszerek tulajdonsagai
 
 ### Bazismegoldasok, eros bazismegoldasok
+
 ### Alkalmazasai
+
 ### Linearis optimalizalas
+*Tetel:* (Iranymenti korlatossag tetele)
+*Tetel:* Ha egy egyenlotlenseg rendszer megoldhato akkor van eros bazis megoldasa.
+*Def.:* Linearis programozasi feladat
+$$
+\begin{aligned}
+\text{s.t.} \quad Ax \leq b \\
+\quad \max cx \\
+\end{aligned}
+$$
+Tehat keresunk egy olyan $x$-et amelyre teljesul egy egyenlotlenseg rendszer es maximalizalja a $c \cdot x$ celfuggvenyt.
+*Megj.:* Meglepoen sok dolog irhato fel ebben az egyszeru alakban.
+
 ### Kupok
 *Def.:* (kup) A $C$ nemures halmaz kup ha $\alpha \cdot x \in C$ minden $\alpha \in \mathbb{R}^{+}$ es $x \in C$-re.
 *Def.:* (konvex kup) A $C$ kup konvex ha $x + y \in C$ minden $x, y \in C$-re.
@@ -27,7 +41,7 @@ C = \{ x: Bx \leq 0 \}.
 $$
 
 ### Politopok
-*Def.:* Veges sok pont konves burka politop.
+*Def.:* Veges sok pont konvex burka politop.
 
 ### Poliederek
 *Def.:* Veges sok felter metszete polieder.
@@ -38,5 +52,15 @@ $$
 *Tetel:* (Farkas lemma) Az $\{ Ax = b : x \geq 0 \}$ rendszernak pontosan akkor van megoldasa, ha az $\{ yA \geq 0: yb < 0 \}$ rendszernek nincs.
 
 ### Szimplex modszer
+
+
 ### Teljesen unimodularis (TU) matrixok
+*Def.:* Azt mondjuk, hogy a $Q$ egeszerteku matrix teljesen unimodularis, ha minden aldeterminansa $0$, $-1$, vagy $+1$.
+*Tetel:* Ha $Q$ TU matrix, akkor $(Q, I)$ is TU matrix, ahol $(A, B)$ azt jeloli hogy $A$ belle konkatenaljuk $B$-t.
+*Tetel:* Ha $Q$ TU matrix, akkor $(Q, -Q)$ is TU matrix.
+*Tetel:* Digraf incidencia matrixa TU matrix.
+*Tetel:* Paros graf incidencia matrixa TU matrix.
+
 ### TU matrixok alkalmazasai
+*Tetel:* Tetszoleges $M$ TU matrixszal megadott egyenlotlenseg rendszer eseten, ha a $b$ jobboldali korlatozo vektor egesz ($Ax \leq b$), akkor minden eros bazis megoldas egesz
+

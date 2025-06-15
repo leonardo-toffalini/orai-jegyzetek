@@ -1,9 +1,9 @@
 Progress 13/17
-`[============>....]`
+`[=============>...]`
 
 - [ ] 1) Algebra es szamelmelet
 - [x] 2) Linearis algebra  (A vegen meg nincs kesz a diagonalizalhatosag es specialis matrixok es kvadratikus alakok reszek.)
-- [ ] 3) A matematika alapjai
+- [x] 3) A matematika alapjai
 - [x] 4.a) Differencial szamitas
 - [x] 4.b) Integral szamitas (Potencial? Lebesgue-mertek nem bizti hogy az amit oran tanultunk...)
 - [x] 4.c) Vegtelen sorok
