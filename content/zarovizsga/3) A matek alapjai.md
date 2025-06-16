@@ -56,6 +56,7 @@ Ezekkel a szeletekkel tudjuk reprezentalni a valos szamokat, pl a $A = \{  a \in
 - irreflexiv, azaz $\not \exists a \in A$, melyre $a < a$,
 - tranzitiv, azaz $a, b, c \in A$ es $a < b$ es $b < c$, akkor $a < c$,
 - trichotomia: $a, b \in A$ akkor a kovetkezo harom kozul pontosan egy teljesul: $a < b$, $a > b$, $a = b$.
+
 *Def.:* Az $(A, <)$ parost rendezett halmaznak hivunk.
 *Def.:* Az $(A, <)$ rendezett halmzt jol rendezettnek hivunk, ha minden nemures reszhalmazanak van legkisebb eleme.
 *Tetel:* Minden halmaz jolrendezheto.
