@@ -53,11 +53,86 @@ $$
 *Tetel:* (Lagrange azonossag) ...
 
 ### Konvexitas alapfogalmai
+*Def.:* Az $A \subseteq \mathbb{R}^{d}$ halmaz konvex, ha minden $a, b \in A$-ra $[a, b] \in A$.
+*Tetel:* Konvex halmazok tetszoleges csaladjanak mettszete is konvex.
+*Def.:* A $H \subseteq \mathbb{R}^{d}$ halmaz konvex burkan a legszukebb konvex halmazt ertjuk mely tartalmazza $H$-t.
+*Tetel:* Minden $H \subseteq \mathbb{R}^{d}$ halmaznak egyertelmuen letezik a konvex burka.
+*Def.:* Az $a_{1}, \dots, a_{n} \in \mathbb{R}^{d}$ pontok konvex konbinaciojan a
+$$
+\sum_{i=1}^{n} \alpha_{i} \cdot a_{i}
+$$
+szamot ertjuk, ahol $\alpha_{i} \in \mathbb{R}^{+}_{0}$ es $\sum \alpha_{i} = 1$.
+*Tetel:* A $K \subseteq \mathbb{R}^{d}$ halmaz pontosan akkor konvex, ha tetszolegesen sok pontjanak minden konvex kombinacioja benne van $K$-ban.
+*Tetel:* Tetszoleges $H \subseteq \mathbb{R}^{d}$ halmaz konvex burka eloall, mint a halmaz opntjainak osszes konvex kombinaciojanak halmaza.
+*Tetel:* (Radon lemma) Tetszoleges $d+2$ darab pont $\mathbb{R}^{d}$-ben felbonthato ket halmaz diszjunkt uniojara ugy hogy a ket halmaz konvex kombinaciojanak mettszete nem ures.
+*Tetel:* (Helly tetel) Adott $K_{1}, \dots, K_{n} \subseteq \mathbb{R}^{d}$ konvex halmaz ugy hogy $n \geq d+1$. Ekkor ha barmaly $d+1$ darab halmaz mettszete nem ures, akkor az osszes $n$ darab mettszete sem ures.
+
 ### Elvalasztasi tetelek
+*Tetel:* Legyen $K \subset \mathbb{R}^{d}$ kompakt konvex halmaz, legyen $p \in \mathbb{R}^{d} - K$ kulso pont. Ekkor letezik $y \in \mathbb{R}^{d}$ es $\alpha \in \mathbb{R}$ melyre $y \cdot p + \alpha > 1$ es $y \cdot x + \alpha \leq 1$.
+*Megj.:* Magyarul ez azt jelenti hogy ha van egy kompakt konvex halmaz es egy pont ami ezen kivul van, akkor letezik olyan $y$ normalvektoru hipersik amely elvalasztja a konvex halmazt a kulso ponttol. Tehat a konvex halmaz a hipersik egyik oldalan van, mig a pont a masikon.
+*Tetel:* Legyenek $K$ es $L$ diszjunkt kompakt konvex halmazok $\mathbb{R}^{d}$-ben. Ekkor letezik olyan hipersik, mely altal meghatarozott ket nyilt felter egyike $K$-t, a masik $L$-et tartalmazza.
+
 ### Konvex halmazok Hausdorff-tavolsaga
+*Def.:* Az $X, Y \subseteq \mathbb{R}^{d}$ halmazok Hausdorff tavolsagan a kovetkezo szamot ertjuk:
+$$
+d(X, Y) := \inf \{ \delta > 0 : Y \subseteq X + B(0, \delta), X \subset Y + B(0, \delta) \}.
+$$
+*Megj.:* Tehat az $X$ es $Y$ halmazok Hausdorff tavolsaga ugy kepzelheto el mint hogy mennyire tavol van a ket legtavolabbi pont. Avagy mennyire kell felfujnunk $X$-et hogy beleferjen $Y$ es forditva.
+*Tetel:* Az $\mathbb{R}^{d}$-beli konvex kompakt halmazokon a Hausdorff tavolsag egy metrika.
+*Tetel:* Sot, nem csak metrika hanem teljes metrikus teret alkot.
+
 ### Eueler-fele poliedertetel
+Minden konvex poliederre fennall a kovetkezo formula:
+$$
+V - E + F = 2.
+$$
+Ugyanez a formula fennall minden sikbarajzolhato grafra is, es az ugras poliederekrol sikbarajzolhato grafokra nagyon szep. Rakjuk bele a poliedert egy gombbe es vetitsuk le a polieder oldalait eleit es csucsait a korulotte levo gomb falaira. Ezt a gombot nyissuk ki egy pontjanal es huzzuk szet vegtelenul ameddig nem kapunk egy sikot. Az igy kapott sikon rajta lesz a konvex polieder grafja, ahol a csucsok pontok, az elek elek, az oldalak tartomanyok a grafban.
+
 ### Szabalyos poliederek
+Olyan konvex poliederek, melyeknek minden oldala egybevago es minden csucsa egyforma, tehat ugynannyi lap talalkozik es ugyanabban a szogben.
+
 ### Euklideszi ter
+$\mathbb{R}^{n}$ ellatva a skalaris szorzattal
+
 ### Projektiv sik
+*Def.:* A $V_{\mathbb{F}}$ vektorter projektivizaltja $P(V) = (V \setminus \{ 0 \}) \diagup \sim$, ahol $u, v \in V - \{ 0 \}$ es $u \sim v$ ha $\exists \lambda \in \mathbb{F}: v = \lambda u$.
+*Megj.:* Magyarul a fenti definicio azt jelenti hogy a projektiv ter elemei a vektorter origon atmeno egyenesei.
+*Def.:* Legyen $U \leq V$ linearis alter, ekkor $P(U)$ projektiv alter, es $\operatorname{dim}P(U) = \operatorname{dim}U - 1$.
+*Def.:* Legyen $X \subseteq P(V)$. Ekkor az $X$ altal generalt projektiv alteren az $X$-et tartalmazo legszukebb projektiv alteret ertjuk.
+*Tetel:* Tetszoleges $X \subseteq P(V)$ altal generalt projektiv alter egyertelmuen letezik. Jelolesben $\langle X \rangle$.
+*Def.:* Legyen $U \leq V$ linearis alter, ekkor $U$ annulatoran $U^{\perp}$ a kovetkezot ertjuk:
+$$
+U^{\perp} := \{ \alpha \in V^{*}: \alpha|_{U} = 0 \}.
+$$
+*Hogyan gondoljunk a projektiv sikra?*
+1. pontok: $\mathbb{R}^{3}$ origon atmeno egyenesei, egyenesek: $\mathbb{R}^{3}$ origon atmeno sikjai
+2. pontok: $S^{2}$ atellenes pont parjai, egyenesek: $S^{2}$ fokorei
+3. fogok egy sikot $\mathbb{R}^{3}$-ban, a pontok az origobol indulo sugarak es ezen sik metszetei, a sikok az egy origobol kiindulo sik es a sik metszete. A pontokhoz meg hozza kell venni a sikkal parhuzamos egyeneseket mint idealis pontokat.
+
 ### Kvaterniok
+$$
+i^{2} = j^{2} = k^{2} = ijk
+$$
+*Tetel:* (Frobenius) Osszesen harom veges dimenzios nullosztomentes asszociativ valos algebra letezik: $\mathbb{R}, \mathbb{C}, \mathbb{H}$.
+
 ### SO(3) csoport
+Azon ortogonalis $3 \times 3$ matrixok csoportja melyeknek a determinansa $1$. Ezek pont a forgatasok $\mathbb{R}^{3}$-ban.
+$$
+\begin{aligned}
+& R_x(\theta)=\left[\begin{array}{ccc}
+1 & 0 & 0 \\
+0 & \cos \theta & -\sin \theta \\
+0 & \sin \theta & \cos \theta
+\end{array}\right] \\
+& R_y(\theta)=\left[\begin{array}{ccc}
+\cos \theta & 0 & \sin \theta \\
+0 & 1 & 0 \\
+-\sin \theta & 0 & \cos \theta
+\end{array}\right] \\
+& R_z(\theta)=\left[\begin{array}{ccc}
+\cos \theta & -\sin \theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+0 & 0 & 1
+\end{array}\right]
+\end{aligned}
+$$
