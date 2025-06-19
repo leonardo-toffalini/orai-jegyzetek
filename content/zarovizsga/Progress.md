@@ -1,4 +1,4 @@
-Progress 15/17
+Progress 16/17
 `[===============>.]`
 
 - [ ] 1) Algebra es szamelmelet
