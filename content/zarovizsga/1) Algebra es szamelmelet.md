@@ -61,15 +61,20 @@ ahol $g(x)$ valami polinom.
 $$
 n = \prod p_{i}^{\alpha_{i}}.
 $$
-*Def.:* Azt mondjuk, hogy az $R$ gyuruben ervenyes a szamelmelet alaptetele, ha mKR minden nem nulla es nem egyseg eleme sorrendtol es asszocialtsagtol eltekintve egyertelmuen folirhato $R$ irreducibilis elemeinek szorzatakent.
+*Def.:* Legyen $R$ szokasos gyuru. A $p \in R$ elemet irreducibilisnek nevezzuk, ha nem nulla, nem egyseg, es $p$-nek nincs nem-trivialis felbontasa.
+*Def.:* Azt mondjuk, hogy az $R$ gyuruben ervenyes a szamelmelet alaptetele, ha $R$ minden nem nulla es nem egyseg eleme sorrendtol es asszocialtsagtol eltekintve egyertelmuen folirhato $R$ irreducibilis elemeinek szorzatakent.
+(Szokasos gyuru = kommutativ nullosztomentes egysegelemes gyuru)
 
-### Euklideszi algo
+### Euklideszi algoritmus
 ```python
 def gcd(a, b):
   if b == 0:
     return a
   return gcd(b, a % b)
 ```
+
+*Tetel:* (Bezout) Legyen $a, b \in \mathbb{N}$ es $d = \operatorname{gcd}(a, b)$. Ekkor letezik $\lambda, \mu \in \mathbb{N}$ ugy, hogy $\lambda \cdot a + \mu \cdot b = d$.
+A fenti allitasban szereplo egyutthatokat a gcd-vel egyutt is ki lehet szamolni a kiterjesztett euklideszi algoritmussal
 
 ### Irreducibilitas
 *Def.:* Legyen $R$ szokasos gyuru. A $p \in R$ elemet irreducibilisnek nevezzuk, ha nem nulla, nem egyseg, es $p$-nek nincs nemtrivialis felbontasa.
