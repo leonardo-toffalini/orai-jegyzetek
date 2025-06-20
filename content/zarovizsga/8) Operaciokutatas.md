@@ -108,7 +108,7 @@ $$
 
 ### Farkas-lemma
 *Tetel:* $\exists x : Ax \leq b \iff \not \exists y : yA = 0, \quad yb < 0, \quad y \geq 0$.
-*Tetel:* Az $\{ Ax = b : x \geq 0 \}$ rendszernak pontosan akkor van megoldasa, ha az $\{ yA \geq 0: yb < 0 \}$ rendszernek nincs.
+*Tetel:* Az $\{ Ax = b : x \geq 0 \}$ rendszernek pontosan akkor van megoldasa, ha az $\{ yA \geq 0: yb < 0 \}$ rendszernek nincs.
 
 ### Szimplex modszer
 Huh... Vizualok nelkul nehez leirni szoban, de
