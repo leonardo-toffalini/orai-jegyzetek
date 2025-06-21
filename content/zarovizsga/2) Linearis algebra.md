@@ -185,6 +185,14 @@ $$
 *Tetel:* Egy $\lambda \in T$ skalar akkor es csak akkor sajaterteke $\mathcal{A}$-nak ha gyoke $k_{\mathcal{A}}(x)$-nek.
 *Biz.:* $\exists v \in V: \mathcal{A}x = \lambda  \iff (\mathcal{A} - \lambda \mathcal{E})x = 0 \iff [\mathcal{A} - \lambda\mathcal{E}] \cdot [x] = [0] \iff \det([\mathcal{A} - \lambda \mathcal{E}]) = 0 \iff k_{\mathcal{A}}(x) = 0$
 
+*Def.:* Az $f$ polinom az $\mathcal{A}$ transzformacio minimalpolinomja, ha $f$ a legkisebb foku olyan polinom, amelynek $\mathcal{A}$ a gyoke. Jelolesben $m_{\mathcal A}$.
+*Tetel:* Minden transzformacionak letezik minimalpolinomja, es konstans szorzo erejeig egyertelmu.
+*Tetel:* (Cayley-Hamilton) A minimalpolinom osztoja a karakterisztikus polinomnak, tehat
+$$
+m_{\mathcal A} \mid k_{\mathcal A}.
+$$
+*Tetel:* Minden $\lambda \in T$-re $m_{\mathcal A}(\lambda) = 0$ pontosan akkor ha $\lambda$ sajaterteke $\mathcal A$-nak. Tehat a minimalpolinom $T$-beli gyokei pontosan a sajatertekek.
+
 ### Diagonalizalhatosag
 *Tetel:* Egy linearis transzformacio matrixa akkor es csak akkor diagonalis ha a sajatvektorok altal alkotott bazisban irtuk fel. Ekkor a foatloban allo elemek pont a megfelelo bazisvektorokhoz tartozo sajatertekek.
 *Biz.:*
@@ -199,14 +207,16 @@ $$
 pontosan akkor teljesul ha $\mathcal{A}a_{1} = \lambda_{1}, \; \mathcal{A}a_{2} = \lambda_{2}, \; \dots,\; \mathcal{A}a_{n} = \lambda_{n}$
 
 ### Normalis transzformaciok
-$$
-A = A^{*}
-$$
+*Def.:* Az $A$ transzformacio normalis, ha $A = A^{*}$.
+*Tetel:* Egy veges dimenzios komplex euklideszi terben akkor es csak akkor letezik az mKA transzformacionak ortonormalt sajatvektorokbol allo bazusa, ha $A$ normalis.
 
 ### Uniter transzformaciok
 $$
 AA^{*} = A^{*}A = I
 $$
+*Tetel:* A fenti definicio ekvivalens a kovetkezokkel:
+- $Ax \cdot Az = x \cdot z$
+- $\| Ax \| = \| x \|$
 
 ### Onadjungalt transzformaciok
 $$
@@ -214,4 +224,22 @@ A = A^{*}
 $$
 
 ### Kvadratikus alakok
+*Def.:* Bilinearis fuggveny.
+*Tetel:*
+$$
+A(u, v) = [u]^{T}[A][v].
+$$
+*Def.:* $A$ szimmetrikus ha $A(u,v) = A(v, u)$.
+*Tetel:* Szimmetrikus bilinearis fuggvenyhez letezik olyan bazis, melyben a matrixa diagonalis.
+*Tetel:* Sot, olyan is amiben a foatloban csak $-1, 0, +1$ elemek vannak.
+*Tetel:* (Tehetetlensegi tetel) A szimmetrikus bilinearis fuggveny diagonalis matrixaban a pozitiv, negativ, es nulla elemek szama fuggetlen a bazistol.
+
+*Def.:* Adott $A$ bilinearis fuggveny, ekkor az $\bar{A}(x) = A(x, x)$ fuggvenyt az $A$-hoz tartozo kvadratikus alaknak nevezzuk.
+*Tetel:* Adott bazisban
+$$
+\bar{A}(x) = [x]^{T}[A][x].
+$$
+*Megj.:* Egy bilinearis fuggveny egyertelmuen meghataroz egy kvadratikus alakot, viszont ez visszafele nem feltetlenul igaz. Csak akkor all fenn visszafele is az allitas ha szimmetrikus a fuggveny.
+
+*Def.:* poz def, neg def, poz szemi def, neg szemi def, indefinit.
 

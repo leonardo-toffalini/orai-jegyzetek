@@ -8,7 +8,7 @@ $$
 $$
 u \cdot v = \lvert u \rvert \cdot \lvert v \rvert \cdot \cos \varphi.
 $$
-*Kov.:* $u \cdot b = 0 \iff u \perp v$.
+*Kov.:* $u \cdot v = 0 \iff u \perp v$.
 *Kov.:* Adott $a \in \mathbb{R}^{n}$, minden $v \in \mathbb{R}^{n}$ vektor felbonthato $v = v_{p} + v_{m}$ komponensekre, ahol $v_{p}$ parhuzamos $a$-val es $v_{m}$ meroleges $a$-ra. Tovabba a kovetkezo kepletek adjak a komponenseket:
 $$
 v_{p} = \lambda a, \quad \text{ahol } \lambda = \frac{a \cdot v}{\lvert a \rvert ^{2}}.
@@ -63,7 +63,7 @@ $$
 $$
 szamot ertjuk, ahol $\alpha_{i} \in \mathbb{R}^{+}_{0}$ es $\sum \alpha_{i} = 1$.
 *Tetel:* A $K \subseteq \mathbb{R}^{d}$ halmaz pontosan akkor konvex, ha tetszolegesen sok pontjanak minden konvex kombinacioja benne van $K$-ban.
-*Tetel:* Tetszoleges $H \subseteq \mathbb{R}^{d}$ halmaz konvex burka eloall, mint a halmaz opntjainak osszes konvex kombinaciojanak halmaza.
+*Tetel:* Tetszoleges $H \subseteq \mathbb{R}^{d}$ halmaz konvex burka eloall, mint a halmaz pontjainak osszes konvex kombinaciojanak halmaza.
 *Tetel:* (Radon lemma) Tetszoleges $d+2$ darab pont $\mathbb{R}^{d}$-ben felbonthato ket halmaz diszjunkt uniojara ugy hogy a ket halmaz konvex kombinaciojanak mettszete nem ures.
 *Tetel:* (Helly tetel) Adott $K_{1}, \dots, K_{n} \subseteq \mathbb{R}^{d}$ konvex halmaz ugy hogy $n \geq d+1$. Ekkor ha barmaly $d+1$ darab halmaz mettszete nem ures, akkor az osszes $n$ darab mettszete sem ures.
 
