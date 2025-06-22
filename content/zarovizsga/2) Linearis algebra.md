@@ -208,7 +208,7 @@ pontosan akkor teljesul ha $\mathcal{A}a_{1} = \lambda_{1}, \; \mathcal{A}a_{2} 
 
 ### Normalis transzformaciok
 *Def.:* Az $A$ transzformacio normalis, ha $A = A^{*}$.
-*Tetel:* Egy veges dimenzios komplex euklideszi terben akkor es csak akkor letezik az mKA transzformacionak ortonormalt sajatvektorokbol allo bazusa, ha $A$ normalis.
+*Tetel:* Egy veges dimenzios komplex euklideszi terben akkor es csak akkor letezik az $A$ transzformacionak ortonormalt sajatvektorokbol allo bazisa, ha $A$ normalis.
 
 ### Uniter transzformaciok
 $$
@@ -230,6 +230,7 @@ $$
 A(u, v) = [u]^{T}[A][v].
 $$
 *Def.:* $A$ szimmetrikus ha $A(u,v) = A(v, u)$.
+*Tetel:* Szimmetrikus bilinearis fuggveny matrixa szimmetrikus.
 *Tetel:* Szimmetrikus bilinearis fuggvenyhez letezik olyan bazis, melyben a matrixa diagonalis.
 *Tetel:* Sot, olyan is amiben a foatloban csak $-1, 0, +1$ elemek vannak.
 *Tetel:* (Tehetetlensegi tetel) A szimmetrikus bilinearis fuggveny diagonalis matrixaban a pozitiv, negativ, es nulla elemek szama fuggetlen a bazistol.
