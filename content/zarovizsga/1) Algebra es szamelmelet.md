@@ -80,10 +80,55 @@ A fenti allitasban szereplo egyutthatokat a gcd-vel egyutt is ki lehet szamolni 
 *Def.:* Legyen $R$ szokasos gyuru. A $p \in R$ elemet irreducibilisnek nevezzuk, ha nem nulla, nem egyseg, es $p$-nek nincs nemtrivialis felbontasa.
 
 ### Primszamok
+Kis fermat tetel
+
 ### Kongruenciak es csoportelmeleti vonatkozasaik
 ### Matrixcsoportok
+*Def.:*
+- $P \in \mathbb{R}^{2}$ pontot fixalo forgatosok csoportja $O(2)$
+- Az origot fixalo forgatasok csoportja $SO(2)$
+
+*Def.:* Legyen $T$ test es $n \geq 1$ egesz. Ekkor a $T$ folotti $n \times n$-es invertalhato matrixok csoportjat a szorzasra general linear group-nak, $GL(n, T)$-nek, nevezzuk. Azok a matrixok melyek determinansa $1$ reszcsoportot alkotnak $GL(n, T)$-ben, es special linear group-nak nevezzuk, es $SL(n, T)$-vel jeloljuk.
+
+cheatsheet:
+- invertalhato $n \times n$-es matrixok csoportja $GL(n, T)$
+- determinans = 1 matrixok csoportja $SL(n, T)$
+- $GL(n, \mathbb{R})$-beli ortogonalis matrixok csoportja $O(n)$
+- ezen belul det = 1 reszcsoport $SO(n)$
+- $GL(n, \mathbb{C})$-beli uniter matrixok csoportja $U(n)$
+- ezen belul det = 1 reszcsoport $SU(n)$
+
 ### Permutaciocsoportok
+*Def.:* Az $X$ veges halmazt onmagara kepezo bijekciokat az $X$ halmaz permutacioinak nevezzuk. Ha $\lvert  X \rvert = n$, akkor $S_{X}$ csoportot alkot a kompoziciora nezve. Ha $X = \{ 1, \dots, n \}$, akkor $S_{X}$ helyett $S_{n}$-et irunk.
+
+inverzio, inverzio szam, paritas, elojel, ugyanannyi paros es paratlan permutacio,
+
+transzpozicio, ciklus
+
+*Tetel:* Veges halmaz minden permutacioja felirhato paronkent diszjunkt ciklusok szorzatakent.
+*Tetel:*
+$$
+(x_{1} x_{2} x_{3} \dots x_{k}) = (x_{1} x_{2})(x_{2} x_{3}) (x_{3} x_{4}) \dots (x_{k-2} x_{k-1})(x_{k-1} x_{k}).
+$$
+*Tetel:* Ha $f$ permutacio felbonlik paratlon sok paros hosszu ciklusra, akkor $f$ paratlan, kulonben paros.
+
 ### Elemrend
+*Def.:* Legyen $G$ csoport es $g \in G$. A $g$ elem rendje a $g$ kulonbozo hatvanyainak a szama, A $g$ elem rendjenek jele $o(g)$. Azt mondjuk, hogy a $k$ egesz szam jo kitevoje a $g$-nek, ha $g^{k} = 1$.
+*Tetel:*
+1. $g$ hatvanyai vagy paronkent kulonboznek es ekkor $o(g) = \infty$, vagy periodikusan ismetlodnek $o(g)$ periodusokban
+2. a rend a legkisebb pozitiv jo kitevo veges rend eseten, tehat ha $o(g) < \infty$ akkor $g^{o(g)} = 1$ es ez a legkisebb
+3. tetszoleges $k, l \in \mathbb{Z}$-re, ha $o(g) < \infty$ akkor
+$$
+g^{k} = g^{l} \iff o(g) \mid k - l, \quad \text{specialisan } \quad g^{k} = 1 \iff o(g) \mid k.
+$$
+- a hatvany rendjenek keplete:
+$$
+o(g^{k}) = \frac{o(g)}{(o(g), k)}.
+$$
+
+*Tetel:* Legyen $G$ csoport, es $g \in G$ es $o(g) = d < \infty$. Ekkor $g$ hatvanyainak rendje $d$-enk osztoja, es $g$-nek pontosan $\varphi(d)$ darab $d$ rendu hatvany van, ahol $\varphi$ az Euler fele tociens fuggveny.
+*Megj.:* $\varphi(n)$ azt szamolja hogy hany $n$-nel kisebb egesz szam van mely relativ prim $n$-el.
+
 ### Faktorcsoport
 ### Algebrais es transzcendens szamok
 ### Minimalpolinom
