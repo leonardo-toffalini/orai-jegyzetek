@@ -10,7 +10,7 @@ A tovabbiakban a
 $$
 Ax \leq b
 $$
-rendszert vizsgaljuk. Felmeul a kerdes, hogy van-e megoldasa ennek a rendszernek, erre a Farkas lemma ad valaszt. Felmerul a kerdes hogy milyen alaku a megoldashazlma, erre a politederek adnak valaszt. Hogyan lehet megadni a rendzsernek megoldashalmazat parameteresen, erre valaszt ad majd az hogy minden korlatos polieder politop es forditva.
+rendszert vizsgaljuk. Felmerul a kerdes, hogy van-e megoldasa ennek a rendszernek, erre a Farkas lemma ad valaszt. Felmerul a kerdes hogy milyen alaku a megoldashazlma, erre a politederek adnak valaszt. Hogyan lehet megadni a rendzsernek megoldashalmazat parameteresen, erre valaszt ad majd az hogy minden korlatos polieder politop es forditva.
 
 ### Kupok
 *Def.:* (kup) A $C$ nemures halmaz kup ha $\alpha \cdot x \in C$ minden $\alpha \in \mathbb{R}^{+}$ es $x \in C$-re.
@@ -45,11 +45,20 @@ $$
 *Megj.:* A kulonbseg a relativ belso pont es a belso pont kozott az hogy a relativ belso pont lehet egy egyenesen vagy egy sikon, mig a belso pont korul van egy kicsi sugaru gomb mely a poliederben van.
 *Def.:* Egy $R \subseteq \mathbb{R}^{n}$ nemures polieder $F$ oldala $R$-nek egy
 $$
-F = \{ x \in R : cd = \delta \}
+F = \{ x \in R : cx = \delta \}
 $$
-alaku nemures reszhalmaza, ahol $\delta = \max \{ cd : x \in R \}$ valamely $cx$ linearis celfuggvenyre, melyre a maximum letezik.
+alaku nemures reszhalmaza, ahol $\delta = \max \{ cx : x \in R \}$ valamely $cx$ linearis celfuggvenyre, melyre a maximum letezik.
 *Def.:* Egy polieder valodi oldalan olyan oldalt ertunk, mely nem az egesz polieder.
 *Def.:* Egy polieder csucsan egy egyelemu oldalt ertunk.
+
+### Felbontasi tetelek
+*Tetel:* Egy politop es egy generalt kup osszege polieder. Specialisan, minden politop korlatos polieder es minden generalt kup eloall metszetkupkent.
+*Tetel:* Minden metszetkup eloall generalt kupkent.
+*Tetel:* Minden nemures polieder eloall mint egy politop es egy generalt kup osszege. Specialisan, minden korlatos polieder politop.
+*Megj.:*
+- polieder = politop + generalt kup
+- metszet kup = generalt kup
+- politop = korlatos polieder
 
 ### Bazismegoldasok, eros bazismegoldasok
 *Def.:* Az $R = \{ x: Qx \leq b \}$ polieder egy $z$ elemere nezve a $Q$ matrix egy sorat $z$-aktivnak hivjuk, ha $z$ egyenloseggel teljesul. A $z$-re nezve aktiv sorok reszmatrixat a $Q$ $z$-aktiv reszmatrixanak nevezzuk es $Q_{z}^{=}$-fel jeloljuk
@@ -65,12 +74,15 @@ alaku nemures reszhalmaza, ahol $\delta = \max \{ cd : x \in R \}$ valamely $cx$
 *Tetel:* A $Qx \leq b$ egyenlotlenseg rendszer egy $z$ megoldasa akkor es csak akkor eros bazis megoldas, ha letezik $Q$-nak egy olyan $r(Q)$ sorbol es $r(Q)$ oszlopbol allo nem szingularis $Q'$ reszmatrixa, amelyre $z$ a $Q'x' = b'$ egyertelmu $x'$ megoldasabol allo elo $0$ komponensek kiterjesztesevel.
 *Kov.:* Legfeljebb veges sok eros bazis megoldas van.
 
+### Farkas-lemma
+*Tetel:* $\exists x : Ax \leq b \iff \not \exists y : yA = 0, \quad yb < 0, \quad y \geq 0$.
+*Tetel:* Az $\{ Ax = b : x \geq 0 \}$ rendszernek pontosan akkor van megoldasa, ha az $\{ yA \geq 0: yb < 0 \}$ rendszernek nincs.
+
 ### Alkalmazasai
-???
+Nem tudom, van egy kovetelmeny rendszered es megnezed hogy lehet-e kielegiteni. Peldaul van egy szoftver csomagod ami csak ennek ezzel a verziojaval mukodik es annak azzal a verziojaval stb., ekkor meg kell oldanod egy linearis egyenlotlenseg rendszert. (Dependency resolution.)
 
 ### Linearis optimalizalas
-*Tetel:* (Iranymenti korlatossag tetele)
-*Tetel:* Ha egy egyenlotlenseg rendszer megoldhato akkor van eros bazis megoldasa.
+*Tetel:* (Iranymenti korlatossag tetele) ...
 *Def.:* Linearis programozasi feladat
 $$
 \begin{aligned}
@@ -79,16 +91,7 @@ $$
 \end{aligned}
 $$
 Tehat keresunk egy olyan $x$-et amelyre teljesul egy egyenlotlenseg rendszer es maximalizalja a $c \cdot x$ celfuggvenyt.
-*Megj.:* Meglepoen sok dolog irhato fel ebben az egyszeru alakban.
-
-### Felbontasi tetelek
-*Tetel:* Egy politop es egy generalt kup osszege polieder. Specialisan, minden politop korlatos polieder es minden generalt kup eloall metszetkupkent.
-*Tetel:* Minden metszetkup eloall generalt kupkent.
-*Tetel:* Minden nemures polieder eloall mint egy politop es egy generalt kup osszege. Specialisan, minden korlatos polieder politop.
-*Megj.:*
-- polieder = politop + generalt kup
-- metszet kup = generalt kup
-- politop = korlatos polieder
+*Megj.:* Meglepoen sok dolog irhato fel ebben az egyszeru alakban. Sajat tapasztalatbol: sudoku, kakuro, mosaic.
 
 ### Dualitas
 *Tetel:* (Gyenge dualitas)
@@ -105,10 +108,6 @@ mert $y \geq 0$ es $Qx \leq b \implies b - Qx \geq 0$. Tehat $yb - cx \geq 0 \im
 $$
 \max cx = \min yb.
 $$
-
-### Farkas-lemma
-*Tetel:* $\exists x : Ax \leq b \iff \not \exists y : yA = 0, \quad yb < 0, \quad y \geq 0$.
-*Tetel:* Az $\{ Ax = b : x \geq 0 \}$ rendszernek pontosan akkor van megoldasa, ha az $\{ yA \geq 0: yb < 0 \}$ rendszernek nincs.
 
 ### Szimplex modszer
 Huh... Vizualok nelkul nehez leirni szoban, de
