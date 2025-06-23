@@ -31,6 +31,30 @@ $$
 $$
 (a + bi) \cdot (c + di) = (ac - bd) + (a d + bc)i
 $$
+*All.:*
+$$
+\frac{1}{z} = \frac{\bar{z}}{\lvert z \rvert ^{2}}.
+$$
+*Biz.:*
+$$
+\frac{1}{z} \cdot \frac{\bar{z}}{\lvert z \rvert ^{2}} = \frac{z \cdot \bar{z}}{\lvert z \rvert ^{2}} = \frac{\lvert z \rvert ^{2}}{\lvert z \rvert ^{2}} = 1.
+$$
+
+*All.:* $z = r(\cos \varphi + i \sin \varphi)$.
+*All.:* 
+$$
+z \cdot w = rs( \cos(\varphi + \psi) + i \sin (\varphi + \psi)).
+$$
+*Megj.:* Komplex szamokkal nagyon szepen leirhatok a forgatasok a sikban. Nem kell szarozni matrixokkal.
+*Megj.:* Trigonometrikus alakban pofon egyszeru komplex szammal osztani is.
+
+*Def.:* A $z \in \mathbb{C}$ szam $n$-edik egyseggyok, ha $z^{n} = 1$.
+*All.:*
+$$
+\varepsilon = \cos \frac{2\pi}{n} + i \sin \frac{2\pi}{n} \implies o(\varepsilon) = n.
+$$
+*Megj.:* Egyenlo tavolsagonkent felbontjuk az egysegkort.
+
 *All.:* $(\mathbb{C}, +, \cdot)$ egy test
 *biz.:* $(\mathbb{C}, +)$ Abel csoport
 
@@ -61,6 +85,13 @@ ahol $g(x)$ valami polinom.
 $$
 n = \prod p_{i}^{\alpha_{i}}.
 $$
+
+*Def.:* A $f \in K[x], deg f \geq 1$ polinom reducibilis, ha $\exists g, h \in K[x]$ ugy hogy $f = gh$ es mindketto kisebb foku mint f.
+*Def.:* Az $f$ irreducibilis ha nem reducibilis.
+
+*Tetel:* A szamelmelet alaptetele test folotti egyvaltozos polinomok folott.
+Legyen $f \in K[x]$ normalt polinom. Ekkor $\exists ! n$ es $\exists ! p_{1}, \dots, p_{n} \in K[x]$ normalt irreducibilis polinomok ugy, hogy $f = p_{1}, \dots, p_{n}$. (Az egyertelmuseg sorrendtol fuggetlenul ertendo.)
+
 *Def.:* Legyen $R$ szokasos gyuru. A $p \in R$ elemet irreducibilisnek nevezzuk, ha nem nulla, nem egyseg, es $p$-nek nincs nem-trivialis felbontasa.
 *Def.:* Azt mondjuk, hogy az $R$ gyuruben ervenyes a szamelmelet alaptetele, ha $R$ minden nem nulla es nem egyseg eleme sorrendtol es asszocialtsagtol eltekintve egyertelmuen folirhato $R$ irreducibilis elemeinek szorzatakent.
 (Szokasos gyuru = kommutativ nullosztomentes egysegelemes gyuru)
@@ -83,6 +114,18 @@ A fenti allitasban szereplo egyutthatokat a gcd-vel egyutt is ki lehet szamolni 
 Kis fermat tetel
 
 ### Kongruenciak es csoportelmeleti vonatkozasaik
+*Def.:* $a \equiv b \mod m$, ha $m \mid a - b$
+*All.:* Ha $ax \equiv a y \mod m$ es $(a, m) = 1$, akkor $x \equiv y \mod m$.
+*Tetel:* Az $ax \equiv b \mod m$ egyenletnek letezik megoldasa akkor es csak akkor ha $(a, m) \mid b$. Tovabba a megoldasok egy maradek osztalyt alkotnak modula $m / (a, m)$.
+*Tetel:* (Kinai maradektetel) Ha $m_{1}, \dots, m_{k} \in \mathbb{Z}$ es paronkent relativ primek es $c_{1}, \dots, c_{k} \in \mathbb{Z}$, akkor az $x \equiv c_{i} \mod m_{i}$ szimultan kongruencia rendszer ekvivalens az $x \equiv c \mod \prod m_{i}$ kongruenciaval.
+*Tetel:* (Euler–Fermat) Ha $(a, m) = 1$, akkor $a^{\varphi(m)} \equiv 1 \mod m$.
+*Tetel:* (Kis Fermat) Ha $p$ prim es $a \in \mathbb{Z}$, akkor ha $p \not \mid a$ akkor $a^{p-1} \equiv 1 \mod p$ es $a^{p} \equiv a \mod p$.
+
+*All.:* A $\mathbb{Z}_{m} = \{ 0, 1, \dots, m-1 \}$ halmaz Abel csoport az osszeadasra.
+*All.:* $\mathbb{Z}_{m}$ kommutativ egysegelemes gyuru.
+*All.:* $\mathbb{Z}_{m}$ test pontosan akkor, ha nullosztomentes, tehat pontosan akkor ha $m$ prim.
+*Tetel:* (Wilson) $(p-1)! \equiv -1 \mod p$.
+
 ### Matrixcsoportok
 *Def.:*
 - $P \in \mathbb{R}^{2}$ pontot fixalo forgatosok csoportja $O(2)$
@@ -130,6 +173,22 @@ $$
 *Megj.:* $\varphi(n)$ azt szamolja hogy hany $n$-nel kisebb egesz szam van mely relativ prim $n$-el.
 
 ### Faktorcsoport
-### Algebrais es transzcendens szamok
-### Minimalpolinom
+*Def.:* Legyen $H \leq G$, ekkor $aH$-t baloldali mellekosztalynak es $Ha$-t jobboldali mellekosztalynak hivjuk.
+*Def.:* Legyen $H \leq G$ reszcsoport, ekkor
+$$
+G / H = \{a H: a \in G\},
+$$
+faktorcsoport neven ismert.
 
+*Megj.:* Tehat a faktorcsoport a baloldali mellekosztalyok csoportja.
+*Peldaul:* Modulo $m$ osszeadas csoportja $\mathbb{Z}_{m}$.
+
+### Algebrai es transzcendens szamok
+*Def.:* Az $x \in \mathbb{R}$ szam algebrai, ha letezik $p \in \mathbb{Z}[x]$ ($p \neq 0$) polinom, melyre $p(x) = 0$.
+*Def.:* Az $x \in \mathbb{R}$ szam transzcendens, ha nem algebrai.
+*Tetel:* Az $e$ es $\pi$ tanszcendens szamok.
+*Tetel:* Majdnem minden szam transzcendens, mivel megszamlalhatoan sok egesz egyutthatos polinom van, ezert megszamlalhatoan sok algebrai szam van.
+
+### Minimalpolinom
+*Def.:* Az $x \in \mathbb{R}$ szam minimalpolinomja a legkisebb foku polinom, melynek $x$ gyoke.
+*Tetel:* Ha $f(x) = 0$, akkor $m \mid f$.
