@@ -1,7 +1,7 @@
-Progress 16/17
-`[===============>.]`
+Progress 17/17
+`[================>]`
 
-- [ ] 1) Algebra es szamelmelet
+- [x] 1) Algebra es szamelmelet
 - [x] 2) Linearis algebra  (A vegen meg nincs kesz a diagonalizalhatosag es specialis matrixok es kvadratikus alakok reszek.)
 - [x] 3) A matematika alapjai
 - [x] 4.a) Differencial szamitas

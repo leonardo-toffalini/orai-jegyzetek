@@ -56,11 +56,10 @@ $$
 *Megj.:* Egyenlo tavolsagonkent felbontjuk az egysegkort.
 
 *All.:* $(\mathbb{C}, +, \cdot)$ egy test
-*biz.:* $(\mathbb{C}, +)$ Abel csoport
 
 ### Polinomok gyokeinek szama test folott
 polinom: $a_{n} x^{n} + \dots + a_{1}x + a_{0}$
-$\geq n + 1$ egyertelmuen meghataroz egy $n$-ed foku polinomot
+$\geq n + 1$ pont egyertelmuen meghataroz egy $n$-ed foku polinomot
 
 *Tetel:* Ha $x_{0}$ gyoke $f(x) = a_{n} x^{n} + \dots + a_{1}x + a_{0}$ polinomnak, akkor ki lehet emelni belole, azaz
 $$
@@ -104,7 +103,7 @@ def gcd(a, b):
   return gcd(b, a % b)
 ```
 
-*Tetel:* (Bezout) Legyen $a, b \in \mathbb{N}$ es $d = \operatorname{gcd}(a, b)$. Ekkor letezik $\lambda, \mu \in \mathbb{N}$ ugy, hogy $\lambda \cdot a + \mu \cdot b = d$.
+*Tetel:* (Bezout) Legyen $a, b \in \mathbb{N}$ es $d = \operatorname{gcd}(a, b)$. Ekkor letezik $\lambda, \mu \in \mathbb{Z}$ ugy, hogy $\lambda \cdot a + \mu \cdot b = d$.
 A fenti allitasban szereplo egyutthatokat a gcd-vel egyutt is ki lehet szamolni a kiterjesztett euklideszi algoritmussal
 
 ### Irreducibilitas
