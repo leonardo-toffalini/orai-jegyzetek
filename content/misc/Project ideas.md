@@ -20,3 +20,7 @@
 
 - [ ] Write a simple but fun platformer game.
 	- Previous attempt: https://github.com/leonardo-toffalini/platformer
+
+- [ ] write a gps tool which can show you GPX data offline, im not paying 10$ a month for an app that loads a file
+
+- [ ] 3d rubiks cube game, could lead to some group theory explorations when trying to write a solver
