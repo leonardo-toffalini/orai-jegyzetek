@@ -24,3 +24,9 @@
 - [ ] write a gps tool which can show you GPX data offline, im not paying 10$ a month for an app that loads a file
 
 - [ ] 3d rubiks cube game, could lead to some group theory explorations when trying to write a solver
+
+- [ ] learn more about shaders by reading through the book of shaders: https://thebookofshaders.com/
+
+- [ ] learn even more about shaders by rewriting some old projects that would greatly benefit from having work be done on the gpu instead of the cpu:
+	- [ ] raytracer in a weekend, the book does all the work sequentially for each pixel on a single thread of a cpu
+	- [ ] rewrite the fluid sim (Stam fluids article) with gpu support
