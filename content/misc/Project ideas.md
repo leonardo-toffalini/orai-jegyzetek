@@ -30,3 +30,9 @@
 - [ ] learn even more about shaders by rewriting some old projects that would greatly benefit from having work be done on the gpu instead of the cpu:
 	- [ ] raytracer in a weekend, the book does all the work sequentially for each pixel on a single thread of a cpu
 	- [ ] rewrite the fluid sim (Stam fluids article) with gpu support
+
+- [ ] game of life in latex, because you can
+
+- [ ] learn typst
+
+- [ ] look into nix-darwin, git it an honest shot if it sounds interesting
