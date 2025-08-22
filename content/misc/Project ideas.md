@@ -36,3 +36,5 @@
 - [ ] learn typst
 
 - [ ] look into nix-darwin, git it an honest shot if it sounds interesting
+
+- [ ] look into the llvm kaleidoscope tutorial: https://llvm.org/docs/tutorial/
