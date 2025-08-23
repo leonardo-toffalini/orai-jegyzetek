@@ -5,11 +5,11 @@
 	- The book uses a bunch of modern cpp features, like smart pointers.
 	- The aim of this exploration would be to see how you could write the same code in rust without those kind of language features.
 
-- [ ] Write an interpreter in rust.
+- [x] Write an interpreter in rust.
 	- Progress: https://github.com/leonardo-toffalini/lexer-rs
 	- [x] lexer
 	- [x] parser
-	- [ ] evaluator
+	- [x] evaluator
 
 - [ ] Do more adhd trap zero player games in lua with love2d.
 	- [ ] Closed battle arena with rotating circle with different weapons attached.
