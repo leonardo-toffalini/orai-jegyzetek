@@ -38,3 +38,5 @@
 - [ ] look into nix-darwin, git it an honest shot if it sounds interesting
 
 - [ ] look into the llvm kaleidoscope tutorial: https://llvm.org/docs/tutorial/
+
+- [ ] do something similar to this: https://www.youtube.com/watch?v=YGLNyHd2w10
