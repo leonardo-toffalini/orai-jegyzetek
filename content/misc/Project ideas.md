@@ -38,3 +38,10 @@
 - [ ] look into nix-darwin, git it an honest shot if it sounds interesting
 
 - [ ] look into the llvm kaleidoscope tutorial: https://llvm.org/docs/tutorial/
+
+- [ ] play around with voronoi algorithms, and Delaunay triangulation
+	- [ ] implement different algos for voronoi
+	- [ ] implement different algos for Delaunay triangulation
+	- [ ] take the graph dual of one to get the other
+	- [ ] make a mesh from a point cloud using Delaunay triangulation
+	- [ ] make a moving cell like animation with voronoi diagrams
