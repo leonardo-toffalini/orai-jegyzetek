@@ -45,3 +45,4 @@
 	- [ ] take the graph dual of one to get the other
 	- [ ] make a mesh from a point cloud using Delaunay triangulation
 	- [ ] make a moving cell like animation with voronoi diagrams
+- [ ] do something similar to this: https://www.youtube.com/watch?v=YGLNyHd2w10
