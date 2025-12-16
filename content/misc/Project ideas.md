@@ -25,7 +25,7 @@
 
 - [ ] 3d rubiks cube game, could lead to some group theory explorations when trying to write a solver
 
-- [ ] learn more about shaders by reading through the book of shaders: https://thebookofshaders.com/
+- [x] learn more about shaders by reading through the book of shaders: https://thebookofshaders.com/
 
 - [ ] learn even more about shaders by rewriting some old projects that would greatly benefit from having work be done on the gpu instead of the cpu:
 	- [ ] raytracer in a weekend, the book does all the work sequentially for each pixel on a single thread of a cpu
@@ -33,9 +33,9 @@
 
 - [ ] game of life in latex, because you can
 
-- [ ] learn typst
+- [x] learn typst
 
-- [ ] look into nix-darwin, git it an honest shot if it sounds interesting
+- [ ] look into nix-darwin, give it an honest shot if it sounds interesting
 
 - [ ] look into the llvm kaleidoscope tutorial: https://llvm.org/docs/tutorial/
 
