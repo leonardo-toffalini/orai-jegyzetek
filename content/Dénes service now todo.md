@@ -9,8 +9,10 @@
 - [x] all not `<span class="Code">` ought to be removed
 - [x] !! remove all `<li class=...>`
 - [x] replace all `<div class="alert alert">` with `<div class="Note">`
-- [ ] replace `<code>` tags with `span.Code`
-- [ ] fix all malformed html
+- [x] replace `<code>` tags with `span.Code`
+- [x] fix all malformed html
+- [x] remove `dir="ltr"` and all other meaningless attributes
+- [x] strong tags -> b.UI tags
 
 - [ ] could add a PR check if prettier passes (maybe with our custom prettier.rc)
 
